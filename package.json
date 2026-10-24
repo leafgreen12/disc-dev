@@ -1,0 +1,13 @@
+{
+  "name": "vaga-disc-workstyle-platform",
+  "version": "0.2.0",
+  "description": "Nền tảng Đánh giá Phong cách Làm việc, Cẩm nang Cộng tác (How to Work With Me), So sánh Cặp 1-1 & Kế hoạch Phát triển Cá nhân Vaga D.I.S.C v0.2 (HTML/CSS/JS thuần + Node.js + SQLite)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node tests/verify-vaga-disc-v02.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "document_id": "DOC-21-VARIANT-ROUTING",
+  "version": "0.1.0",
+  "routes": [
+    {
+      "work_package_ref": "WP20-001",
+      "variant_key": "scope_baseline",
+      "task_id": "TASK21-001",
+      "recipe_refs": [
+        "R20-00"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-001",
+      "variant_key": "architecture",
+      "task_id": "TASK21-002",
+      "recipe_refs": [
+        "R20-00"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-002",
+      "variant_key": "test_foundation",
+      "task_id": "TASK21-003",
+      "recipe_refs": [
+        "R20-00"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-002",
+      "variant_key": "identity_core",
+      "task_id": "TASK21-004",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-003",
+      "variant_key": "core_privacy",
+      "task_id": "TASK21-005",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-003",
+      "variant_key": "assessment_purpose",
+      "task_id": "TASK21-006",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-004",
+      "variant_key": "pair_purposes",
+      "task_id": "TASK21-007",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-004",
+      "variant_key": "manual_draft",
+      "task_id": "TASK21-008",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-005",
+      "variant_key": "manual_publication",
+      "task_id": "TASK21-009",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-005",
+      "variant_key": "rights_core",
+      "task_id": "TASK21-010",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-006",
+      "variant_key": "rights_manual",
+      "task_id": "TASK21-011",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-006",
+      "variant_key": "rights_assessment",
+      "task_id": "TASK21-012",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-007",
+      "variant_key": "rights_extensions",
+      "task_id": "TASK21-013",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-007",
+      "variant_key": "support_core",
+      "task_id": "TASK21-014",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-008",
+      "variant_key": "lifecycle_core",
+      "task_id": "TASK21-015",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-008",
+      "variant_key": "lifecycle_domain_adapters",
+      "task_id": "TASK21-016",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-009",
+      "variant_key": "general_catalog",
+      "task_id": "TASK21-017",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-009",
+      "variant_key": "conditional_catalog",
+      "task_id": "TASK21-018",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-010",
+      "variant_key": "operations_core",
+      "task_id": "TASK21-019",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-010",
+      "variant_key": "scope_rehearsal",
+      "task_id": "TASK21-020",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-011",
+      "variant_key": "core_ux",
+      "task_id": "TASK21-021",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-011",
+      "variant_key": "manual_ux",
+      "task_id": "TASK21-022",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-012",
+      "variant_key": "assessment_ux",
+      "task_id": "TASK21-023",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-012",
+      "variant_key": "extension_ux",
+      "task_id": "TASK21-024",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-013",
+      "variant_key": "manual_rollout",
+      "task_id": "TASK21-025",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-013",
+      "variant_key": "measurement_route",
+      "task_id": "TASK21-026",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-014",
+      "variant_key": "qualitative_evidence",
+      "task_id": "TASK21-027",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-014",
+      "variant_key": "assessment_synthetic",
+      "task_id": "TASK21-028",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-015",
+      "variant_key": "measurement_release",
+      "task_id": "TASK21-029",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-015",
+      "variant_key": "research_governance",
+      "task_id": "TASK21-030",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-016",
+      "variant_key": "study_infrastructure",
+      "task_id": "TASK21-031",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-016",
+      "variant_key": "self_limited",
+      "task_id": "TASK21-032",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-017",
+      "variant_key": "generic_actions",
+      "task_id": "TASK21-033",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-017",
+      "variant_key": "pilot_rollout",
+      "task_id": "TASK21-034",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-018",
+      "variant_key": "empirical_claims",
+      "task_id": "TASK21-035",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-018",
+      "variant_key": "score_content_synthetic",
+      "task_id": "TASK21-036",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-019",
+      "variant_key": "reviewed_self_content",
+      "task_id": "TASK21-037",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-019",
+      "variant_key": "self_score_rollout",
+      "task_id": "TASK21-038",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-020",
+      "variant_key": "literal_pair",
+      "task_id": "TASK21-039",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-020",
+      "variant_key": "semantic_pair",
+      "task_id": "TASK21-040",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-021",
+      "variant_key": "preference_rollout",
+      "task_id": "TASK21-041",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-021",
+      "variant_key": "disc_pair_synthetic",
+      "task_id": "TASK21-042",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-022",
+      "variant_key": "disc_pair_rollout",
+      "task_id": "TASK21-043",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-022",
+      "variant_key": "enterprise_integration",
+      "task_id": "TASK21-044",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-023",
+      "variant_key": "ai_task_release",
+      "task_id": "TASK21-045",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-023",
+      "variant_key": "analytics_release",
+      "task_id": "TASK21-046",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-024",
+      "variant_key": "operation_review",
+      "task_id": "TASK21-047",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-024",
+      "variant_key": "reminder_release",
+      "task_id": "TASK21-048",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-025",
+      "variant_key": "classification_extension",
+      "task_id": "TASK21-049",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    },
+    {
+      "work_package_ref": "WP20-025",
+      "variant_key": "norm_extension",
+      "task_id": "TASK21-050",
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "dispatch_status": "NOT_DISPATCHED"
+    }
+  ],
+  "meaning": "ONE_TASK_PER_VARIANT_NOT_APPROVAL_OR_TEST_COVERAGE"
+}

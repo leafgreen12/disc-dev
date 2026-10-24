@@ -1,0 +1,13 @@
+# Gói không tự init Git; mẫu bảo vệ khi nhập repo nội bộ.
+.env
+.env.*
+!.env.example
+.codex/auth.json
+.codex/config.toml
+__pycache__/
+*.pyc
+handoff_work/
+evidence/runtime/
+*.har
+*.log
+# Không ignore corpus/keys rồi nghĩ chúng không nằm trong frontend bundle.

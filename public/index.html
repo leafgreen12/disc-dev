@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaga D.I.S.C v0.2 – Hệ Thống Phong Cách Làm Việc & Cẩm Nang Cộng Tác Nội Bộ</title>
+  <link rel="stylesheet" href="/css/style.css?v=md3-v3" />
+  <link rel="stylesheet" href="/css/print.css?v=md3-v3" media="print" />
+</head>
+<body>
+  <!-- TOP APP BAR & ADAPTIVE NAVIGATION (Ẩn khi in PDF) -->
+  <header class="navbar no-print">
+    <div class="container navbar-inner">
+      <div class="navbar-brand-row">
+        <a href="/" class="brand" id="brand-home-link">
+          <div class="brand-dots">
+            <span class="dot dot-d">D</span>
+            <span class="dot dot-i">I</span>
+            <span class="dot dot-s">S</span>
+            <span class="dot dot-c">C</span>
+          </div>
+          <div class="brand-text">
+            <strong>Vaga D.I.S.C <span class="version-chip">v0.2</span></strong>
+            <span>Workstyle &amp; Collaboration Platform</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="/admin.html" class="btn btn-secondary btn-sm">
+            🛡️ <span class="nav-admin-text">Quản trị &amp; Audit</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Segmented Navigation Bar (Top Center trên Desktop, Bottom Bar trên Mobile) -->
+      <nav class="workspace-tabs" id="workspace-tabs" aria-label="Điều hướng phân hệ">
+        <button type="button" class="ws-tab active" data-tab="assessment">
+          <span class="ws-tab-icon">📝</span>
+          <span class="ws-tab-label">1. Đánh giá</span>
+        </button>
+        <button type="button" class="ws-tab" data-tab="self-report">
+          <span class="ws-tab-icon">📊</span>
+          <span class="ws-tab-label">2. Hồ sơ</span>
+        </button>
+        <button type="button" class="ws-tab" data-tab="manuals">
+          <span class="ws-tab-icon">🤝</span>
+          <span class="ws-tab-label">3. Cẩm nang</span>
+        </button>
+        <button type="button" class="ws-tab" data-tab="pair-compare">
+          <span class="ws-tab-icon">⚡</span>
+          <span class="ws-tab-label">4. So sánh 1-1</span>
+        </button>
+        <button type="button" class="ws-tab" data-tab="growth-privacy">
+          <span class="ws-tab-icon">🌱</span>
+          <span class="ws-tab-label">5. Kế hoạch</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-container">
+    <!-- ======================================================================
+         PHÂN HỆ 1 & 2: ĐÁNH GIÁ PHONG CÁCH LÀM VIỆC & BÁO CÁO HỒ SƠ CÁ NHÂN
+         ====================================================================== -->
+
+    <!-- MÀN HÌNH 1: GIỚI THIỆU & CHỌN CHẾ ĐỘ ĐÁNH GIÁ (2-COLUMN BENTO HERO) -->
+    <section id="screen-welcome" class="screen active">
+      <div class="welcome-bento-grid">
+        <!-- Cột trái: Thông điệp chính, CTA & Chỉ số hệ thống -->
+        <div class="hero-card hero-primary-pane">
+          <div class="hero-content">
+            <span class="badge-highlight">✨ Nền Tảng Phát Triển Bản Thân &amp; Cộng Tác Đội Nhóm Vaga v0.2</span>
+            <h1>Thấu Hiểu Phong Cách Làm Việc &amp; Xây Dựng Cẩm Nang Cộng Tác</h1>
+            <p class="hero-desc">
+              Hệ thống đánh giá xu hướng hành vi nơi công sở theo chuẩn <strong>Vaga D.I.S.C Blueprint</strong>:
+              hỗ trợ đồng thời <strong>Thang đo Likert 5 mức có Adaptive (40–48 câu)</strong> và
+              <strong>Forced-Choice Most/Least (24 câu)</strong>, phân tích <strong>12 phong cách pha trộn + Cân bằng</strong>,
+              khởi tạo <strong>Cẩm nang “How to Work With Me”</strong> và <strong>So sánh cặp 1-1 (A → B)</strong>.
+            </p>
+
+            <div class="hero-actions-row">
+              <button id="btn-start-assessment" class="btn btn-primary btn-lg">
+                🚀 Bắt đầu Đánh giá Phong cách Làm việc →
+              </button>
+              <button id="btn-jump-manuals" class="btn btn-secondary btn-lg">
+                🤝 Xem Danh bạ Cẩm nang (6 thành viên mẫu)
+              </button>
+              <button id="btn-jump-actions" class="btn btn-outline btn-lg">
+                🌱 Tạo Kế hoạch Phát triển (Không cần làm test)
+              </button>
+            </div>
+
+            <div class="hero-metrics-strip">
+              <div class="hero-metric-item">
+                <strong>40–48 câu</strong>
+                <span>Likert 5 mức + Adaptive</span>
+              </div>
+              <div class="hero-metric-item">
+                <strong>12 + 1</strong>
+                <span>Hồ sơ Pha trộn &amp; Cân bằng</span>
+              </div>
+              <div class="hero-metric-item">
+                <strong>72 Thẻ</strong>
+                <span>Hành vi thực chiến (CB11)</span>
+              </div>
+              <div class="hero-metric-item">
+                <strong>100%</strong>
+                <span>Kiểm soát Quyền riêng tư</span>
+              </div>
+            </div>
+
+            <!-- Guardrail chống dán nhãn theo chuẩn DOC-01 / DOC-14 -->
+            <div class="guardrail-banner">
+              <strong>🛡️ Nguyên tắc sử dụng văn minh (Anti-Stereotyping Guardrail):</strong>
+              <span>Kết quả DISC mô tả <em>xu hướng hành vi trong ngữ cảnh công việc hiện tại</em>, không đo năng lực, trí tuệ hay đóng khung tính cách cố định. Bạn toàn quyền kiểm soát việc giữ riêng tư hoặc xuất bản Cẩm nang cộng tác của mình.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột phải: Ma trận 4 miền D - I - S - C trực quan -->
+        <div class="disc-pillars-grid">
+          <div class="pillar-card pillar-d">
+            <div class="pillar-header">
+              <span class="pillar-letter">D</span>
+              <div>
+                <h3>Dominance (Chủ động)</h3>
+                <small class="pillar-axis">Nhịp nhanh • Hướng mục tiêu</small>
+              </div>
+            </div>
+            <p>Quyết đoán, hướng tới kết quả đầu ra, giải quyết vấn đề nhanh và thích chinh phục thử thách.</p>
+          </div>
+
+          <div class="pillar-card pillar-i">
+            <div class="pillar-header">
+              <span class="pillar-letter">I</span>
+              <div>
+                <h3>Influence (Ảnh hưởng)</h3>
+                <small class="pillar-axis">Nhịp nhanh • Hướng con người</small>
+              </div>
+            </div>
+            <p>Cởi mở, truyền cảm hứng, kết nối mọi người và khơi dậy bầu không khí sáng tạo tích cực.</p>
+          </div>
+
+          <div class="pillar-card pillar-s">
+            <div class="pillar-header">
+              <span class="pillar-letter">S</span>
+              <div>
+                <h3>Steadiness (Kiên định)</h3>
+                <small class="pillar-axis">Nhịp điềm tĩnh • Hướng con người</small>
+              </div>
+            </div>
+            <p>Điềm tĩnh, tận tâm, lắng nghe chân thành và giữ nhịp phối hợp ổn định, bền vững.</p>
+          </div>
+
+          <div class="pillar-card pillar-c">
+            <div class="pillar-header">
+              <span class="pillar-letter">C</span>
+              <div>
+                <h3>Conscientiousness (Chuẩn xác)</h3>
+                <small class="pillar-axis">Nhịp cẩn trọng • Hướng hệ thống</small>
+              </div>
+            </div>
+            <p>Logic, khách quan, làm việc có hệ thống, đề cao dữ liệu thực tế và tiêu chuẩn chất lượng.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 2: THÔNG TIN CÁ NHÂN, ĐỒNG THUẬN DỮ LIỆU & CHỌN CHẾ ĐỘ TEST -->
+    <section id="screen-user-info" class="screen">
+      <div class="card form-card">
+        <div class="card-header">
+          <span class="section-tag">Bước 1 / 2 • Thiết lập Hồ sơ &amp; Quyền riêng tư</span>
+          <h2>Thông Tin Người Tham Gia &amp; Chế Độ Khảo Sát</h2>
+          <p>Hồ sơ của bạn được lưu trữ an toàn trên SQLite, hỗ trợ lưu lịch sử nhiều lần làm bài (Retest History) mà không ghi đè bản cũ.</p>
+        </div>
+
+        <form id="user-info-form" class="user-form">
+          <div class="setup-split-grid">
+            <!-- Cột trái: Thông tin định danh -->
+            <div class="setup-left-pane">
+              <h3 class="pane-subtitle">👤 1. Thông tin định danh cá nhân</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="input-fullname">Họ và tên <span class="req">*</span></label>
+                  <input
+                    type="text"
+                    id="input-fullname"
+                    name="full_name"
+                    placeholder="Ví dụ: Nguyễn Văn An"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="input-email">Email công việc <span class="req">*</span></label>
+                  <input
+                    type="email"
+                    id="input-email"
+                    name="email"
+                    placeholder="Ví dụ: an.nguyen@vaga.vn"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="input-phone">Số điện thoại</label>
+                  <input
+                    type="tel"
+                    id="input-phone"
+                    name="phone"
+                    placeholder="Ví dụ: 0901234567"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="input-department">Phòng ban / Khối</label>
+                  <input
+                    type="text"
+                    id="input-department"
+                    name="department"
+                    placeholder="Ví dụ: Khối Sản phẩm / Phòng Nhân sự"
+                  />
+                </div>
+
+                <div class="form-group full-col">
+                  <label for="input-position">Chức vụ / Vai trò hiện tại</label>
+                  <input
+                    type="text"
+                    id="input-position"
+                    name="position"
+                    placeholder="Ví dụ: Product Manager / Kỹ sư Phần mềm / Chuyên viên"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Cột phải: Chọn chế độ test & Đồng thuận -->
+            <div class="setup-right-pane">
+              <div class="mode-selector-box">
+                <h3 class="pane-subtitle">🎯 2. Chọn phương pháp đánh giá Vaga DISC</h3>
+                <div class="mode-cards-grid">
+                  <label class="mode-option-card active" id="mode-card-likert">
+                    <input type="radio" name="assessment_mode" value="likert40" checked />
+                    <div class="mode-card-body">
+                      <div class="mode-card-head">
+                        <strong>Chuẩn Vaga Likert 5 Mức + Adaptive (40–48 câu)</strong>
+                        <span class="badge-rec">Khuyên dùng (Blueprint v0.2)</span>
+                      </div>
+                      <p>Đo độc lập từng miền D-I-S-C trên thang chuẩn 0–100, có câu đảo ngược chống trả lời máy móc và tự động mở 8 câu Adaptive khi 2 nhóm dẫn đầu sát nhau.</p>
+                    </div>
+                  </label>
+
+                  <label class="mode-option-card" id="mode-card-forced">
+                    <input type="radio" name="assessment_mode" value="forced24" />
+                    <div class="mode-card-body">
+                      <div class="mode-card-head">
+                        <strong>Forced-Choice Most / Least (24 cụm câu hỏi)</strong>
+                        <span class="badge-classic">Cổ điển nhanh</span>
+                      </div>
+                      <p>Chọn 1 đặc điểm Giống bạn nhất (Most) và 1 đặc điểm Ít giống bạn nhất (Least) trong 24 tình huống để đối chiếu hành vi Thích ứng và Tự nhiên.</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Đồng thuận quyền riêng tư tường minh (DOC-14) -->
+              <div class="consent-box">
+                <label class="consent-checkbox-label">
+                  <input type="checkbox" id="chk-consent" required checked />
+                  <div>
+                    <strong>Đồng thuận sử dụng dữ liệu &amp; Quyền riêng tư (VAGA-CONSENT-v0.2):</strong>
+                    <p>Tôi hiểu rằng kết quả khảo sát chi tiết (bao gồm Vùng mù, Phản ứng dưới áp lực và Ghi chú phát triển) là <strong>riêng tư của cá nhân tôi</strong>. Đồng nghiệp chỉ xem được Cẩm nang cộng tác (“How to Work With Me”) khi tôi chủ động nhấn Xuất bản, và tôi có thể Thu hồi hoặc Xóa dữ liệu bất cứ lúc nào.</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" id="btn-back-welcome" class="btn btn-secondary">
+              ← Quay lại trang giới thiệu
+            </button>
+            <button type="submit" class="btn btn-primary btn-lg">
+              Bắt đầu làm bài khảo sát →
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 3: LÀM BÀI TRẮC NGHIỆM (HỖ TRỢ CẢ LIKERT 40/48 VÀ FORCED-CHOICE 24) -->
+    <section id="screen-quiz" class="screen">
+      <div class="quiz-top-bar card">
+        <div class="quiz-user-meta">
+          <div class="quiz-user-pill">
+            <span class="meta-label">Thí sinh:</span>
+            <strong id="quiz-display-name">---</strong>
+            <span class="mode-pill" id="quiz-mode-pill">Likert 40 câu</span>
+          </div>
+          <div class="timer-pill">
+            ⏱️ <strong id="quiz-timer">00:00</strong>
+          </div>
+        </div>
+
+        <div class="quiz-progress-wrap">
+          <div class="progress-info">
+            <span id="quiz-progress-text">Đã hoàn thành: 0 / 40 câu</span>
+            <span id="quiz-progress-percent">0%</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="quiz-progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <div class="quiz-quick-tools">
+          <select id="demo-archetype-select" class="demo-select" title="Chọn kiểu hồ sơ mẫu để điền nhanh">
+            <option value="DI">Mẫu DI (Tiên phong)</option>
+            <option value="D">Mẫu D (Quyết đoán)</option>
+            <option value="I">Mẫu I (Truyền cảm hứng)</option>
+            <option value="IS">Mẫu IS (Gắn kết)</option>
+            <option value="S">Mẫu S (Kiên định)</option>
+            <option value="SC">Mẫu SC (Chuẩn chỉ)</option>
+            <option value="C">Mẫu C (Phân tích)</option>
+            <option value="CD">Mẫu CD (Kiến trúc sư)</option>
+            <option value="BALANCED">Mẫu BALANCED (Cân bằng)</option>
+          </select>
+          <button type="button" id="btn-demo-fill" class="btn btn-outline btn-sm">
+            ⚡ Điền nhanh (Demo)
+          </button>
+        </div>
+      </div>
+
+      <!-- Thông báo khi kích hoạt 8 câu Adaptive -->
+      <div id="adaptive-banner" class="adaptive-alert hidden">
+        <strong>🔍 Đã kích hoạt 8 câu Adaptive phân giải cao (Câu 41–48):</strong>
+        <span id="adaptive-reason-text">Khoảng cách giữa 2 miền dẫn đầu khá sát nhau, hệ thống mở thêm 8 câu để tăng độ chính xác.</span>
+      </div>
+
+      <div class="quiz-layout">
+        <div class="card question-card">
+          <div class="question-header">
+            <div class="question-badge-row">
+              <span class="question-number-badge" id="question-number-badge">Câu 1 / 40</span>
+              <span class="question-status-tag" id="question-status-tag">Chưa trả lời</span>
+            </div>
+            <h2 id="question-context-title">---</h2>
+            <p class="question-instruction" id="question-instruction-text">
+              Hãy chọn mức độ phản ánh đúng nhất hành vi thực tế của bạn trong công việc (Từ 1 - Rất không giống tôi đến 5 - Rất giống tôi):
+            </p>
+          </div>
+
+          <div id="forced-choice-table-head" class="options-table-head hidden">
+            <span class="col-desc">Mô tả hành vi trong công việc</span>
+            <span class="col-choice most-col">👍 Giống nhất (MOST)</span>
+            <span class="col-choice least-col">👎 Ít giống nhất (LEAST)</span>
+          </div>
+
+          <div id="question-options-list" class="options-list">
+            <!-- Render động bằng JS (Likert 1-5 hoặc Most/Least) -->
+          </div>
+
+          <div id="quiz-validation-alert" class="alert-box hidden"></div>
+
+          <div class="question-footer-nav">
+            <button type="button" id="btn-prev-question" class="btn btn-secondary">
+              ← Câu trước
+            </button>
+
+            <label class="auto-next-toggle">
+              <input type="checkbox" id="chk-auto-next" checked />
+              <span>Tự động chuyển câu tiếp theo</span>
+            </label>
+
+            <button type="button" id="btn-next-question" class="btn btn-primary">
+              Câu tiếp theo →
+            </button>
+
+            <button type="button" id="btn-submit-quiz" class="btn btn-success btn-lg hidden">
+              ✓ Hoàn thành &amp; Xem Hồ Sơ
+            </button>
+          </div>
+        </div>
+
+        <!-- Bảng điều hướng câu hỏi -->
+        <aside class="card navigator-card">
+          <h3 id="nav-card-title">Danh sách câu hỏi</h3>
+          <p class="nav-hint">Nhấn vào số câu để chuyển nhanh:</p>
+          <div id="question-nav-grid" class="question-nav-grid"></div>
+
+          <div class="nav-legend">
+            <div class="legend-item">
+              <span class="legend-dot answered"></span> Đã trả lời hợp lệ
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot current"></span> Câu đang mở
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot pending"></span> Chưa hoàn thành
+            </div>
+          </div>
+
+          <button type="button" id="btn-submit-sidebar" class="btn btn-success full-width" style="margin-top: 16px;">
+            ✓ Nộp bài &amp; Phân tích kết quả
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 4: HỒ SƠ CÁ NHÂN CHI TIẾT (PRIVATE SELF VIEW) & XUẤT PDF A4 -->
+    <section id="screen-result" class="screen">
+      <!-- Thanh chọn Hồ sơ hoặc Tra cứu Lịch sử làm bài (Ẩn khi in PDF) -->
+      <div class="result-action-bar no-print">
+        <div class="save-status-banner" id="save-status-banner">
+          <span class="status-icon">🔒</span>
+          <span id="save-status-text">Chế độ Hồ sơ Cá nhân Riêng tư (Private Self View) • Đã lưu SQLite</span>
+        </div>
+        <div class="result-buttons">
+          <select id="profile-switcher-select" class="demo-select" title="Chuyển nhanh xem các hồ sơ trong cơ sở dữ liệu"></select>
+          <button type="button" id="btn-open-manual-from-report" class="btn btn-success btn-sm">
+            🤝 Tạo / Xuất bản Cẩm nang
+          </button>
+          <button type="button" id="btn-print-pdf" class="btn btn-primary btn-sm">
+            🖨️ In Báo Cáo / Xuất PDF (A4)
+          </button>
+          <button type="button" id="btn-retake-quiz" class="btn btn-secondary btn-sm">
+            🔄 Làm bài mới
+          </button>
+        </div>
+      </div>
+
+      <!-- Khung Báo Cáo Chuẩn A4 -->
+      <article id="printable-report" class="report-sheet">
+        <div class="report-header">
+          <div class="report-brand">
+            <div class="brand-dots">
+              <span class="dot dot-d">D</span>
+              <span class="dot dot-i">I</span>
+              <span class="dot dot-s">S</span>
+              <span class="dot dot-c">C</span>
+            </div>
+            <div>
+              <h1>HỒ SƠ PHONG CÁCH LÀM VIỆC &amp; PHÁT TRIỂN CÁ NHÂN (VAGA D.I.S.C)</h1>
+              <p id="report-mode-subtitle">Báo cáo Cá nhân Riêng tư (Private Self View) • Phân tích 12 Phong cách Pha trộn &amp; Cân bằng</p>
+            </div>
+          </div>
+          <div class="report-meta-id">
+            <span>Mã bản ghi SQLite</span>
+            <strong id="report-submission-id">#---</strong>
+            <small id="report-revision-badge">Lần #1</small>
+          </div>
+        </div>
+
+        <!-- Thông tin cá nhân người làm bài -->
+        <div class="report-user-box">
+          <div class="user-info-item">
+            <span class="info-label">Họ và tên</span>
+            <strong id="report-user-name">---</strong>
+          </div>
+          <div class="user-info-item">
+            <span class="info-label">Email công việc</span>
+            <strong id="report-user-email">---</strong>
+          </div>
+          <div class="user-info-item">
+            <span class="info-label">Số điện thoại</span>
+            <strong id="report-user-phone">---</strong>
+          </div>
+          <div class="user-info-item">
+            <span class="info-label">Phòng ban / Khối</span>
+            <strong id="report-user-dept">---</strong>
+          </div>
+          <div class="user-info-item">
+            <span class="info-label">Chức vụ / Vai trò</span>
+            <strong id="report-user-pos">---</strong>
+          </div>
+          <div class="user-info-item">
+            <span class="info-label">Thời gian &amp; Chế độ</span>
+            <strong id="report-user-date">---</strong>
+          </div>
+        </div>
+
+        <!-- Thanh chỉ báo Chất lượng phản hồi (Response Quality Banner) -->
+        <div id="report-quality-banner" class="quality-banner quality-high">
+          <div>
+            <strong id="report-quality-title">✅ Độ nhất quán phản hồi cao (Điểm tin cậy: 95/100)</strong>
+            <p id="report-quality-notes">Các câu đối chứng thuận - nghịch và thời gian hoàn thành đạt độ ổn định tốt.</p>
+          </div>
+          <span class="quality-pill" id="report-confidence-band">CLEAR_BLEND</span>
+        </div>
+
+        <!-- Khối kết quả Nhóm phong cách chủ đạo -->
+        <div class="report-hero-profile" id="report-hero-profile">
+          <div class="profile-type-badge" id="report-profile-code">DI</div>
+          <div class="profile-hero-content">
+            <div class="profile-tag-row">
+              <span class="primary-dim-pill" id="report-primary-dim-name">Nhóm chủ đạo: D</span>
+              <div id="report-keywords-list" class="keywords-list"></div>
+            </div>
+            <h2 id="report-profile-title">---</h2>
+            <p class="profile-subtitle" id="report-profile-subtitle">---</p>
+            <blockquote class="profile-motto" id="report-profile-motto">---</blockquote>
+          </div>
+        </div>
+
+        <!-- 4 Thẻ điểm số D - I - S - C (Điểm chuẩn 0-100 + Mean 1-5 + Tỷ trọng %) -->
+        <div class="score-cards-grid">
+          <div class="score-card score-d">
+            <div class="score-card-top">
+              <span class="score-letter">D</span>
+              <span class="score-pct" id="score-pct-D">0%</span>
+            </div>
+            <h4>Dominance (Chủ động)</h4>
+            <div class="linear-bar-track"><div class="linear-bar-fill fill-d" id="linear-bar-D" style="width:50%"></div></div>
+            <div class="score-metrics">
+              <span>Chuẩn 0-100: <strong id="score-linear-D">0</strong></span>
+              <span>Mean 1-5: <strong id="score-mean-D">0</strong></span>
+              <span>M/L: <strong id="score-most-D">0</strong>/<strong id="score-least-D">0</strong> (<strong id="score-diff-D">0</strong>)</span>
+            </div>
+          </div>
+
+          <div class="score-card score-i">
+            <div class="score-card-top">
+              <span class="score-letter">I</span>
+              <span class="score-pct" id="score-pct-I">0%</span>
+            </div>
+            <h4>Influence (Ảnh hưởng)</h4>
+            <div class="linear-bar-track"><div class="linear-bar-fill fill-i" id="linear-bar-I" style="width:50%"></div></div>
+            <div class="score-metrics">
+              <span>Chuẩn 0-100: <strong id="score-linear-I">0</strong></span>
+              <span>Mean 1-5: <strong id="score-mean-I">0</strong></span>
+              <span>M/L: <strong id="score-most-I">0</strong>/<strong id="score-least-I">0</strong> (<strong id="score-diff-I">0</strong>)</span>
+            </div>
+          </div>
+
+          <div class="score-card score-s">
+            <div class="score-card-top">
+              <span class="score-letter">S</span>
+              <span class="score-pct" id="score-pct-S">0%</span>
+            </div>
+            <h4>Steadiness (Kiên định)</h4>
+            <div class="linear-bar-track"><div class="linear-bar-fill fill-s" id="linear-bar-S" style="width:50%"></div></div>
+            <div class="score-metrics">
+              <span>Chuẩn 0-100: <strong id="score-linear-S">0</strong></span>
+              <span>Mean 1-5: <strong id="score-mean-S">0</strong></span>
+              <span>M/L: <strong id="score-most-S">0</strong>/<strong id="score-least-S">0</strong> (<strong id="score-diff-S">0</strong>)</span>
+            </div>
+          </div>
+
+          <div class="score-card score-c">
+            <div class="score-card-top">
+              <span class="score-letter">C</span>
+              <span class="score-pct" id="score-pct-C">0%</span>
+            </div>
+            <h4>Conscientiousness (Chuẩn xác)</h4>
+            <div class="linear-bar-track"><div class="linear-bar-fill fill-c" id="linear-bar-C" style="width:50%"></div></div>
+            <div class="score-metrics">
+              <span>Chuẩn 0-100: <strong id="score-linear-C">0</strong></span>
+              <span>Mean 1-5: <strong id="score-mean-C">0</strong></span>
+              <span>M/L: <strong id="score-most-C">0</strong>/<strong id="score-least-C">0</strong> (<strong id="score-diff-C">0</strong>)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Khu vực 2 Biểu đồ Trực quan -->
+        <div class="charts-grid">
+          <div class="chart-box">
+            <h3>Biểu Đồ Radar Đa Trục D.I.S.C</h3>
+            <p class="chart-sub">Hình thái cường độ 4 miền hành vi trên thang chuẩn 0–100</p>
+            <div class="canvas-holder">
+              <canvas id="result-radar-canvas"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-box">
+            <h3>Biểu Đồ Cường Độ Điểm Chuẩn &amp; Tỷ Trọng</h3>
+            <p class="chart-sub">Đối chiếu điểm chuẩn (0–100) độc lập và tỷ trọng tương đối của 4 nhóm</p>
+            <div class="canvas-holder">
+              <canvas id="result-bar-canvas"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tổng quan nhận định -->
+        <div class="analysis-overview-box">
+          <h3>1. Tổng Quan Xu Hướng Phong Cách Làm Việc</h3>
+          <p id="report-overview-text">---</p>
+        </div>
+
+        <!-- Phân tích chi tiết Điểm mạnh, Khi dùng quá mức, Vùng mù & Phản ứng dưới áp lực -->
+        <div class="analysis-details-grid">
+          <div class="analysis-card strength-card">
+            <h3>🌟 2. Điểm Mạnh Cốt Lõi Trong Công Việc</h3>
+            <ul id="report-strengths-list"></ul>
+          </div>
+
+          <div class="analysis-card overuse-card">
+            <h3>⚡ 3. Khi Điểm Mạnh Dùng Quá Mức (Overused Strengths)</h3>
+            <ul id="report-overuse-list"></ul>
+          </div>
+
+          <div class="analysis-card blindspot-card">
+            <h3>⚠️ 4. Vùng Mù Hành Vi Cần Lưu Ý (Blind Spots)</h3>
+            <ul id="report-blindspots-list"></ul>
+          </div>
+
+          <div class="analysis-card stress-card">
+            <h3>🔥 5. Bản Đồ Phản Ứng Dưới Áp Lực (Under Stress Pattern)</h3>
+            <div id="report-stress-box" class="stress-flow-box"></div>
+          </div>
+        </div>
+
+        <!-- Khối Hành động phát triển nhanh (Quick Wins 7 ngày & Thói quen 30 ngày) -->
+        <div class="analysis-details-grid" style="margin-top: 20px;">
+          <div class="analysis-card comm-card">
+            <h3>🚀 6. Gợi Ý Hành Động Ngắn (Quick Wins 7 Ngày &amp; Thói Quen 30 Ngày)</h3>
+            <div id="report-quickwins-box"></div>
+          </div>
+
+          <div class="analysis-card career-card">
+            <h3>🧭 7. Ma Trận Chủ Động Thích Ứng Khi Làm Việc Với D / I / S / C</h3>
+            <div id="report-adaptation-box" class="adaptation-mini-grid"></div>
+            <h4 style="margin-top:16px;">Môi trường phát huy tối đa &amp; Vai trò phù hợp:</h4>
+            <p class="env-desc" id="report-env-text">---</p>
+            <div id="report-careers-tags" class="career-tags"></div>
+          </div>
+        </div>
+
+        <!-- Khối Lịch sử làm bài (Retest History) của cùng Email -->
+        <div class="history-section no-print" id="report-history-section">
+          <h3>🕒 8. Lịch Sử Các Lần Đánh Giá (Non-Destructive Retest History)</h3>
+          <p class="section-sub">Hệ thống giữ nguyên mọi bản chụp (Snapshot) theo thời gian để bạn theo dõi sự thay đổi theo vai trò công việc.</p>
+          <div id="report-history-list" class="history-cards-row"></div>
+        </div>
+
+        <footer class="report-footer">
+          <p>Báo cáo được tạo bởi Hệ thống Vaga D.I.S.C v0.2 • Lưu trữ bảo mật trên SQLite Database • Tuân thủ Luật BVDLCN 91/2025/QH15</p>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ======================================================================
+         PHÂN HỆ 3: CẨM NANG CỘNG TÁC ("HOW TO WORK WITH ME" & DANH BẠ ĐỒNG NGHIỆP)
+         ====================================================================== -->
+    <section id="screen-manuals" class="screen">
+      <div class="split-header-card card">
+        <div>
+          <span class="section-tag">Flow 1 • Cẩm Nang Cộng Tác ("How to Work With Me")</span>
+          <h2>Danh Bạ Cộng Tác Đội Nhóm &amp; Trình Biên Tập Cẩm Nang 1 Phút</h2>
+          <p>Chỉ những Cẩm nang được chính chủ xác nhận <strong>Xuất bản (PUBLISHED)</strong> mới hiển thị trong danh bạ. Không bao giờ lộ câu trả lời thô, vùng mù hay ghi chú riêng tư.</p>
+        </div>
+        <div class="subtab-Toggle">
+          <button type="button" class="btn btn-primary btn-sm" id="btn-subtab-directory">
+            👥 Danh bạ Đồng nghiệp
+          </button>
+          <button type="button" class="btn btn-outline btn-sm" id="btn-subtab-editor">
+            ✏️ Soạn / Quản lý Cẩm nang của Tôi
+          </button>
+        </div>
+      </div>
+
+      <!-- KHỐI 3A: DANH BẠ ĐỒNG NGHIỆP & CHEAT SHEET 1 PHÚT -->
+      <div id="manuals-directory-view">
+        <div class="card toolbar-card">
+          <div class="toolbar">
+            <div class="search-box">
+              <input
+                type="search"
+                id="manual-search-input"
+                placeholder="🔍 Tìm đồng nghiệp theo Họ tên, Email, Phòng ban, Chức vụ..."
+              />
+            </div>
+            <div class="filter-group">
+              <select id="manual-type-filter" class="demo-select">
+                <option value="">Tất cả nhóm (D, I, S, C, Balanced)</option>
+                <option value="D">Nhóm D (Chủ động)</option>
+                <option value="I">Nhóm I (Ảnh hưởng)</option>
+                <option value="S">Nhóm S (Kiên định)</option>
+                <option value="C">Nhóm C (Chuẩn xác)</option>
+                <option value="BALANCED">Nhóm BALANCED (Cân bằng)</option>
+              </select>
+              <button type="button" id="btn-refresh-manuals" class="btn btn-secondary btn-sm">
+                🔄 Làm mới
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="manuals-workspace-grid">
+          <!-- Cột trái: Danh sách thẻ đồng nghiệp đã xuất bản -->
+          <div id="published-manuals-grid" class="colleague-cards-list"></div>
+
+          <!-- Cột phải: Chi tiết Cẩm nang 1 Phút ("How to Work With Me" Cheat Sheet) -->
+          <div id="manual-detail-pane" class="card manual-cheatsheet-card">
+            <div class="empty-state-box">
+              Chọn một đồng nghiệp ở danh sách bên trái để xem <strong>Cẩm nang Cộng tác 1 Phút (How to Work With Me)</strong> của họ.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KHỐI 3B: TRÌNH BIÊN TẬP CẨM NANG CỦA TÔI (OWNER DRAFT / PUBLISH / REVOKE) -->
+      <div id="manuals-editor-view" class="hidden">
+        <div class="card">
+          <div class="editor-top-bar">
+            <div>
+              <h3>✏️ Trình Biên Tập Cẩm Nang Cộng Tác Của Tôi</h3>
+              <p>Bạn có thể nạp sẵn gợi ý từ kết quả đánh giá DISC hoặc tự biên tập hoàn toàn theo thực tế công việc của mình.</p>
+            </div>
+            <div class="editor-load-box">
+              <input type="email" id="editor-lookup-email" placeholder="Nhập email để tải Cẩm nang (VD: quan.tran@vaga.vn)" class="inline-input" />
+              <button type="button" id="btn-load-owner-manual" class="btn btn-secondary btn-sm">
+                📥 Tải theo Email
+              </button>
+            </div>
+          </div>
+
+          <div id="editor-status-banner" class="editor-status-banner">
+            <span id="editor-status-badge" class="status-pill status-draft">DRAFT (Bản nháp riêng tư)</span>
+            <span id="editor-status-desc">Bản nháp này chỉ mình bạn nhìn thấy cho tới khi bạn nhấn Xuất bản.</span>
+          </div>
+
+          <form id="manual-editor-form" class="user-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Họ và tên hiển thị <span class="req">*</span></label>
+                <input type="text" id="man-full-name" required placeholder="Họ và tên của bạn" />
+              </div>
+              <div class="form-group">
+                <label>Email chủ sở hữu <span class="req">*</span></label>
+                <input type="email" id="man-owner-email" required placeholder="email@vaga.vn" />
+              </div>
+              <div class="form-group">
+                <label>Phòng ban / Đơn vị</label>
+                <input type="text" id="man-department" placeholder="Khối / Phòng ban" />
+              </div>
+              <div class="form-group">
+                <label>Chức vụ / Vai trò</label>
+                <input type="text" id="man-position" placeholder="Chức vụ hiện tại" />
+              </div>
+              <div class="form-group">
+                <label>Phong cách đại diện (12+1 Styles)</label>
+                <select id="man-profile-code">
+                  <option value="D">D – Người Kiến Tạo Kết Quả</option>
+                  <option value="DI">DI – Người Tiên Phong Truyền Lửa</option>
+                  <option value="ID">ID – Người Truyền Cảm Hứng Hành Động</option>
+                  <option value="I">I – Người Kết Nối &amp; Truyền Cảm Hứng</option>
+                  <option value="IS">IS – Người Gắn Kết Hòa Hợp</option>
+                  <option value="SI">SI – Người Đồng Hành Tận Tâm</option>
+                  <option value="S">S – Người Kiên Định Bền Bỉ</option>
+                  <option value="SC">SC – Người Thực Thi Chuẩn Chỉ</option>
+                  <option value="CS">CS – Người Bảo Chứng Chất Lượng</option>
+                  <option value="C">C – Người Phân Tích Chuẩn Xác</option>
+                  <option value="CD">CD – Người Kiến Trúc Chiến Lược</option>
+                  <option value="DC">DC – Người Thực Thi Chuẩn Xác &amp; Quyết Liệt</option>
+                  <option value="BALANCED">BALANCED – Người Linh Hoạt Đa Miền</option>
+                </select>
+              </div>
+              <div class="form-group" style="display:flex; align-items:flex-end;">
+                <button type="button" id="btn-autofill-manual-template" class="btn btn-outline full-width">
+                  ✨ Nạp mẫu gợi ý chuẩn theo Phong cách đã chọn
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 18px;">
+              <label>⏱️ Tóm tắt 60 giây ("Read Me in 60 Seconds")</label>
+              <textarea id="man-best-read" rows="2" class="form-textarea" placeholder="2-3 câu tóm tắt ngắn gọn nhất về cách phối hợp hiệu quả với bạn..."></textarea>
+            </div>
+
+            <!-- 5 Thanh trượt phong cách làm việc -->
+            <div class="sliders-editor-box">
+              <h4>🎚️ 5 Thanh Trượt Phong Cách Làm Việc (Thang 1 – 5)</h4>
+              <div id="man-sliders-container" class="sliders-list"></div>
+            </div>
+
+            <!-- Điều Nên Làm (Do's) & Điều Nên Tránh (Don'ts) -->
+            <div class="form-grid" style="margin-top: 18px;">
+              <div class="form-group">
+                <label>✅ Điều NÊN LÀM khi phối hợp với tôi (Mỗi dòng 1 ý)</label>
+                <textarea id="man-dos-text" rows="4" class="form-textarea" placeholder="Mỗi dòng một gạch đầu dòng..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>🚫 Điều NÊN TRÁNH khi phối hợp với tôi (Mỗi dòng 1 ý)</label>
+                <textarea id="man-donts-text" rows="4" class="form-textarea" placeholder="Mỗi dòng một gạch đầu dòng..."></textarea>
+              </div>
+            </div>
+
+            <!-- 7 Ngữ cảnh công việc chuẩn Vaga -->
+            <div style="margin-top: 20px;">
+              <h4>🗂️ Hướng Dẫn Theo 7 Ngữ Cảnh Công Việc Thực Tế</h4>
+              <div id="man-contexts-container" class="contexts-editor-grid"></div>
+            </div>
+
+            <div id="man-feedback-alert" class="alert-box hidden" style="margin-top: 16px;"></div>
+
+            <div class="form-actions manual-editor-actions">
+              <button type="button" id="btn-save-manual-draft" class="btn btn-secondary">
+                💾 Lưu Bản Nháp Riêng Tư (DRAFT)
+              </button>
+              <button type="button" id="btn-publish-manual" class="btn btn-success btn-lg">
+                🌐 Xác Nhận &amp; Xuất Bản Công Khai (PUBLISH)
+              </button>
+              <button type="button" id="btn-revoke-manual" class="btn btn-danger-outline">
+                🛑 Thu Hồi Quyền Chia Sẻ Ngay (REVOKE)
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PHÂN HỆ 4: SO SÁNH CẶP 1-1 CÓ HƯỚNG (A -> B PAIR COMPARISON)
+         ====================================================================== -->
+    <section id="screen-pair-compare" class="screen">
+      <div class="card">
+        <div class="split-header-card" style="padding:0; border:none; box-shadow:none; margin-bottom:20px;">
+          <div>
+            <span class="section-tag">Flow 3 • So Sánh Cặp 1-1 Có Hướng (Directional Pair Comparison A → B)</span>
+            <h2>Đối Chiếu Phong Cách &amp; Gợi Ý Cộng Tác 1-1</h2>
+            <p>Phân tích độ lệch hành vi giữa <strong>Người xem (A)</strong> và <strong>Đồng nghiệp (B)</strong> theo ngữ cảnh công việc. Không phán xét đúng/sai và tuyệt đối không dùng chỉ số “% hợp nhau” giả tạo.</p>
+          </div>
+        </div>
+
+        <div class="pair-selector-bar">
+          <div class="pair-select-col">
+            <label>👤 Hồ sơ Người xem (A - Bạn):</label>
+            <select id="pair-viewer-select" class="pair-select"></select>
+          </div>
+
+          <div class="pair-swap-col">
+            <button type="button" id="btn-swap-pair" class="btn btn-outline btn-sm" title="Đảo chiều A ↔ B để xem lời khuyên theo hướng ngược lại">
+              ⇄ Đảo chiều (A ↔ B)
+            </button>
+          </div>
+
+          <div class="pair-select-col">
+            <label>🤝 Hồ sơ Đồng nghiệp (B - Đối tác):</label>
+            <select id="pair-target-select" class="pair-select"></select>
+          </div>
+
+          <div class="pair-select-col">
+            <label>🎯 Ngữ cảnh trọng tâm:</label>
+            <select id="pair-context-select" class="pair-select">
+              <option value="all">Tất cả 7 ngữ cảnh công việc</option>
+              <option value="meeting">📅 Họp hành &amp; Thảo luận</option>
+              <option value="direct_conversation">💬 Giao tiếp trực tiếp 1-1</option>
+              <option value="chat_email">✉️ Tin nhắn &amp; Email</option>
+              <option value="decision">⚖️ Ra quyết định</option>
+              <option value="conflict">🤝 Giải quyết bất đồng</option>
+              <option value="delegation">🎯 Giao việc &amp; Phối hợp</option>
+              <option value="feedback_recognition">🌟 Phản hồi &amp; Ghi nhận</option>
+            </select>
+          </div>
+
+          <div class="pair-action-col">
+            <button type="button" id="btn-run-pair-compare" class="btn btn-primary">
+              ⚡ Phân tích Cặp
+            </button>
+          </div>
+        </div>
+
+        <div id="pair-comparison-output" class="pair-output-container">
+          <!-- Render động kết quả so sánh A -> B -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PHÂN HỆ 5: KẾ HOẠCH HÀNH ĐỘNG RIÊNG TƯ & TRUNG TÂM QUYỀN DỮ LIỆU
+         ====================================================================== -->
+    <section id="screen-growth-privacy" class="screen">
+      <div class="growth-privacy-grid">
+        <!-- CỘT TRÁI: KẾ HOẠCH HÀNH ĐỘNG PHÁT TRIỂN CÁ NHÂN RIÊNG TƯ (FLOW 2) -->
+        <div class="card">
+          <span class="section-tag">Flow 2 • Kế Hoạch Hành Động Riêng Tư (Hoạt động độc lập không cần làm test)</span>
+          <h2>🌱 Sổ Tay Cam Kết Hành Động Cá Nhân (Private Growth Playbook)</h2>
+          <p class="section-sub">
+            Mọi cam kết hành động và ghi chú tự kiểm tại đây là <strong>tuyệt đối riêng tư</strong> của chủ sở hữu email, không bao giờ hiển thị trên hồ sơ công khai hay trang đồng nghiệp.
+          </p>
+
+          <!-- Chọn Email chủ sở hữu để xem/quản lý hành động riêng tư -->
+          <div class="owner-filter-bar">
+            <div class="owner-input-group">
+              <label for="action-owner-email">🔒 Email chủ sở hữu:</label>
+              <input type="email" id="action-owner-email" value="quan.tran@vaga.vn" placeholder="Nhập email của bạn..." />
+              <input type="text" id="action-owner-name" value="Trần Minh Quân" placeholder="Họ tên..." />
+              <button type="button" id="btn-load-actions" class="btn btn-secondary btn-sm">
+                Tải danh sách của tôi
+              </button>
+            </div>
+          </div>
+
+          <!-- Bộ chọn nhanh từ Ngân hàng 72 Thẻ Hành vi chuẩn DOC-11 -->
+          <div class="card-picker-box">
+            <div class="card-picker-header">
+              <strong>📚 Chọn nhanh từ Ngân hàng 72 Thẻ Hành vi Vaga (DOC-11):</strong>
+              <select id="bank-context-filter" class="demo-select">
+                <option value="">Lọc theo ngữ cảnh (Tất cả)</option>
+                <option value="meeting">📅 Họp hành &amp; Thảo luận</option>
+                <option value="direct_conversation">💬 Giao tiếp trực tiếp</option>
+                <option value="chat_email">✉️ Tin nhắn &amp; Email</option>
+                <option value="decision">⚖️ Ra quyết định</option>
+                <option value="conflict">🤝 Giải quyết bất đồng</option>
+                <option value="delegation">🎯 Giao việc &amp; Phối hợp</option>
+                <option value="feedback_recognition">🌟 Phản hồi &amp; Ghi nhận</option>
+              </select>
+            </div>
+            <div class="card-picker-controls">
+              <select id="bank-card-select" class="pair-select"></select>
+              <button type="button" id="btn-apply-bank-card" class="btn btn-outline btn-sm">
+                ↓ Điền vào biểu mẫu
+              </button>
+            </div>
+          </div>
+
+          <!-- Form thêm cam kết hành động mới -->
+          <form id="private-action-form" class="action-form">
+            <input type="hidden" id="act-card-id" value="" />
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Tiêu đề hành động cam kết <span class="req">*</span></label>
+                <input type="text" id="act-title" required placeholder="VD: Tạm dừng 10 giây trước khi chốt phương án họp" />
+              </div>
+              <div class="form-group">
+                <label>Ngữ cảnh áp dụng <span class="req">*</span></label>
+                <select id="act-context" required>
+                  <option value="meeting">📅 Họp hành &amp; Thảo luận</option>
+                  <option value="direct_conversation">💬 Giao tiếp trực tiếp</option>
+                  <option value="chat_email">✉️ Tin nhắn &amp; Email</option>
+                  <option value="decision">⚖️ Ra quyết định</option>
+                  <option value="conflict">🤝 Giải quyết bất đồng</option>
+                  <option value="delegation">🎯 Giao việc &amp; Phối hợp</option>
+                  <option value="feedback_recognition">🌟 Phản hồi &amp; Ghi nhận</option>
+                </select>
+              </div>
+              <div class="form-group full-col">
+                <label>Tình huống kích hoạt (Trigger Situation) <span class="req">*</span></label>
+                <input type="text" id="act-trigger" required placeholder="Khi nào / Trong tình huống nào bạn sẽ thực hiện hành vi này?" />
+              </div>
+              <div class="form-group full-col">
+                <label>Hành vi cụ thể sẽ thực hiện (Action Behavior) <span class="req">*</span></label>
+                <textarea id="act-behavior" rows="2" class="form-textarea" required placeholder="Mô tả bước hành động cụ thể, quan sát được..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>Dấu hiệu thành công (Success Signal)</label>
+                <input type="text" id="act-signal" placeholder="Kết quả mong đợi sau khi áp dụng..." />
+              </div>
+              <div class="form-group">
+                <label>Ngày tự rà soát (Review Date)</label>
+                <input type="date" id="act-review-date" />
+              </div>
+              <div class="form-group full-col">
+                <label>🔒 Ghi chú phản tư riêng tư (Private Notes - Chỉ mình tôi xem được)</label>
+                <textarea id="act-private-notes" rows="2" class="form-textarea" placeholder="Ghi chú cá nhân, nhật ký tự kiểm..."></textarea>
+              </div>
+            </div>
+
+            <div id="action-form-alert" class="alert-box hidden" style="margin-top:10px;"></div>
+
+            <div class="action-form-footer">
+              <button type="reset" id="btn-reset-action-form" class="btn btn-secondary btn-sm">
+                Làm mới form
+              </button>
+              <button type="submit" class="btn btn-primary">
+                + Lưu Cam Kết Hành Động Riêng Tư
+              </button>
+            </div>
+          </form>
+
+          <!-- Danh sách các hành động riêng tư của tôi -->
+          <div style="margin-top: 28px;">
+            <h3>📋 Danh Sách Cam Kết Hành Động Của Tôi (<span id="actions-count-badge">0</span>)</h3>
+            <div id="private-actions-list" class="private-actions-list"></div>
+          </div>
+        </div>
+
+        <!-- CỘT PHẢI: TRUNG TÂM QUYỀN DỮ LIỆU CÁ NHÂN (DATA RIGHTS & PRIVACY LIFECYCLE) -->
+        <aside class="card privacy-center-card">
+          <span class="section-tag">Flow 4 • Quyền Dữ Liệu &amp; Bảo Vệ Dữ Liệu Cá Nhân (DOC-14)</span>
+          <h2>🛡️ Trung Tâm Quyền Dữ Liệu Cá Nhân</h2>
+          <p class="section-sub">
+            Tuân thủ <strong>Luật Bảo vệ Dữ liệu Cá nhân 91/2025/QH15</strong> &amp; <strong>Nghị định 356/2025/NĐ-CP</strong>. Bạn có toàn quyền trích xuất, thu hồi chia sẻ hoặc xóa dữ liệu của mình.
+          </p>
+
+          <div class="privacy-guarantee-list">
+            <div class="pg-item">
+              <strong>1. Tách biệt tuyệt đối Private vs. Public:</strong>
+              <span>Điểm thô từng câu, Vùng mù, Stress Triggers và Ghi chú hành động cá nhân không bao giờ xuất hiện ở API công khai.</span>
+            </div>
+            <div class="pg-item">
+              <strong>2. Thu hồi tức thì (Instant Revocation):</strong>
+              <span>Ngay khi bạn thu hồi Cẩm nang cộng tác, mọi truy cập từ Danh bạ và So sánh cặp 1-1 đều bị chặn ngay lập tức.</span>
+            </div>
+            <div class="pg-item">
+              <strong>3. Bảo toàn lịch sử hoặc Xóa vĩnh viễn:</strong>
+              <span>Bạn có thể tải trọn bộ dữ liệu JSON cá nhân hoặc yêu cầu xóa toàn bộ dữ liệu khỏi SQLite.</span>
+            </div>
+          </div>
+
+          <div class="rights-action-box">
+            <label for="rights-email-input"><strong>Email thực hiện quyền dữ liệu:</strong></label>
+            <input type="email" id="rights-email-input" value="quan.tran@vaga.vn" placeholder="Nhập email của bạn..." class="full-width-input" />
+            <input type="text" id="rights-reason-input" placeholder="Ghi chú lý do (Tùy chọn)..." class="full-width-input" style="margin-top:8px;" />
+
+            <div class="rights-buttons-stack">
+              <button type="button" id="btn-right-export-json" class="btn btn-outline full-width">
+                📥 1. Tải trọn bộ Dữ liệu Cá nhân của tôi (JSON)
+              </button>
+              <button type="button" id="btn-right-revoke-manual" class="btn btn-secondary full-width">
+                🛑 2. Thu hồi Công bố Cẩm nang Cộng tác (Revoke)
+              </button>
+              <button type="button" id="btn-right-delete-assessments" class="btn btn-danger-outline full-width">
+                🗑️ 3. Xóa toàn bộ Lịch sử Bài khảo sát DISC
+              </button>
+              <button type="button" id="btn-right-full-erasure" class="btn btn-danger full-width">
+                ⚠️ 4. Xóa Vĩnh Viễn Toàn Bộ Dữ Liệu Cá Nhân (Full Erasure)
+              </button>
+            </div>
+
+            <div id="rights-result-banner" class="alert-box hidden" style="margin-top:12px;"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Nhúng các file JS thuần theo thứ tự phụ thuộc -->
+  <script src="/js/questions-data.js?v=md3-v2"></script>
+  <script src="/js/disc-profiles.js?v=md3-v2"></script>
+  <script src="/js/disc-engine.js?v=md3-v2"></script>
+  <script src="/js/chart-renderer.js?v=md3-v2"></script>
+  <script src="/js/app.js?v=md3-v2"></script>
+</body>
+</html>

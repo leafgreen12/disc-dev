@@ -1,0 +1,16 @@
+{
+  "task_id": "TASK21-001",
+  "scope": "PLANNING_ONLY",
+  "outcome": "BLOCKED",
+  "files_written": [],
+  "source_ids": [],
+  "commands": [],
+  "missing_items": [
+    "Task chưa được thực hiện trong ứng dụng/Codex."
+  ],
+  "human_decisions_needed": [
+    "Phạm vi baseline và người chịu trách nhiệm chưa được chốt."
+  ],
+  "application_implemented": false,
+  "production_authorized": false
+}

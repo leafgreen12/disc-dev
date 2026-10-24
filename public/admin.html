@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản Trị &amp; Kiểm Toán Hệ Thống Vaga D.I.S.C v0.2 (SQLite Governance)</title>
+  <link rel="stylesheet" href="/css/style.css?v=md3-v3" />
+  <link rel="stylesheet" href="/css/admin.css?v=md3-v3" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="navbar-brand-row">
+        <a href="/" class="brand">
+          <div class="brand-dots">
+            <span class="dot dot-d">D</span>
+            <span class="dot dot-i">I</span>
+            <span class="dot dot-s">S</span>
+            <span class="dot dot-c">C</span>
+          </div>
+          <div class="brand-text">
+            <strong>Vaga D.I.S.C Governance &amp; Admin <span class="version-chip">v0.2</span></strong>
+            <span>Quản trị SQLite • Audit Logs • Data Rights • Content &amp; Question Bank</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="/" class="btn btn-primary btn-sm">
+            ← Về Không gian làm việc chính
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container admin-main">
+    <div class="admin-title-row">
+      <div>
+        <h1>Bảng Điều Khiển Quản Trị &amp; Kiểm Toán Dữ Liệu Vaga D.I.S.C</h1>
+        <p>Lưu trữ trực tiếp trong <code>data/disc.db</code> (SQLite) • Tuân thủ phân tách dữ liệu Private vs. Public (DOC-12 / DOC-14).</p>
+      </div>
+      <div class="admin-header-actions">
+        <button type="button" id="btn-seed-sample" class="btn btn-outline">
+          ✨ Tạo thêm 4 hồ sơ khảo sát mẫu
+        </button>
+        <button type="button" id="btn-export-csv" class="btn btn-success">
+          📥 Xuất file CSV / Excel
+        </button>
+      </div>
+    </div>
+
+    <!-- Thẻ thống kê tổng quan -->
+    <section class="stats-grid">
+      <div class="stat-card stat-total">
+        <span class="stat-label">Tổng số bài khảo sát</span>
+        <strong class="stat-value" id="stat-total-count">0</strong>
+        <small id="stat-avg-duration">TB: 00:00 phút</small>
+      </div>
+
+      <div class="stat-card stat-d">
+        <div class="stat-top">
+          <span class="stat-label">Nhóm D (Chủ động)</span>
+          <span class="stat-badge badge-d">D</span>
+        </div>
+        <strong class="stat-value" id="stat-count-D">0</strong>
+        <small id="stat-pct-D">0% tổng số</small>
+      </div>
+
+      <div class="stat-card stat-i">
+        <div class="stat-top">
+          <span class="stat-label">Nhóm I (Ảnh hưởng)</span>
+          <span class="stat-badge badge-i">I</span>
+        </div>
+        <strong class="stat-value" id="stat-count-I">0</strong>
+        <small id="stat-pct-I">0% tổng số</small>
+      </div>
+
+      <div class="stat-card stat-s">
+        <div class="stat-top">
+          <span class="stat-label">Nhóm S (Kiên định)</span>
+          <span class="stat-badge badge-s">S</span>
+        </div>
+        <strong class="stat-value" id="stat-count-S">0</strong>
+        <small id="stat-pct-S">0% tổng số</small>
+      </div>
+
+      <div class="stat-card stat-c">
+        <div class="stat-top">
+          <span class="stat-label">Nhóm C (Chuẩn xác)</span>
+          <span class="stat-badge badge-c">C</span>
+        </div>
+        <strong class="stat-value" id="stat-count-C">0</strong>
+        <small id="stat-pct-C">0% tổng số</small>
+      </div>
+    </section>
+
+    <!-- Thống kê Vaga v0.2: Cẩm nang, Hành động riêng tư, Quyền dữ liệu -->
+    <section class="card distribution-card" style="margin-bottom: 20px;">
+      <div class="dist-header">
+        <h3>Chỉ số Vận hành Vaga v0.2 &amp; Phân bổ 4 miền chủ đạo</h3>
+        <span id="dist-summary-text">Dữ liệu thời gian thực từ SQLite</span>
+      </div>
+      <div class="dist-bar-stacked" id="dist-bar-stacked">
+        <div class="dist-seg seg-d" id="dist-seg-D" style="width: 25%" title="Nhóm D"></div>
+        <div class="dist-seg seg-i" id="dist-seg-I" style="width: 25%" title="Nhóm I"></div>
+        <div class="dist-seg seg-s" id="dist-seg-S" style="width: 25%" title="Nhóm S"></div>
+        <div class="dist-seg seg-c" id="dist-seg-C" style="width: 25%" title="Nhóm C"></div>
+      </div>
+      <div id="v02-governance-metrics" class="gov-metrics-strip"></div>
+    </section>
+
+    <!-- Bảng dữ liệu Bài nộp Khảo sát -->
+    <section class="card table-card">
+      <div class="toolbar" style="margin-bottom: 16px;">
+        <div class="search-box">
+          <input
+            type="search"
+            id="admin-search-input"
+            placeholder="🔍 Tìm theo Họ tên, Email, SĐT, Phòng ban, Chức vụ, Mã nhóm (DI, SC...)..."
+          />
+        </div>
+
+        <div class="filter-group">
+          <label for="admin-type-filter">Nhóm:</label>
+          <select id="admin-type-filter">
+            <option value="">Tất cả (D, I, S, C, Balanced)</option>
+            <option value="D">Nhóm D – Dominance</option>
+            <option value="I">Nhóm I – Influence</option>
+            <option value="S">Nhóm S – Steadiness</option>
+            <option value="C">Nhóm C – Conscientiousness</option>
+            <option value="BALANCED">Nhóm BALANCED – Cân bằng</option>
+          </select>
+
+          <select id="admin-mode-filter">
+            <option value="">Mọi chế độ test</option>
+            <option value="likert">Likert 40/48 câu</option>
+            <option value="forced24">Forced-Choice 24 câu</option>
+          </select>
+
+          <button type="button" id="btn-refresh-list" class="btn btn-secondary btn-sm">
+            🔄 Làm mới
+          </button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="submissions-table">
+          <thead>
+            <tr>
+              <th>ID / Lần</th>
+              <th>Họ và Tên / Email</th>
+              <th>Đơn vị &amp; Vai trò</th>
+              <th>Hồ sơ (12+1 Styles)</th>
+              <th>Điểm Chuẩn 0-100 (D - I - S - C)</th>
+              <th>Chế độ &amp; Độ tin cậy</th>
+              <th>Thời gian nộp</th>
+              <th style="text-align: right;">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="submissions-tbody">
+            <tr>
+              <td colspan="8" class="empty-cell">Đang tải dữ liệu từ SQLite...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Nhật ký Kiểm toán (Audit Logs) & Yêu cầu Quyền Dữ liệu -->
+    <section class="card table-card" style="margin-top: 24px;">
+      <div class="dist-header" style="margin-bottom: 12px;">
+        <h3>🛡️ Nhật Ký Kiểm Toán Bất Biến (Immutable Audit Logs) &amp; Quyền Dữ Liệu (DOC-14)</h3>
+        <span>Ghi vết tự động mọi thao tác Nộp bài, Xuất bản, Thu hồi chia sẻ, Xóa và Trích xuất dữ liệu</span>
+      </div>
+      <div class="table-responsive">
+        <table class="submissions-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Thời gian</th>
+              <th>Tác nhân (Actor Email)</th>
+              <th>Hành động (Action Type)</th>
+              <th>Đối tượng</th>
+              <th>Chi tiết sự kiện</th>
+            </tr>
+          </thead>
+          <tbody id="audit-logs-tbody">
+            <tr>
+              <td colspan="6" class="empty-cell">Đang tải nhật ký kiểm toán...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL XEM CHI TIẾT HỒ SƠ & CÂU TRẢ LỜI -->
+  <div id="detail-modal-backdrop" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="modal-id-pill" id="modal-record-id">#1</span>
+          <h2 id="modal-user-name">---</h2>
+          <p id="modal-user-meta">---</p>
+        </div>
+        <div class="modal-header-actions">
+          <a href="#" id="modal-print-link" target="_blank" class="btn btn-primary btn-sm">
+            🖨️ Mở bản In / Xuất PDF (A4)
+          </a>
+          <button type="button" id="btn-close-modal" class="btn btn-secondary btn-sm">
+            ✕ Đóng
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-profile-banner" id="modal-profile-banner">
+          <div class="modal-badge" id="modal-profile-code">DI</div>
+          <div>
+            <h3 id="modal-profile-title">---</h3>
+            <p id="modal-profile-overview">---</p>
+          </div>
+        </div>
+
+        <div class="modal-charts-row">
+          <div class="modal-chart-card">
+            <h4>Biểu đồ Radar Đa trục</h4>
+            <div class="canvas-holder">
+              <canvas id="modal-radar-canvas"></canvas>
+            </div>
+          </div>
+          <div class="modal-chart-card">
+            <h4>Biểu đồ Điểm Chuẩn 0-100 &amp; Tỷ trọng</h4>
+            <div class="canvas-holder">
+              <canvas id="modal-bar-canvas"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-answers-section">
+          <h3 id="modal-answers-heading">Chi tiết câu trả lời của người tham gia</h3>
+          <div id="modal-answers-grid" class="modal-answers-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/questions-data.js?v=md3-v2"></script>
+  <script src="/js/disc-profiles.js?v=md3-v2"></script>
+  <script src="/js/disc-engine.js?v=md3-v2"></script>
+  <script src="/js/chart-renderer.js?v=md3-v2"></script>
+  <script src="/js/admin.js?v=md3-v2"></script>
+</body>
+</html>

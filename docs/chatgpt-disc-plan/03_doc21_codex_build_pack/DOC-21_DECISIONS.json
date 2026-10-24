@@ -1,0 +1,182 @@
+{
+  "decisions": [
+    {
+      "id": "DEC-277",
+      "title": "Đủ 22 bản thảo không phải release",
+      "proposal": "Kết thúc danh mục DOC00–21, chuyển sang TASK21-001; trạng thái code/research/release tách riêng.",
+      "limits": "Không tạo DOC22 để né bước thực thi; không gọi app hoàn thành.",
+      "owner_role": "PO/BA",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-278",
+      "title": "Một dossier cho mỗi variant",
+      "proposal": "50 dossier gắn WP20 và recipe; AC pool phải có applicability trước run.",
+      "limits": "Không kéo tất cả variant chỉ vì cùng WP hoặc đóng toàn story từ phần nhỏ.",
+      "owner_role": "BA/QA/Tech",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-279",
+      "title": "Corpus bất biến, baseline tách riêng",
+      "proposal": "Giữ bytes nguồn và tạo candidate delta/hash theo scope.",
+      "limits": "Không dùng tài liệu mới nhất thay quyết định có thẩm quyền.",
+      "owner_role": "BA/Tech/Privacy",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-280",
+      "title": "Nguồn tối thiểu có selector",
+      "proposal": "JSON pointer/khoảng dòng và file digest; giới hạn output không truncate.",
+      "limits": "Registry chỉ định tuyến, không thay đọc phụ thuộc quan trọng hoặc nguồn quyền.",
+      "owner_role": "Tech/QA",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-281",
+      "title": "AGENTS ngắn và theo vùng",
+      "proposal": "Root hướng dẫn gói, bốn template code vùng; kiểm cwd và instruction sources.",
+      "limits": "AGENTS không là sandbox hoặc app authorization.",
+      "owner_role": "Tech/Security",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-282",
+      "title": "Config mẫu chưa active",
+      "proposal": "Mẫu workspace-write/on-request, subprocess network off; không provider/model credentials.",
+      "limits": "Không ghi config toàn máy hoặc bypass managed settings.",
+      "owner_role": "Security/Tech",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-283",
+      "title": "Khởi đầu bằng chuẩn bị R20-00",
+      "proposal": "Ba dossier đầu làm baseline/ADR/toolchain theo điều kiện; người thật có gate riêng.",
+      "limits": "Không chặn toàn bộ bởi optional; không dùng synthetic marker hợp thức real data.",
+      "owner_role": "PO/Tech",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-284",
+      "title": "Commands có mức chứng cứ",
+      "proposal": "LOCAL_PACK đã kiểm khác CODEX_EXAMPLE chưa chạy và PRODUCT_UNBOUND.",
+      "limits": "Không stub exit0 hoặc suy package manager từ source script Python.",
+      "owner_role": "Tech/QA",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-285",
+      "title": "Evidence không ghi đè nguồn",
+      "proposal": "Verifier stdout hoặc output mới ngoài gói; report runtime khác doc-local.",
+      "limits": "Không cộng PASS cũ thành test app, không sửa golden để khớp SUT.",
+      "owner_role": "QA",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-286",
+      "title": "Applicability trước test",
+      "proposal": "Mỗi source AC có disposition theo variant và phần nghĩa vụ còn lại.",
+      "limits": "Pool refs không là coverage mọi field/endpoint hoặc full 375 AC đã chạy.",
+      "owner_role": "QA/BA",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-287",
+      "title": "Corpus và keys không ra frontend",
+      "proposal": "Lưu nguồn/server assets tách projection, kiểm artifact graph trước release.",
+      "limits": "Tên restricted_assets không phải kiểm soát nếu pipeline vẫn bundle.",
+      "owner_role": "Security/Engineering",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-288",
+      "title": "Song song theo write set",
+      "proposal": "Branches/worktrees và ownership sau repo thực; review contract trước merge.",
+      "limits": "Không reset/revert thay đổi của người khác hoặc tự push/merge.",
+      "owner_role": "Tech",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-289",
+      "title": "Gap đóng bằng đúng bằng chứng",
+      "proposal": "DOC21 bổ sung handoff cho GAP20-16 nhưng commands/runtime vẫn thiếu; OpenAPI gap mở.",
+      "limits": "Không đổi OPEN thành CLOSED bằng một checker nháp.",
+      "owner_role": "QA/domain owners",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    },
+    {
+      "id": "DEC-290",
+      "title": "Kết thúc handoff có checkpoint thực thi",
+      "proposal": "README và CHECKPOINT_BUILD_START nêu task kế, artifacts, blockers và không background task.",
+      "limits": "Không tự triển khai, mời người hoặc quyết định claims từ Continue.",
+      "owner_role": "PO/Tech/Ops",
+      "status": "OPEN_NOT_APPROVED",
+      "approved_by": null,
+      "approved_at": null,
+      "gate": "Trước baseline của phần chịu ảnh hưởng"
+    }
+  ],
+  "change_requests": [
+    {
+      "id": "CR21-01",
+      "proposal": "Thêm routing task/context, candidate baseline và evidence capsule vào delivery view; không sửa source requirements.",
+      "affected": [
+        "DOC-00",
+        "DOC-16",
+        "DOC-20",
+        "DOC-21"
+      ],
+      "status": "PROPOSED_NOT_APPLIED"
+    },
+    {
+      "id": "CR21-02",
+      "proposal": "Sau ADR, tạo command/path bindings và agent policy ở repository thực, cập nhật CI/secret/network/fixture boundaries tương ứng.",
+      "affected": [
+        "DOC-14",
+        "DOC-16",
+        "DOC-17",
+        "DOC-21"
+      ],
+      "status": "PROPOSED_NOT_APPLIED"
+    }
+  ]
+}

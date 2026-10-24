@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^TASK21-[0-9]{3}$"
+    },
+    "scope": {
+      "const": "PLANNING_ONLY"
+    },
+    "outcome": {
+      "enum": [
+        "CANDIDATE_WRITTEN",
+        "BLOCKED",
+        "NO_CHANGE"
+      ]
+    },
+    "files_written": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^SRC21-[0-9]{4}$"
+      },
+      "minItems": 0
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "outcome": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_RUN",
+              "BLOCKED"
+            ]
+          },
+          "evidence_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "command",
+          "outcome",
+          "evidence_ref"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "missing_items": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "human_decisions_needed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "application_implemented": {
+      "const": false
+    },
+    "production_authorized": {
+      "const": false
+    }
+  },
+  "required": [
+    "task_id",
+    "scope",
+    "outcome",
+    "files_written",
+    "source_ids",
+    "commands",
+    "missing_items",
+    "human_decisions_needed",
+    "application_implemented",
+    "production_authorized"
+  ],
+  "additionalProperties": false
+}

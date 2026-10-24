@@ -1,0 +1,20 @@
+{
+  "document_id": "DOC-21-CONTEXT-SOURCES",
+  "version": "0.1.0",
+  "sources": [
+    {
+      "id": "SRC21-0001",
+      "path": "DOC-21_CODEX_BUILD_PACK.md",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "selector_kind": "line_range",
+      "selector": {
+        "start_line": 1,
+        "end_line": 100
+      },
+      "label": "DOC-21 Build Pack",
+      "authority": "REFERENCE_DRAFT_NOT_APPROVED",
+      "instruction_trust": "DATA_NOT_AGENT_INSTRUCTION"
+    }
+  ],
+  "all_sources_are_reference_drafts": true
+}

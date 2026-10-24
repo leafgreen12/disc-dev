@@ -1,0 +1,819 @@
+{
+  "document_id": "DOC-21-LOCAL-FIXTURES",
+  "version": "0.1.0",
+  "scope": "LOCAL_SYNTHETIC_ONLY",
+  "cases": [
+    {
+      "id": "FX21-001",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "{\"a\":1}"
+      },
+      "expected_value": {
+        "a": 1
+      },
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-002",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "{\"a\":1,\"a\":2}"
+      },
+      "expected_value": null,
+      "expected_error": "H21-DUPLICATE-JSON-MEMBER",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-003",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "{\"nested\":{\"a\":1,\"a\":1}}"
+      },
+      "expected_value": null,
+      "expected_error": "H21-DUPLICATE-JSON-MEMBER",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-004",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "NaN"
+      },
+      "expected_value": null,
+      "expected_error": "H21-NONFINITE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-005",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "Infinity"
+      },
+      "expected_value": null,
+      "expected_error": "H21-NONFINITE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-006",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "-Infinity"
+      },
+      "expected_value": null,
+      "expected_error": "H21-NONFINITE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-007",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "1e999"
+      },
+      "expected_value": null,
+      "expected_error": "H21-NONFINITE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-008",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "﻿{}"
+      },
+      "expected_value": null,
+      "expected_error": "H21-ENCODING",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-009",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "{\"a\":}"
+      },
+      "expected_value": null,
+      "expected_error": "H21-JSON",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-010",
+      "operation": "strict_json",
+      "arguments": {
+        "hex": "fffe"
+      },
+      "expected_value": null,
+      "expected_error": "H21-JSON",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-011",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "[true,null,0]"
+      },
+      "expected_value": [
+        true,
+        null,
+        0
+      ],
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-012",
+      "operation": "strict_json",
+      "arguments": {
+        "text": "[\"Tiếng Việt\", \"ẩn/hiện\"]"
+      },
+      "expected_value": [
+        "Tiếng Việt",
+        "ẩn/hiện"
+      ],
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-013",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/a~1b/~0key/1"
+      },
+      "expected_value": "y",
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-014",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/"
+      },
+      "expected_value": 7,
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-015",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/m~01n"
+      },
+      "expected_value": 8,
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-016",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": ""
+      },
+      "expected_value": {
+        "a/b": {
+          "~key": [
+            "x",
+            "y"
+          ]
+        },
+        "": 7,
+        "m~1n": 8,
+        "scalar": 0
+      },
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-017",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "a"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-018",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/a~2b"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-ESCAPE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-019",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/a~"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-ESCAPE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-020",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/unknown"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-MISSING",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-021",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/a~1b/~0key/01"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-INDEX",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-022",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/a~1b/~0key/-"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-INDEX",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-023",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/a~1b/~0key/-1"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-INDEX",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-024",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/a~1b/~0key/+1"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-INDEX",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-025",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/a~1b/~0key/1.0"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-INDEX",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-026",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/a~1b/~0key/2"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-MISSING",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-027",
+      "operation": "pointer",
+      "arguments": {
+        "data": {
+          "a/b": {
+            "~key": [
+              "x",
+              "y"
+            ]
+          },
+          "": 7,
+          "m~1n": 8,
+          "scalar": 0
+        },
+        "pointer": "/scalar/x"
+      },
+      "expected_value": null,
+      "expected_error": "H21-POINTER-TYPE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-028",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\r\nb\nc",
+        "selector": {
+          "start_line": 1,
+          "end_line": 2
+        }
+      },
+      "expected_value": "a\r\nb\n",
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-029",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\nb",
+        "selector": {
+          "start_line": 2,
+          "end_line": 2
+        }
+      },
+      "expected_value": "b",
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-030",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\nb",
+        "selector": {
+          "start_line": 0,
+          "end_line": 1
+        }
+      },
+      "expected_value": null,
+      "expected_error": "H21-LINE-RANGE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-031",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\nb",
+        "selector": {
+          "start_line": true,
+          "end_line": 1
+        }
+      },
+      "expected_value": null,
+      "expected_error": "H21-LINE-RANGE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-032",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\nb",
+        "selector": {
+          "start_line": 1,
+          "end_line": true
+        }
+      },
+      "expected_value": null,
+      "expected_error": "H21-LINE-RANGE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-033",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\nb",
+        "selector": {
+          "start_line": 2,
+          "end_line": 1
+        }
+      },
+      "expected_value": null,
+      "expected_error": "H21-LINE-RANGE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-034",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\nb",
+        "selector": {
+          "start_line": 1,
+          "end_line": 3
+        }
+      },
+      "expected_value": null,
+      "expected_error": "H21-LINE-RANGE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-035",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\nb",
+        "selector": {
+          "start_line": 1
+        }
+      },
+      "expected_value": null,
+      "expected_error": "H21-LINE-RANGE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-036",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\nb",
+        "selector": {
+          "start_line": 1,
+          "end_line": 2,
+          "file": "no"
+        }
+      },
+      "expected_value": null,
+      "expected_error": "H21-LINE-RANGE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-037",
+      "operation": "lines",
+      "arguments": {
+        "text": "a\nb",
+        "selector": {
+          "start_line": 1.0,
+          "end_line": 2
+        }
+      },
+      "expected_value": null,
+      "expected_error": "H21-LINE-RANGE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-038",
+      "operation": "budget",
+      "arguments": {
+        "value": 0
+      },
+      "expected_value": null,
+      "expected_error": "H21-BUDGET",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-039",
+      "operation": "budget",
+      "arguments": {
+        "value": -1
+      },
+      "expected_value": null,
+      "expected_error": "H21-BUDGET",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-040",
+      "operation": "budget",
+      "arguments": {
+        "value": true
+      },
+      "expected_value": null,
+      "expected_error": "H21-BUDGET",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-041",
+      "operation": "budget",
+      "arguments": {
+        "value": 262145
+      },
+      "expected_value": null,
+      "expected_error": "H21-BUDGET",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-042",
+      "operation": "budget",
+      "arguments": {
+        "value": 1
+      },
+      "expected_value": 1,
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-043",
+      "operation": "budget",
+      "arguments": {
+        "value": 262144
+      },
+      "expected_value": 262144,
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-044",
+      "operation": "path",
+      "arguments": {
+        "relative": "../a.txt"
+      },
+      "expected_value": null,
+      "expected_error": "H21-PATH",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-045",
+      "operation": "path",
+      "arguments": {
+        "relative": "/tmp/a.txt"
+      },
+      "expected_value": null,
+      "expected_error": "H21-PATH",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-046",
+      "operation": "path",
+      "arguments": {
+        "relative": "a/../a.txt"
+      },
+      "expected_value": null,
+      "expected_error": "H21-PATH",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-047",
+      "operation": "path",
+      "arguments": {
+        "relative": "a//b.txt"
+      },
+      "expected_value": null,
+      "expected_error": "H21-PATH",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-048",
+      "operation": "path",
+      "arguments": {
+        "relative": "a/./b.txt"
+      },
+      "expected_value": null,
+      "expected_error": "H21-PATH",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-049",
+      "operation": "path",
+      "arguments": {
+        "relative": "C:/a.txt"
+      },
+      "expected_value": null,
+      "expected_error": "H21-PATH",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-050",
+      "operation": "path",
+      "arguments": {
+        "relative": "a\\b.txt"
+      },
+      "expected_value": null,
+      "expected_error": "H21-PATH",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-051",
+      "operation": "path",
+      "arguments": {
+        "relative": "a\u0000.txt"
+      },
+      "expected_value": null,
+      "expected_error": "H21-PATH",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-052",
+      "operation": "path",
+      "arguments": {
+        "relative": "missing.txt"
+      },
+      "expected_value": null,
+      "expected_error": "H21-FILE-MISSING",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-053",
+      "operation": "path",
+      "arguments": {
+        "relative": "ok.txt"
+      },
+      "expected_value": "ok.txt",
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-054",
+      "operation": "path_symlink",
+      "arguments": {},
+      "expected_value": null,
+      "expected_error": "H21-SYMLINK",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-055",
+      "operation": "source_hash",
+      "arguments": {},
+      "expected_value": null,
+      "expected_error": "H21-SOURCE-HASH",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-056",
+      "operation": "excerpt_budget",
+      "arguments": {},
+      "expected_value": null,
+      "expected_error": "H21-EXCERPT-TOO-LARGE",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-057",
+      "operation": "unique",
+      "arguments": {
+        "rows": [
+          {
+            "id": "x"
+          },
+          {
+            "id": "x"
+          }
+        ]
+      },
+      "expected_value": null,
+      "expected_error": "H21-DUPLICATE-ID",
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    },
+    {
+      "id": "FX21-058",
+      "operation": "unique",
+      "arguments": {
+        "rows": [
+          {
+            "id": "x"
+          },
+          {
+            "id": "y"
+          }
+        ]
+      },
+      "expected_value": true,
+      "expected_error": null,
+      "scope": "LOCAL_SYNTHETIC_ONLY"
+    }
+  ]
+}

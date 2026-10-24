@@ -1,0 +1,7 @@
+# EXAMPLE_ONLY_NOT_ACTIVE; verify installed Codex and managed policy first.
+# Không model/provider/credentials; không tự ghi đè cấu hình đang dùng.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+web_search = "disabled"
+[sandbox_workspace_write]
+network_access = false

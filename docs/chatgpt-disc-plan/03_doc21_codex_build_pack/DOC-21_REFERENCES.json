@@ -1,0 +1,93 @@
+{
+  "references": [
+    {
+      "id": "S21-01",
+      "title": "OpenAI — Custom instructions with AGENTS.md",
+      "requested_url": "https://developers.openai.com/codex/guides/agents-md",
+      "resolved_url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+      "accessed_on": "2026-10-15",
+      "scope_read": "Đã đọc mục discovery/layering; hướng dẫn theo thư mục và giới hạn nạp.",
+      "limits": "Chỉ nguồn hành vi Codex được tài liệu hóa; chưa chạy kiểm discovery trên CLI thực.",
+      "source_kind": "PRIMARY_OFFICIAL_HTML",
+      "redistribution": "LINK_AND_ORIGINAL_SUMMARY_ONLY"
+    },
+    {
+      "id": "S21-02",
+      "title": "OpenAI — Agent approvals & security",
+      "requested_url": "https://developers.openai.com/codex/agent-approvals-security",
+      "resolved_url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+      "accessed_on": "2026-10-15",
+      "scope_read": "Đã đọc sandbox, approval, network và phạm vi local/cloud.",
+      "limits": "Mẫu giới hạn của Vaga là đề xuất, không chứng minh cấu hình người dùng hiệu lực.",
+      "source_kind": "PRIMARY_OFFICIAL_HTML",
+      "redistribution": "LINK_AND_ORIGINAL_SUMMARY_ONLY"
+    },
+    {
+      "id": "S21-03",
+      "title": "OpenAI — Config basics",
+      "requested_url": "https://developers.openai.com/codex/config-basic",
+      "resolved_url": "https://learn.chatgpt.com/docs/config-file/config-basic",
+      "accessed_on": "2026-10-15",
+      "scope_read": "Đã đọc project trust, lớp config và các keys sandbox/approval/web search.",
+      "limits": "Không chọn model, không ghi cấu hình active vào máy hoặc xác nhận CLI version.",
+      "source_kind": "PRIMARY_OFFICIAL_HTML",
+      "redistribution": "LINK_AND_ORIGINAL_SUMMARY_ONLY"
+    },
+    {
+      "id": "S21-04",
+      "title": "OpenAI — Non-interactive mode",
+      "requested_url": "https://developers.openai.com/codex/noninteractive",
+      "resolved_url": "https://learn.chatgpt.com/docs/non-interactive-mode",
+      "accessed_on": "2026-10-15",
+      "scope_read": "Đã đọc exec, JSONL, output schema, output-last-message và cảnh báo credentials.",
+      "limits": "Command examples chưa chạy. Schema response không chứng minh app được triển khai.",
+      "source_kind": "PRIMARY_OFFICIAL_HTML",
+      "redistribution": "LINK_AND_ORIGINAL_SUMMARY_ONLY"
+    },
+    {
+      "id": "S21-05",
+      "title": "OpenAI — Cloud environments",
+      "requested_url": "https://developers.openai.com/codex/cloud/environments",
+      "resolved_url": "https://learn.chatgpt.com/docs/environments/cloud-environment",
+      "accessed_on": "2026-10-15",
+      "scope_read": "Đã đọc setup/agent phase và phạm vi môi trường cloud.",
+      "limits": "Không có environment cloud, setup script hoặc secret của Vaga được tạo.",
+      "source_kind": "PRIMARY_OFFICIAL_HTML",
+      "redistribution": "LINK_AND_ORIGINAL_SUMMARY_ONLY"
+    },
+    {
+      "id": "S21-06",
+      "title": "OpenAI — How OpenAI uses Codex",
+      "requested_url": "https://openai.com/business/guides-and-resources/how-openai-uses-codex/",
+      "resolved_url": "https://openai.com/business/guides-and-resources/how-openai-uses-codex/",
+      "accessed_on": "2026-10-15",
+      "scope_read": "Đối chiếu phần best practices: chuẩn bị ngữ cảnh và công việc có phạm vi rõ.",
+      "limits": "Không mượn số liệu hiệu quả, thời gian hay kinh nghiệm OpenAI làm số đo Vaga.",
+      "source_kind": "PRIMARY_OFFICIAL_HTML",
+      "redistribution": "LINK_AND_ORIGINAL_SUMMARY_ONLY"
+    },
+    {
+      "id": "S21-07",
+      "title": "IETF — RFC 6901, JSON Pointer",
+      "requested_url": "https://www.rfc-editor.org/rfc/rfc6901.html",
+      "resolved_url": "https://www.rfc-editor.org/rfc/rfc6901.html",
+      "accessed_on": "2026-10-15",
+      "scope_read": "Đọc cú pháp, evaluation, escape và lỗi để thiết kế selector.",
+      "limits": "Helper không là JSON Patch hoặc URI fragment resolver tổng quát.",
+      "source_kind": "PRIMARY_OFFICIAL_HTML",
+      "redistribution": "LINK_AND_ORIGINAL_SUMMARY_ONLY"
+    },
+    {
+      "id": "S21-08",
+      "title": "JSON Schema — Draft 2020-12",
+      "requested_url": "https://json-schema.org/draft/2020-12",
+      "resolved_url": "https://json-schema.org/draft/2020-12",
+      "accessed_on": "2026-10-15",
+      "scope_read": "Đối chiếu phiên bản schema dùng trong gói và phạm vi assertions.",
+      "limits": "JSON Schema không xác thực authority, legal basis hoặc correctness thực nghiệm.",
+      "source_kind": "PRIMARY_OFFICIAL_HTML",
+      "redistribution": "LINK_AND_ORIGINAL_SUMMARY_ONLY"
+    }
+  ],
+  "scope": "No PDF, provider calls or legal update in this delivery"
+}

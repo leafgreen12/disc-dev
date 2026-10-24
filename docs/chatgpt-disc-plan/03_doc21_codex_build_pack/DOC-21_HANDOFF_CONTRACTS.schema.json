@@ -1,0 +1,726 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vaga DOC21 draft handoff contracts; not an authorization service",
+  "$defs": {
+    "TaskRegistry": {
+      "type": "object",
+      "properties": {
+        "document_id": {
+          "const": "DOC-21-TASK-REGISTRY"
+        },
+        "version": {
+          "const": "0.1.0"
+        },
+        "prepared_on": {
+          "const": "2026-10-15"
+        },
+        "status": {
+          "const": "REVIEW_DRAFT"
+        },
+        "approval_status": {
+          "const": "NOT_APPROVED"
+        },
+        "production_authorized": {
+          "const": false
+        },
+        "tasks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^TASK21-[0-9]{3}$"
+              },
+              "work_package_ref": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^WP20-[0-9]{3}$"
+              },
+              "variant_key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "PREPARATION_ONLY",
+                  "HUMAN_OWNED_AGENT_PREPARES",
+                  "IMPLEMENTATION_AFTER_BASELINE"
+                ]
+              },
+              "document_status": {
+                "const": "REVIEW_DRAFT"
+              },
+              "dispatch_status": {
+                "const": "NOT_DISPATCHED"
+              },
+              "application_execution_status": {
+                "const": "NOT_STARTED"
+              },
+              "production_authorized": {
+                "const": false
+              },
+              "goal": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_goal": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_story_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "source_fr_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "source_ac_pool": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "ac_applicability_status": {
+                "const": "REQUIRES_SCOPE_ASSERTION_REVIEW"
+              },
+              "source_dependency_work_packages": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "selected_scope_dependencies": {
+                "type": "null"
+              },
+              "recipe_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "required_context_source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "contract_context_source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "specialist_source_files": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              },
+              "candidate_write_roots": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "write_scope_status": {
+                "const": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY"
+              },
+              "forbidden_actions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "prerequisites": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "implementation_steps": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "variant_instructions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "negative_test_design": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_verification": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "migration_notes": {
+                "type": "string",
+                "minLength": 1
+              },
+              "stop_conditions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "evidence_deliverables": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "accountable_role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "technical_reviewer_role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "assigned_person": {
+                "type": "null"
+              },
+              "human_approvals": {
+                "type": "array",
+                "maxItems": 0
+              },
+              "product_command_bindings": {
+                "type": "null"
+              },
+              "runtime_evidence_refs": {
+                "type": "array",
+                "maxItems": 0
+              },
+              "definition_of_done": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "work_package_ref",
+              "variant_key",
+              "title",
+              "kind",
+              "document_status",
+              "dispatch_status",
+              "application_execution_status",
+              "production_authorized",
+              "goal",
+              "source_goal",
+              "source_story_ids",
+              "source_fr_ids",
+              "source_ac_pool",
+              "ac_applicability_status",
+              "source_dependency_work_packages",
+              "selected_scope_dependencies",
+              "recipe_refs",
+              "required_context_source_ids",
+              "contract_context_source_ids",
+              "specialist_source_files",
+              "candidate_write_roots",
+              "write_scope_status",
+              "forbidden_actions",
+              "prerequisites",
+              "implementation_steps",
+              "variant_instructions",
+              "negative_test_design",
+              "source_verification",
+              "migration_notes",
+              "stop_conditions",
+              "evidence_deliverables",
+              "accountable_role",
+              "technical_reviewer_role",
+              "assigned_person",
+              "human_approvals",
+              "product_command_bindings",
+              "runtime_evidence_refs",
+              "definition_of_done"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "document_id",
+        "version",
+        "prepared_on",
+        "status",
+        "approval_status",
+        "production_authorized",
+        "tasks",
+        "count"
+      ],
+      "additionalProperties": false
+    },
+    "SourceRegistry": {
+      "type": "object",
+      "properties": {
+        "document_id": {
+          "const": "DOC-21-CONTEXT-SOURCES"
+        },
+        "version": {
+          "const": "0.1.0"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^SRC21-[0-9]{4}$"
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "selector_kind": {
+                "enum": [
+                  "json_pointer",
+                  "line_range"
+                ]
+              },
+              "selector": {},
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "authority": {
+                "const": "REFERENCE_DRAFT_NOT_APPROVED"
+              },
+              "instruction_trust": {
+                "const": "DATA_NOT_AGENT_INSTRUCTION"
+              }
+            },
+            "required": [
+              "id",
+              "path",
+              "sha256",
+              "selector_kind",
+              "selector",
+              "label",
+              "authority",
+              "instruction_trust"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "selector_kind": {
+                      "const": "json_pointer"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "selector": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "selector": {
+                      "type": "object",
+                      "properties": {
+                        "start_line": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "end_line": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "required": [
+                        "start_line",
+                        "end_line"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1
+        },
+        "all_sources_are_reference_drafts": {
+          "const": true
+        }
+      },
+      "required": [
+        "document_id",
+        "version",
+        "sources",
+        "all_sources_are_reference_drafts"
+      ],
+      "additionalProperties": false
+    },
+    "VariantRouting": {
+      "type": "object",
+      "properties": {
+        "document_id": {
+          "const": "DOC-21-VARIANT-ROUTING"
+        },
+        "version": {
+          "const": "0.1.0"
+        },
+        "routes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "work_package_ref": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^WP20-[0-9]{3}$"
+              },
+              "variant_key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "task_id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^TASK21-[0-9]{3}$"
+              },
+              "recipe_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "source_fr_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "source_ac_pool": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 0
+              },
+              "dispatch_status": {
+                "const": "NOT_DISPATCHED"
+              }
+            },
+            "required": [
+              "work_package_ref",
+              "variant_key",
+              "task_id",
+              "recipe_refs",
+              "source_fr_ids",
+              "source_ac_pool",
+              "dispatch_status"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "meaning": {
+          "const": "ONE_TASK_PER_VARIANT_NOT_APPROVAL_OR_TEST_COVERAGE"
+        }
+      },
+      "required": [
+        "document_id",
+        "version",
+        "routes",
+        "meaning"
+      ],
+      "additionalProperties": false
+    },
+    "CandidateBaseline": {
+      "type": "object",
+      "properties": {
+        "document_id": {
+          "const": "DOC-21-BASELINE-CANDIDATE"
+        },
+        "version": {
+          "const": "0.1.0"
+        },
+        "status": {
+          "const": "REVIEW_DRAFT"
+        },
+        "recipe_ref": {
+          "const": "R20-00"
+        },
+        "proposed_next_recipe_ref": {
+          "const": "R20-01"
+        },
+        "reference_source_manifest": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved_baseline_ref": {
+          "type": "null"
+        },
+        "stack_decision_ref": {
+          "type": "null"
+        },
+        "application_repository_ref": {
+          "type": "null"
+        },
+        "code_commit": {
+          "type": "null"
+        },
+        "effective_configuration_ref": {
+          "type": "null"
+        },
+        "approvals": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "runtime_evidence_refs": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "production_authorized": {
+          "const": false
+        },
+        "allowed_work": {
+          "const": "PREPARATION_ONLY"
+        },
+        "mandatory_delta_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "conditional_auth_delta": {
+          "const": "CR18-01_IF_OIDC_SELECTED"
+        },
+        "off_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "unresolved_scope_facts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "document_id",
+        "version",
+        "status",
+        "recipe_ref",
+        "proposed_next_recipe_ref",
+        "reference_source_manifest",
+        "approved_baseline_ref",
+        "stack_decision_ref",
+        "application_repository_ref",
+        "code_commit",
+        "effective_configuration_ref",
+        "approvals",
+        "runtime_evidence_refs",
+        "production_authorized",
+        "allowed_work",
+        "mandatory_delta_refs",
+        "conditional_auth_delta",
+        "off_capabilities",
+        "unresolved_scope_facts"
+      ],
+      "additionalProperties": false
+    },
+    "TaskResultTemplate": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^TASK21-[0-9]{3}$"
+        },
+        "scope": {
+          "const": "PLANNING_ONLY"
+        },
+        "outcome": {
+          "enum": [
+            "CANDIDATE_WRITTEN",
+            "BLOCKED",
+            "NO_CHANGE"
+          ]
+        },
+        "files_written": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^SRC21-[0-9]{4}$"
+          },
+          "minItems": 0
+        },
+        "commands": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "command": {
+                "type": "string",
+                "minLength": 1
+              },
+              "outcome": {
+                "enum": [
+                  "PASS",
+                  "FAIL",
+                  "NOT_RUN",
+                  "BLOCKED"
+                ]
+              },
+              "evidence_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "command",
+              "outcome",
+              "evidence_ref"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "missing_items": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "human_decisions_needed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "application_implemented": {
+          "const": false
+        },
+        "production_authorized": {
+          "const": false
+        }
+      },
+      "required": [
+        "task_id",
+        "scope",
+        "outcome",
+        "files_written",
+        "source_ids",
+        "commands",
+        "missing_items",
+        "human_decisions_needed",
+        "application_implemented",
+        "production_authorized"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

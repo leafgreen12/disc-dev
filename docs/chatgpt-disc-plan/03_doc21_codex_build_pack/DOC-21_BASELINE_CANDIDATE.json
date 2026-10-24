@@ -1,0 +1,43 @@
+{
+  "document_id": "DOC-21-BASELINE-CANDIDATE",
+  "version": "0.1.0",
+  "status": "REVIEW_DRAFT",
+  "recipe_ref": "R20-00",
+  "proposed_next_recipe_ref": "R20-01",
+  "reference_source_manifest": "DOC-21_SOURCE_MANIFEST.json",
+  "approved_baseline_ref": null,
+  "stack_decision_ref": null,
+  "application_repository_ref": null,
+  "code_commit": null,
+  "effective_configuration_ref": null,
+  "approvals": [],
+  "runtime_evidence_refs": [],
+  "production_authorized": false,
+  "allowed_work": "PREPARATION_ONLY",
+  "mandatory_delta_refs": [
+    "CR14-01",
+    "CR14-02",
+    "CR14-03",
+    "CR14-04",
+    "CR17-01",
+    "CR17-02",
+    "CR17-03"
+  ],
+  "conditional_auth_delta": "CR18-01_IF_OIDC_SELECTED",
+  "off_capabilities": [
+    "AI",
+    "ENTERPRISE_SYNC",
+    "PRODUCT_ANALYTICS",
+    "REMINDERS",
+    "CLASSIFICATION",
+    "NORMS",
+    "SCORE_CONTENT",
+    "DISC_PAIR"
+  ],
+  "unresolved_scope_facts": [
+    "Stack/DB/auth/hosting chưa chọn",
+    "Reviewer/owner thật chưa bổ nhiệm",
+    "Delta baseline đích chưa được duyệt",
+    "Runtime commands và evidence chưa có"
+  ]
+}

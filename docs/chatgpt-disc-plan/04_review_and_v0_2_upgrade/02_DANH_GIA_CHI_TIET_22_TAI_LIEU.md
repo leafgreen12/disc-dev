@@ -1,0 +1,440 @@
+---
+title: "Đánh giá chi tiết 22 tài liệu Vaga DISC"
+version: 1.0.0
+prepared_on: 2026-10-15
+status: REVIEW_RECOMMENDATIONS
+source_baseline: "DOC-00–DOC-21 v0.1.0, gói đợt 19"
+---
+
+# Đánh giá chi tiết từng tài liệu
+
+## Cách hiểu điểm số
+
+Điểm 0–10 là nhận định của người review về chất lượng tài liệu so với nhiệm vụ của nó: độ rõ, tính nhất quán, khả năng kiểm chứng, tính thực thi và mức phù hợp Vaga. Không phải xác suất đúng, chứng nhận tiêu chuẩn hay điểm tiến độ ứng dụng. Không trừ điểm chỉ vì tài liệu không chứa ứng dụng đã xây; các hạn chế về build được đánh giá riêng. Không lấy trung bình bảng này làm điểm tổng có trọng số trong báo cáo chính.
+
+Phạm vi: kiểm toàn vẹn/cấu trúc toàn gói; rà từng nhóm tài liệu lõi và đọc sâu các hợp đồng/nguồn có rủi ro. Không tuyên bố kiểm độc lập từng câu chữ trong 519 tệp, mọi URL, mọi quyền sở hữu trí tuệ hoặc mọi ca nghiệm thu. Các tham chiếu dưới là đường dẫn trong gói nguồn đã giao; bằng chứng review nằm cùng gói review này.
+
+| Tài liệu | Vai trò | Điểm /10 | Nâng cấp ưu tiên |
+|---|---|---:|---|
+| DOC-00 | Mã nguồn yêu cầu và quản trị | 7.0 | Giữ DOC00 trong kho tham khảo bất biến. |
+| DOC-01 | Nhu cầu người dùng | 7.5 | Bổ sung evidence map cho từng nhu cầu quan trọng: giả thuyết, quan sát cần thu, quyết định sản phẩm chịu ảnh hưởng. |
+| DOC-02 | Nghiệp vụ và giới hạn | 7.5 | Chốt một business case cho bản đầu, không phải mọi nhánh. |
+| DOC-03 | Use Cases/ngoại lệ | 8.0 | Giữ use case là câu chuyện nghiệp vụ; bổ sung sequence chart cho những luồng có giao dịch và danh sách acceptance instance theo phạm vi. |
+| DOC-04 | Stories/AC | 7.0 | Tạo applicability matrix cho scope được chọn: REQUIRED/DEFERRED_WITH_REASON/NOT_APPLICABLE, người quyết định, test thực thi. |
+| DOC-05 | Function/field/state | 7.5 | Đóng phiên bản FRD theo scope trong baseline mới; ghi diff chính xác của thứ tự chọn nguồn, request kinds và guard review. |
+| DOC-06 | IA/flows | 7.5 | Giữ sitemap đầy đủ trong thiết kế nhưng chỉ hiển thị điều hướng theo nhiệm vụ. |
+| DOC-07 | Screen/component/copy | 7.0 | Tạo prototype của ba hành trình hoàn chỉnh với dữ liệu tổng hợp, bỏ bảng điều khiển fixture khỏi chế độ người dùng. |
+| DOC-08 | Item/form/scale/provenance | 6.5 | Ưu tiên review câu theo construct thay vì viết thêm cho đạt số lượng. |
+| DOC-09 | Numerical scoring/abstention | 8.0 | Giữ core số học; nghiên cứu độ nhạy của missing policy và cách hiển thị miền đủ dữ liệu. |
+| DOC-10 | Validation/evidence protocol | 8.0 | Chọn thứ tự: content/cognitive review; pilot vận hành; thiết kế cỡ mẫu có luận chứng cho structure/reliability; xác nhận và fairness theo scope; nghiên cứu giá trị tăng thêm. |
+| DOC-11 | Content/rule/source | 7.0 | Thu hẹp context từng thẻ, thêm context chính/phụ và ca phản ví dụ. |
+| DOC-12 | Data/transaction/lifecycle | 7.0 | Chọn mô hình quan hệ cho các ràng buộc cốt lõi, dùng payload có schema cho tài sản versioned phù hợp. |
+| DOC-13 | API/DTO/transport | 6.5 | Vá schema phân nhánh theo unit và semantic validator; tách diagnostic thô khỏi estimate đủ điều kiện diễn giải. |
+| DOC-14 | Security/privacy | 8.0 | Thêm precondition typed/non-null cho snapshot, resolve ownership và grant tại service. |
+| DOC-15 | AI có điều kiện | 7.0 | Giữ AI OFF ở bản đầu. |
+| DOC-16 | Test/evidence/release quality | 7.0 | Giữ ID/truy vết nhưng sinh phần dùng chung từ test harness. |
+| DOC-17 | Deploy/restore/operations | 7.5 | Sau ADR, bind từng runbook của scope đầu vào interface/lệnh đã kiểm. |
+| DOC-18 | Enterprise integration có điều kiện | 7.5 | Bản đầu chỉ chọn phương thức đăng nhập an toàn phù hợp hệ thống thực và quy trình cấp/thu hồi thủ công có trách nhiệm. |
+| DOC-19 | Analytics có điều kiện | 7.5 | Chọn ít câu hỏi sản phẩm và dùng task study/khảo sát có quyền trước khi dựng collector. |
+| DOC-20 | Roadmap/scope/WBS | 7.0 | Tạo variant private_self_chosen_actions không phụ thuộc WP017; cập nhật các nghĩa vụ riêng tư/xóa đi cùng. |
+| DOC-21 | Task/context/agent handoff | 7.0 | Thay lời giao việc rộng bằng một task đã khóa scope, accepted contract, file boundaries và lệnh thật. |
+
+## DOC-00 — Mã nguồn yêu cầu và quản trị · 7.0/10
+
+**Nguồn chính:** `DOC-00_DOCUMENTATION_MAP.md`.
+
+### 1. Phần nên giữ
+Giữ ổn định mã yêu cầu, tách 22 tài liệu theo trách nhiệm và lưu lịch sử nguồn. Cách tổ chức này giúp không đánh mất các quyết định khoa học, quyền riêng tư và ngoại lệ khi chuyển qua nhiều đợt.
+
+### 2. Phản biện
+Bản đồ tài liệu chưa phải bản đồ nguồn có hiệu lực để lập trình. Qua 19 đợt, cùng một hành vi có thể được mô tả trong FRD, API, security và CR bổ sung mà chưa có một phiên bản đích thống nhất. Nếu coi toàn thư mục là yêu cầu cùng hiệu lực, người lập trình phải tự phân xử.
+
+### 3. Nâng cấp đề xuất
+Giữ DOC00 trong kho tham khảo bất biến. Tạo chỉ mục active baseline theo phạm vi, ghi chính xác nguồn nào điều khiển từng hành vi, trạng thái và trường; nội dung nào chỉ là lịch sử; CR nào đã hợp nhất hoặc được hoãn có điều kiện.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Một người mới chỉ ra được phiên bản áp dụng cho công bố manual, thu hồi và xử lý nghỉ việc mà không phải tự chọn tài liệu mới nhất; mọi đường dẫn current hoạt động.
+
+**Đối chiếu:** `DOC-00_DOCUMENTATION_MAP.md`; `DOC-21_BASELINE_AUTHORITY.md`.
+
+## DOC-01 — Nhu cầu người dùng · 7.5/10
+
+**Nguồn chính:** `DOC-01_URD.md`.
+
+### 1. Phần nên giữ
+URD phân biệt nhu cầu cá nhân, đồng nghiệp và vai trò quản trị; giữ lựa chọn không làm assessment và quyền kiểm soát chia sẻ. Nhu cầu được diễn đạt theo công việc cần hoàn thành thay vì chỉ theo tính năng.
+
+### 2. Phản biện
+Chân dung, khó khăn và ưu tiên vẫn là giả thuyết thiết kế. Chưa có quan sát nhân viên thực để biết họ có mở một trang riêng trước cuộc họp hay thích chỉ dẫn ngay trong quy trình hiện tại. Có nguy cơ xây đầy đủ chức năng nhưng ít sử dụng.
+
+### 3. Nâng cấp đề xuất
+Bổ sung evidence map cho từng nhu cầu quan trọng: giả thuyết, quan sát cần thu, quyết định sản phẩm chịu ảnh hưởng. Nghiên cứu ba tác vụ: soạn manual, tìm cách giao việc cho đồng nghiệp, tự chọn một thay đổi nhỏ; không thu dữ liệu tâm lý không cần thiết.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Ba hành trình cốt lõi có ghi nhận thực địa phù hợp quyền, vấn đề ưu tiên và quyết định giữ/bỏ; không chuyển proto-persona thành kết quả phỏng vấn.
+
+**Đối chiếu:** `DOC-01_URD.md`; `DOC-06_USABILITY_TEST_PLAN.md`.
+
+## DOC-02 — Nghiệp vụ và giới hạn · 7.5/10
+
+**Nguồn chính:** `DOC-02_BRD.md`.
+
+### 1. Phần nên giữ
+Mục đích phát triển và phối hợp được bảo vệ bằng quy tắc chống dán nhãn; metric có tử số, mẫu số và giới hạn. Manual tự viết được tách khỏi việc làm bài.
+
+### 2. Phản biện
+Mô hình vận hành còn thiếu người thực chịu trách nhiệm, ngân sách và quy mô. Chỉ số hữu ích gốc và cách xử lý câu trả lời UNSURE ở DOC19 cần thống nhất; không thể dùng hai mẫu số cho cùng một tên chỉ số.
+
+### 3. Nâng cấp đề xuất
+Chốt một business case cho bản đầu, không phải mọi nhánh. Tách kết quả mong đợi, dấu hiệu quan sát và giới hạn nhân quả. Cập nhật định nghĩa metric theo version, công bố đầy đủ YES/NO/UNSURE và tỷ lệ phản hồi khi áp dụng.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Bản phạm vi có người ra quyết định, chi phí đầu vào cần ước lượng, quy tắc dừng; một metric chỉ có một công thức có hiệu lực và không trở thành KPI ép nhân viên.
+
+**Đối chiếu:** `DOC-02_BRD.md §12`; `DOC-19_METRIC_DICTIONARY.md`; `DOC-20_RESOURCES_ESTIMATION_INVESTMENT.md`.
+
+## DOC-03 — Use Cases/ngoại lệ · 8.0/10
+
+**Nguồn chính:** `DOC-03_USE_CASES.md`.
+
+### 1. Phần nên giữ
+20 use cases bao phủ cả luồng lỗi, hai tab, gửi lặp, thu hồi, hỗ trợ và nhân viên nghỉ việc. Đây là một trong các phần hữu ích nhất để giữ hành vi đầu-cuối.
+
+### 2. Phản biện
+Độ bao phủ tốt nhưng nhiều use case rộng, đi qua nhiều phạm vi phát hành. Nếu thực hiện một use case như một task đơn lẻ, phần quyền dữ liệu hoặc lỗi có thể bị bỏ trong khi giao diện đã được báo hoàn tất.
+
+### 3. Nâng cấp đề xuất
+Giữ use case là câu chuyện nghiệp vụ; bổ sung sequence chart cho những luồng có giao dịch và danh sách acceptance instance theo phạm vi. Không viết lại 20 use case chỉ để giảm chữ.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Mỗi use case thuộc bản đầu có tối thiểu đường thành công, từ chối quyền, xung đột và phục hồi gắn API/store/observer cụ thể; use case ngoài phạm vi có lý do hoãn.
+
+**Đối chiếu:** `DOC-03_USE_CASES.md`; `DOC-16_CROSSCUTTING_TEST_CATALOG.md`.
+
+## DOC-04 — Stories/AC · 7.0/10
+
+**Nguồn chính:** `DOC-04_USER_STORIES.md`.
+
+### 1. Phần nên giữ
+75 stories và 375 tiêu chí có mã ổn định, giúp truy ngược yêu cầu. Phân biệt story nghiệp vụ với công việc hỗ trợ kỹ thuật là hợp lý.
+
+### 2. Phản biện
+Mỗi story có đúng năm tiêu chí tạo một cấu trúc đều, nhưng độ rủi ro không đều. Số lượng cố định không chứng minh đủ ngoại lệ. Pool AC theo WP cũng chưa phải tập AC áp dụng cho từng variant; DOC21 ghi rõ hạn chế này.
+
+### 3. Nâng cấp đề xuất
+Tạo applicability matrix cho scope được chọn: REQUIRED/DEFERRED_WITH_REASON/NOT_APPLICABLE, người quyết định, test thực thi. Tách story quá rộng khi cần nhưng giữ alias về mã gốc; không ép mọi story có năm tiêu chí.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Không có AC bắt buộc thiếu người nhận hoặc observer; hoàn tất một variant manual không tự đóng phần assessment của cùng story.
+
+**Đối chiếu:** `DOC-04_USER_STORIES.md`; `DOC-04_BACKLOG.json`; `DOC-21_VALIDATION_REPORT.md §4`.
+
+## DOC-05 — Function/field/state · 7.5/10
+
+**Nguồn chính:** `DOC-05_FRD.md`.
+
+### 1. Phần nên giữ
+FRD có trạng thái, trường, validation, nguồn authority và xử lý đồng thời; phân biệt completion kỹ thuật với khả năng diễn giải khoa học. Các quy tắc nguyên bản cần được giữ.
+
+### 2. Phản biện
+FRD đã được các tài liệu sau tinh chỉnh nhưng chưa được hợp nhất. Ví dụ pair ưu tiên DISC ở bảng nguồn, trong khi DOC11 đề xuất preference-first. Một số quyền dữ liệu và review target cần CR14 nhưng API/FRD hiện vẫn chưa đổi.
+
+### 3. Nâng cấp đề xuất
+Đóng phiên bản FRD theo scope trong baseline mới; ghi diff chính xác của thứ tự chọn nguồn, request kinds và guard review. Mỗi điều kiện phải gắn nơi thực thi: client, service, database hay quyết định con người.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+FRD, DTO, policy và test cho cùng thao tác có cùng ngữ nghĩa; không có quy tắc mâu thuẫn đang cùng được đánh dấu áp dụng.
+
+**Đối chiếu:** `DOC-05_FRD.md §7.1`; `DOC-11_DECISIONS_AND_REFERENCES.md DEC-118`; `DOC-21_BASELINE_AUTHORITY.md §3`.
+
+## DOC-06 — IA/flows · 7.5/10
+
+**Nguồn chính:** `DOC-06_IA_UX_FLOWS.md`.
+
+### 1. Phần nên giữ
+49 đích thông tin và 30 luồng phân biệt rõ Self, manual, pair và kênh quyền dữ liệu ngoài phiên. Các trạng thái chưa rõ đã lưu, mất quyền và quay lại sau hết phiên được xử lý có chủ đích.
+
+### 2. Phản biện
+Điều hướng vẫn là giả thuyết, chưa có bằng chứng người dùng tìm đúng chức năng. Nhiều đích quản trị và ngoại lệ có thể làm bản đầu nặng nếu biến mỗi đích logic thành một mục menu.
+
+### 3. Nâng cấp đề xuất
+Giữ sitemap đầy đủ trong thiết kế nhưng chỉ hiển thị điều hướng theo nhiệm vụ. Bản đầu tập trung Tôi, Đồng nghiệp, Hành động của tôi, Riêng tư và Hỗ trợ; quản trị theo nhiệm vụ tách riêng. Kiểm khả năng tìm lại và rời tác vụ an toàn.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Người thử hoàn tất ba nhiệm vụ chính mà không cần hiểu mã DISC; trạng thái trống, lỗi và rút quyền vẫn có lối đi; không cần 49 mục điều hướng.
+
+**Đối chiếu:** `DOC-06_IA_UX_FLOWS.md`; `DOC-06_NAVIGATION_MAP.md`.
+
+## DOC-07 — Screen/component/copy · 7.0/10
+
+**Nguồn chính:** `DOC-07_UI_UX_SPECIFICATION.md`.
+
+### 1. Phần nên giữ
+Có design system, microcopy, 43 mẫu giao diện và nguyên mẫu HTML. Đã có chú ý tiếng Việt, mobile, focus, trạng thái lưu và không chỉ dùng màu để biểu thị điểm.
+
+### 2. Phản biện
+Nguyên mẫu được kiểm là atlas/mô phỏng, không phải ứng dụng kết nối dữ liệu và không có bằng chứng usability trên nhân viên. Các nút đổi fixture là công cụ QA, không nên bị nhầm thành thiết kế cuối. Mặt khác, bản ứng dụng cần ít cảnh báo lặp hơn mà vẫn giữ thông tin quan trọng.
+
+### 3. Nâng cấp đề xuất
+Tạo prototype của ba hành trình hoàn chỉnh với dữ liệu tổng hợp, bỏ bảng điều khiển fixture khỏi chế độ người dùng. Dùng progressive disclosure: quyền và trạng thái quan trọng ngay tại hành động; giải thích khoa học chi tiết ở lớp mở rộng. Kiểm toàn quy trình với bàn phím và trình đọc màn hình.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Có báo cáo tác vụ theo đúng fidelity, lỗi quan sát và sửa thiết kế; không tuyên bố WCAG toàn ứng dụng từ kiểm vài màu hoặc ảnh chụp.
+
+**Đối chiếu:** `DOC-07_PROTOTYPE_AND_REVIEW.md`; `DOC-07_SCREEN_SPECIFICATIONS.md`; `DOC-07_PROTOTYPE.html`.
+
+## DOC-08 — Item/form/scale/provenance · 6.5/10
+
+**Nguồn chính:** `DOC-08_QUESTION_BANK_METADATA.md`.
+
+### 1. Phần nên giữ
+Metadata giữ nguyên 64 phát biểu và chiều khóa nguồn; tách 40 Likert, 16 statement forced-choice và 8 reserve. Provenance, review status và hypothesis được tách, không tự gọi validated.
+
+### 2. Phản biện
+Metadata kỹ lưỡng hơn độ hoàn thiện nội dung câu hỏi. Mức giữa trộn tùy tình huống với trung bình; context chưa khóa khung tham chiếu; nhiều câu có thể đo quyền hạn, năng lực hoặc kỹ năng được đào tạo thay cho xu hướng. Định nghĩa facet chưa được thực nghiệm xác nhận.
+
+### 3. Nâng cấp đề xuất
+Ưu tiên review câu theo construct thay vì viết thêm cho đạt số lượng. Soạn revision mới cho các câu rủi ro, thử cách hiểu, xác định hướng dẫn người thiếu bối cảnh. Mỗi sửa wording/scale/key phải tăng version và giữ nguồn cũ.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Có phiếu chuyên gia và kết quả cognitive interview gắn exact revision; lý do giữ/sửa/loại từng câu; không còn dùng nhãn giữa như missing và không triển khai câu chỉ vì JSON hợp lệ.
+
+**Đối chiếu:** `DOC-08_SOURCE_INVENTORY.md L-D07/L-C04`; `DOC-08_QUESTION_BANK_METADATA.md §6`; `DOC-08_QUESTION_BANK.json`.
+
+## DOC-09 — Numerical scoring/abstention · 8.0/10
+
+**Nguồn chính:** `DOC-09_SCORING_CLASSIFICATION.md`.
+
+### 1. Phần nên giữ
+Phép tính minh bạch, phân số chính xác, rounding ở presentation, missing không thành 0 và không ép nhãn. Review mới chạy 60 bộ đáp án tổng hợp; phần linear-score được đối chiếu đều đúng.
+
+### 2. Phản biện
+Policy yêu cầu đủ mọi item của mỗi miền có thể làm tỷ lệ có kết quả đầy đủ giảm đáng kể khi bỏ câu. Đây là lựa chọn bảo thủ hợp lý để thử, nhưng chưa có dữ liệu để chốt UX. Phân loại/norm hiện cố ý tắt, nên không được quảng bá đây là bộ chấm DISC hoàn chỉnh đã chuẩn hóa.
+
+### 3. Nâng cấp đề xuất
+Giữ core số học; nghiên cứu độ nhạy của missing policy và cách hiển thị miền đủ dữ liệu. Trước port sang stack khác, dùng golden độc lập, property tests và kiểm transport precision. Classifier là quyết định nghiên cứu riêng, không thêm top-two cho giao diện đẹp.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Các test biên, thiếu dữ liệu và golden chạy trên implementation thực; có quyết định missing theo bằng chứng; các nhánh nhãn/norm vẫn tắt khi chưa được phép.
+
+**Đối chiếu:** `DOC-09_SCORING_CLASSIFICATION.md`; `DOC-09_CLASSIFICATION_EVIDENCE.md`; `independent_arithmetic_tests.json`.
+
+## DOC-10 — Validation/evidence protocol · 8.0/10
+
+**Nguồn chính:** `DOC-10_PSYCHOMETRIC_VALIDATION_PROTOCOL.md`.
+
+### 1. Phần nên giữ
+Kế hoạch kiểm định phân biệt nội dung, quá trình trả lời, cấu trúc, độ tin cậy, đo lại, công bằng và hiệu quả phối hợp. Omega của composite quan sát và ICC agreement được diễn giải cẩn thận; không chỉ chạy alpha rồi kết luận đúng.
+
+### 2. Phản biện
+Nhiều nghiên cứu và cổng có thể tạo gánh nặng vượt năng lực đội nhỏ nếu triển khai cùng lúc. Tuy nhiên, không nên hạ chuẩn bằng cách coi vài chục người nội bộ là mẫu đủ cho mọi kết luận. Cần khóa nghiên cứu tối thiểu theo claim thực sự muốn mở.
+
+### 3. Nâng cấp đề xuất
+Chọn thứ tự: content/cognitive review; pilot vận hành; thiết kế cỡ mẫu có luận chứng cho structure/reliability; xác nhận và fairness theo scope; nghiên cứu giá trị tăng thêm. Mẫu thật, người phụ trách và chi phí phải được xác nhận trước tuyển.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Protocol đã chốt estimand, mẫu, dữ liệu, quyền, tiêu chí và người duyệt theo giai đoạn; kết quả không ủng hộ vẫn được báo; không tự mở classifier từ một chỉ số đạt ngưỡng.
+
+**Đối chiếu:** `DOC-10_PSYCHOMETRIC_VALIDATION_PROTOCOL.md §13`; `DOC-10_SAMPLING_ANALYSIS_PLAN.md §8`; `DOC-10_CLAIM_EVIDENCE_GATES.md`.
+
+## DOC-11 — Content/rule/source · 7.0/10
+
+**Nguồn chính:** `DOC-11_MODULAR_BEHAVIORAL_CONTENT.md`.
+
+### 1. Phần nên giữ
+72 thẻ có nguồn, điều kiện, phản ví dụ, hành động và rule; có phân biệt lời khuyên chung, sở thích được xác nhận và diễn giải theo điểm. Pair có hướng và ngân sách ba hành động là phù hợp mục tiêu dùng hằng ngày.
+
+### 2. Phản biện
+Review đếm được 44/72 thẻ gắn đủ cả bảy context. Điều này không tự sai nhưng làm bộ lọc context kém chọn lọc; ví dụ thẻ về giao việc/chốt phương án cũng đủ điều kiện context recognition. Lời khuyên có thể đúng chung nhưng lệch tình huống cụ thể.
+
+### 3. Nâng cấp đề xuất
+Thu hẹp context từng thẻ, thêm context chính/phụ và ca phản ví dụ. Duyệt tính phù hợp trước tối ưu câu chữ. Ưu tiên sở thích B đã xác nhận; khi thiếu căn cứ trả ít hơn hoặc hướng dẫn chung có nhãn. Không dùng text cũ để suy code sở thích.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Mỗi cặp context–thẻ có lý do sử dụng và kiểm trường hợp không nên chọn; kiểm nhận xét bằng người đọc phù hợp; không buộc 72/72 thẻ đều lên production.
+
+**Đối chiếu:** `DOC-11_CONTENT_BANK.json CB11-SELF-D-03`; `DOC-11_SELECTION_AND_PAIR_RULES.md`; `content_and_product_audit.json`.
+
+## DOC-12 — Data/transaction/lifecycle · 7.0/10
+
+**Nguồn chính:** `DOC-12_DATA_MODEL.md`.
+
+### 1. Phần nên giữ
+65 thực thể logic và 905 trường expanded mô tả khá rõ ownership, phiên bản, sparse response, immutable submission, publication, quyền dữ liệu và nghiên cứu riêng.
+
+### 2. Phản biện
+Đây chưa là schema vật lý, nên việc giao thẳng 65 thực thể thành 65 bảng/CRUD sẽ tăng chi phí và có thể làm yếu invariants. Nhiều trạng thái và references còn cần hợp nhất với các CR sau; kiểu payload linh hoạt dễ bị dùng thành kho JSON không kiểm soát.
+
+### 3. Nâng cấp đề xuất
+Chọn mô hình quan hệ cho các ràng buộc cốt lõi, dùng payload có schema cho tài sản versioned phù hợp. Thiết kế vật lý chỉ cho scope đầu; quyền, ownership, generation, publication pointer và idempotency là trường rõ, không giấu trong JSON tùy ý.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Migration, FK/unique/check và index được chạy trên DB đã chọn; negative tests kiểm cross-tenant, orphan, xóa và lịch sử; bản logic vẫn giữ làm reference.
+
+**Đối chiếu:** `DOC-12_DATA_MODEL.md`; `DOC-12_DATA_DICTIONARY.md`; `DOC-12_TRANSACTIONS_AND_CONSTRAINTS.md`.
+
+## DOC-13 — API/DTO/transport · 6.5/10
+
+**Nguồn chính:** `DOC-13_API_SPECIFICATION.md`.
+
+### 1. Phần nên giữ
+Có 123 operation, DTO tách read/write, lỗi, CAS/idempotency và loại phiên. Kiểm tĩnh mới không phát hiện tham chiếu nội bộ hỏng hoặc thiếu khai báo path parameter.
+
+### 2. Phản biện
+Chưa chạy validator OpenAPI độc lập đầy đủ. Helper contract chấp nhận MetricEstimate RAW_MEAN_1_5=7, LINEAR_0_100=107 và COUNT âm; một số validation đơn vị còn thiếu. SafeDimension cũng nhận value nhiều chữ số lẻ nhưng text đã làm tròn, cần khóa ngữ nghĩa vận chuyển.
+
+### 3. Nâng cấp đề xuất
+Vá schema phân nhánh theo unit và semantic validator; tách diagnostic thô khỏi estimate đủ điều kiện diễn giải. Chạy OAS validator độc lập, contract tests qua HTTP implementation và schema projection; không chỉ đếm operation hay $ref.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Các phản ví dụ PR01–PR05 được xử lý theo contract rõ; công cụ OAS độc lập báo kết quả và phiên bản; negative fields không lọt qua actual server.
+
+**Đối chiếu:** `contract_doc13.py _named`; `DOC-13_DTO_SCHEMAS.json`; `adversarial_probe_results.json`; `openapi_static_audit.json`.
+
+## DOC-14 — Security/privacy · 8.0/10
+
+**Nguồn chính:** `DOC-14_SECURITY_PRIVACY_SPECIFICATION.md`.
+
+### 1. Phần nên giữ
+Thiết kế ưu tiên dữ liệu riêng, quyền theo tác vụ, dòng xử lý quyền dữ liệu, offboarding và survival qua restore. Threat model không đánh đồng manager với quyền đọc Self.
+
+### 2. Phản biện
+Các yêu cầu tốt chưa thành enforcement có topology và bằng chứng. Trong policy helper, so sánh bốn snapshot refs đều null có thể trả allowed=true ở nhánh DISC; đây là mô hình cục bộ với runtime_authorization=false, không phải lỗ hổng đã xác nhận trên hệ thống thật. Legal mapping cũng chưa là ý kiến áp dụng đã ký.
+
+### 3. Nâng cấp đề xuất
+Thêm precondition typed/non-null cho snapshot, resolve ownership và grant tại service. Chốt authorization matrix của scope và chứng minh mốc cấp dữ liệu trên kiến trúc thật. Rà nghĩa vụ vòng đời theo từng dữ liệu và processor, không phê duyệt nguyên lịch TTL nháp.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+PR06 bị chặn đúng lớp; có negative tests scope/epoch/claim; người chịu trách nhiệm pháp lý xác nhận dataflow và ngoại lệ giữ; restore drill không hồi sinh quyền.
+
+**Đối chiếu:** `policy_doc14_reference.py evaluate`; `DOC-14_REVOCATION_CONSISTENCY.md`; `DOC-14_PRIVACY_LEGAL_MAPPING.md`; `adversarial_probe_results.json`.
+
+## DOC-15 — AI có điều kiện · 7.0/10
+
+**Nguồn chính:** `DOC-15_AI_LLM_PERSONALIZATION.md`.
+
+### 1. Phần nên giữ
+Giới hạn AI khá thận trọng: không chấm điểm, không suy tính cách, dữ liệu tối thiểu, xem lại bản nháp và hai cổng quyền trước gửi/nhận. Có fallback không AI.
+
+### 2. Phản biện
+Độ đầu tư đặc tả AI lớn trong khi chưa có bài toán chứng minh giá trị tăng thêm. Với nhiệm vụ chỉ chọn mã của các câu đã duyệt, rule-based có thể đủ, rẻ và dễ tái lập hơn; đây là giả thuyết cần thử, không khẳng định LLM luôn vô ích.
+
+### 3. Nâng cấp đề xuất
+Giữ AI OFF ở bản đầu. Chỉ mở một thử nghiệm có tiêu chí so với baseline không AI: chất lượng, tác hại, thời gian, chi phí và dữ liệu gửi đi. Cắt nhiệm vụ không tạo cải thiện đủ ý nghĩa.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Có quyết định NO_BUILD hoặc nghiên cứu một nhiệm vụ cụ thể; không cần xây toàn bộ AI platform để hoàn thành manual và private actions.
+
+**Đối chiếu:** `DOC-15_TASKS_AND_DATA_BOUNDARIES.md`; `DOC-15_EVALUATION_AND_RELEASE_PLAN.md`.
+
+## DOC-16 — Test/evidence/release quality · 7.0/10
+
+**Nguồn chính:** `DOC-16_MASTER_TEST_QUALITY_PLAN.md`.
+
+### 1. Phần nên giữ
+Chiến lược kiểm theo rủi ro và phạm vi phát hành là đúng; giữ mọi runtime tests NOT_RUN thay vì dùng checker để giả bằng chứng ứng dụng. Có 447 đơn vị thiết kế kiểm và ma trận API theo quyền.
+
+### 2. Phản biện
+Bộ nghiệm thu rất dài và có boilerplate lặp. Một bước setup giống nhau xuất hiện 375 lần; trục API REQUIRED là checklist, chưa phải assertion chạy được. Các phản ví dụ mới cho thấy local checks hiện không bao phủ hết validation ngữ nghĩa.
+
+### 3. Nâng cấp đề xuất
+Giữ ID/truy vết nhưng sinh phần dùng chung từ test harness. Ưu tiên ca độc lập do người review thiết kế, property/mutation tests cho số học và validation, quyền qua HTTP/store thực, observer positive control và các lịch R/I tái hiện được.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Test quan trọng có executable binding, actual artifact và owner; một test bị vô hiệu có lý do; không dùng tổng tỷ lệ pass để bỏ qua lỗi quyền hoặc dữ liệu.
+
+**Đối chiếu:** `DOC-16_ACCEPTANCE_TEST_CATALOG.md`; `DOC-16_MASTER_TEST_QUALITY_PLAN.md`; `structural_audit.json`.
+
+## DOC-17 — Deploy/restore/operations · 7.5/10
+
+**Nguồn chính:** `DOC-17_DEPLOYMENT_DEVOPS_OPERATIONS.md`.
+
+### 1. Phần nên giữ
+Phân biệt phát hành code, cấu hình, nội dung và instrument; rollback không reset quyền; runbook có bước kiểm trước/sau và restore có cách ly.
+
+### 2. Phản biện
+Vận hành vẫn trung lập hạ tầng: chưa biết DB, hosting, proxy hoặc người trực. RPO/RTO và 53 cấu hình chưa effective; blueprint không thể tự chứng minh khả năng phục hồi.
+
+### 3. Nâng cấp đề xuất
+Sau ADR, bind từng runbook của scope đầu vào interface/lệnh đã kiểm. Diễn tập một vòng backup–restore có dữ liệu giả đã xóa, một vòng rollback code với quyền mới, và một sự cố nguồn quyền không khả dụng.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Có bằng chứng đo từ topology thực, cấu hình effective và người nhận cảnh báo; chưa đạt thì không gọi vận hành sẵn sàng dù runbook đầy đủ.
+
+**Đối chiếu:** `DOC-17_BACKUP_RESTORE.md`; `DOC-17_OPERATIONAL_RUNBOOKS.md`; `DOC-17_ENVIRONMENTS_CONFIGURATION.md`.
+
+## DOC-18 — Enterprise integration có điều kiện · 7.5/10
+
+**Nguồn chính:** `DOC-18_ENTERPRISE_INTEGRATION.md`.
+
+### 1. Phần nên giữ
+Các nguyên tắc không nối người bằng email, không cho group admin tự cấp quyền, per-lane ordering, lịch tương lai và tái gia nhập được thiết kế sâu.
+
+### 2. Phản biện
+Khả năng tích hợp rộng hơn nhu cầu đã xác nhận. SSO cơ bản và tự động đồng bộ HRIS/SCIM cần phân biệt trong kế hoạch đầu tư; provider profile chưa thể thay contract thực của tenant Vaga.
+
+### 3. Nâng cấp đề xuất
+Bản đầu chỉ chọn phương thức đăng nhập an toàn phù hợp hệ thống thực và quy trình cấp/thu hồi thủ công có trách nhiệm. Hoãn SCIM, SAML, webhook và kênh ngoài không có nhu cầu; khi chọn mới thử protocol với provider.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Có matrix nguồn thẩm quyền theo field cho nhánh chọn, test offboard/rejoin/email change, không cần triển khai mọi IOP để chạy MVP.
+
+**Đối chiếu:** `DOC-18_SSO_PROTOCOL_PROFILE.md`; `DOC-18_PROVISIONING_RECONCILIATION.md`; `DOC-18_CONFIG_PROPOSAL.json`.
+
+## DOC-19 — Analytics có điều kiện · 7.5/10
+
+**Nguồn chính:** `DOC-19_PRODUCT_ANALYTICS_MEASUREMENT.md`.
+
+### 1. Phần nên giữ
+Đo sản phẩm thay vì theo dõi nhân viên; phân biệt thiếu dữ liệu, collector OFF, mẫu số 0, nhóm nhỏ và báo cáo không được công bố. Có sự quan tâm tới differencing giữa các bản báo cáo.
+
+### 2. Phản biện
+Chưa biết quy mô nên ngưỡng nhóm có thể làm dashboard hầu như trống; đó không phải lý do hạ bảo vệ. Mẫu số YES/(YES+NO) cần hiển thị UNSURE để không gây ấn tượng quá lạc quan. Nhiều metric chưa cần ở bản đầu.
+
+### 3. Nâng cấp đề xuất
+Chọn ít câu hỏi sản phẩm và dùng task study/khảo sát có quyền trước khi dựng collector. Nếu triển khai analytics, khóa một schema event tối thiểu và báo cả phần không quan sát được; nghiên cứu hiệu quả tách khỏi adoption.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Không có dashboard cá nhân, không bí mật giảm ngưỡng; metric có mẫu số và trạng thái; optional analytics không chặn manual hoặc hành động tự chọn.
+
+**Đối chiếu:** `DOC-19_METRIC_DICTIONARY.md`; `DOC-19_PRIVACY_AGGREGATION.md`; `DOC-19_CONFIG_PROPOSAL.json`.
+
+## DOC-20 — Roadmap/scope/WBS · 7.0/10
+
+**Nguồn chính:** `DOC-20_PRODUCT_ROADMAP_RELEASE_PLAN.md`.
+
+### 1. Phần nên giữ
+Roadmap giữ nhiều track, phân biệt synthetic với người thật và không biến ngày/chi phí chưa biết thành cam kết. Manual-first giảm phụ thuộc vào nghiên cứu.
+
+### 2. Phản biện
+WP20-019 gộp Self, hành động, lịch sử và retest rồi phụ thuộc assessment. Điều này trì hoãn một giá trị có thể giao sớm: nhân viên tự chọn hành động riêng tư không dựa điểm. 33 WP/50 variant vẫn cần rút thành vài lát cắt thực hiện.
+
+### 3. Nâng cấp đề xuất
+Tạo variant private_self_chosen_actions không phụ thuộc WP017; cập nhật các nghĩa vụ riêng tư/xóa đi cùng. Lộ trình đầu là manual + hành động tự chọn + nền an toàn; assessment tiếp tục song song, không quảng bá điểm chưa valid.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Một người chưa làm assessment vẫn tạo/sửa/xóa và tự xem lại hành động; không tự chia sẻ ghi chú hoặc gán DISC; DAG không chứa dependency khoa học không cần thiết.
+
+**Đối chiếu:** `DOC-20_WORK_PACKAGES_DEPENDENCIES.md WP20-019`; `DOC-13_DTO_SCHEMAS.json ActionInput`; `content_and_product_audit.json`.
+
+## DOC-21 — Task/context/agent handoff · 7.0/10
+
+**Nguồn chính:** `DOC-21_CODEX_BUILD_PACK.md`.
+
+### 1. Phần nên giữ
+50 dossier có source selectors, checksum, phạm vi và stop conditions; AGENTS ngắn; helper có giới hạn đọc và chống path traversal. Bộ kiểm cuối tái chạy đạt 114/114.
+
+### 2. Phản biện
+Đây là gói giao việc chuẩn bị tốt hơn là gói bắt đầu code ít cần quyết định. 15 binding lệnh sản phẩm chưa có; baseline ứng viên mới ở R20-00. Thiếu active contract và applicability vẫn chuyển gánh nặng phán quyết sang lượt Codex tiếp theo.
+
+### 3. Nâng cấp đề xuất
+Thay lời giao việc rộng bằng một task đã khóa scope, accepted contract, file boundaries và lệnh thật. Bảo toàn corpus tham khảo; agent chỉ sửa baseline/app được chỉ định. Hợp nhất vài quyết định nền trước, không yêu cầu đóng cả 290 DEC.
+
+### 4. Điều kiện kiểm lại sau nâng cấp
+Từ checkout sạch, kỹ sư chạy được kiểm contract và một lát cắt synthetic theo README; task output ghi test/lỗi/nguồn; không chỉ in kế hoạch rồi gọi build pack đã chạy.
+
+**Đối chiếu:** `DOC-21_START_HERE.md`; `DOC-21_BASELINE_AUTHORITY.md`; `DOC-21_BOOTSTRAP_COMMANDS.md`; `DOC21_independent_rerun.json`.
+
+## Kết luận xuyên tài liệu
+
+Ưu tiên sửa mối nối giữa tài liệu trước khi tiếp tục mở rộng nội dung: baseline của scope đầu, thẩm quyền từng trường, thông điệp UX, contract thật và test độc lập. DOC09/10 có nền tảng phương pháp tốt cần giữ; DOC08/11 cần thẩm định nội dung; DOC12–14 cần chuyển sang ràng buộc thực thi; DOC20/21 cần chuyển từ tổ chức kế hoạch sang một lát cắt có thể build. Không tạo DOC22 chỉ để mô tả lại rằng còn nhiều việc chưa chốt.

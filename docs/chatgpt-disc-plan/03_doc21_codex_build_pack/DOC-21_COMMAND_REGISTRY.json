@@ -1,0 +1,293 @@
+{
+  "version": "0.1.0",
+  "commands": [
+    {
+      "id": "CMD21-L01",
+      "name": "verify_sources",
+      "class": "LOCAL_PACK",
+      "argv": [
+        "python",
+        "handoff_doc21.py",
+        "--verify-sources"
+      ],
+      "cwd": "PACKAGE_ROOT",
+      "network_required": false,
+      "status": "IMPLEMENTED_LOCAL_VERIFY_REPORT_REQUIRED",
+      "expected_exit_codes": [
+        0
+      ],
+      "product_command": false
+    },
+    {
+      "id": "CMD21-L02",
+      "name": "list_tasks",
+      "class": "LOCAL_PACK",
+      "argv": [
+        "python",
+        "handoff_doc21.py",
+        "--list-tasks"
+      ],
+      "cwd": "PACKAGE_ROOT",
+      "network_required": false,
+      "status": "IMPLEMENTED_LOCAL_VERIFY_REPORT_REQUIRED",
+      "expected_exit_codes": [
+        0
+      ],
+      "product_command": false
+    },
+    {
+      "id": "CMD21-L03",
+      "name": "read_task",
+      "class": "LOCAL_PACK",
+      "argv": [
+        "python",
+        "handoff_doc21.py",
+        "--task",
+        "TASK21-001"
+      ],
+      "cwd": "PACKAGE_ROOT",
+      "network_required": false,
+      "status": "IMPLEMENTED_LOCAL_VERIFY_REPORT_REQUIRED",
+      "expected_exit_codes": [
+        0
+      ],
+      "product_command": false
+    },
+    {
+      "id": "CMD21-L04",
+      "name": "read_recipe",
+      "class": "LOCAL_PACK",
+      "argv": [
+        "python",
+        "handoff_doc21.py",
+        "--recipe",
+        "R20-00"
+      ],
+      "cwd": "PACKAGE_ROOT",
+      "network_required": false,
+      "status": "IMPLEMENTED_LOCAL_VERIFY_REPORT_REQUIRED",
+      "expected_exit_codes": [
+        0
+      ],
+      "product_command": false
+    },
+    {
+      "id": "CMD21-L05",
+      "name": "read_excerpt",
+      "class": "LOCAL_PACK",
+      "argv": [
+        "python",
+        "handoff_doc21.py",
+        "--excerpt",
+        "SRC21-0001"
+      ],
+      "cwd": "PACKAGE_ROOT",
+      "network_required": false,
+      "status": "IMPLEMENTED_LOCAL_VERIFY_REPORT_REQUIRED",
+      "expected_exit_codes": [
+        0
+      ],
+      "product_command": false
+    },
+    {
+      "id": "CMD21-L06",
+      "name": "check_gates",
+      "class": "LOCAL_PACK",
+      "argv": [
+        "python",
+        "handoff_doc21.py",
+        "--check-gates"
+      ],
+      "cwd": "PACKAGE_ROOT",
+      "network_required": false,
+      "status": "IMPLEMENTED_LOCAL_VERIFY_REPORT_REQUIRED",
+      "expected_exit_codes": [
+        3
+      ],
+      "product_command": false
+    },
+    {
+      "id": "CMD21-L07",
+      "name": "verify_package",
+      "class": "LOCAL_PACK",
+      "argv": [
+        "python",
+        "verify_doc21.py"
+      ],
+      "cwd": "PACKAGE_ROOT",
+      "network_required": false,
+      "status": "IMPLEMENTED_LOCAL_VERIFY_REPORT_REQUIRED",
+      "expected_exit_codes": [
+        0
+      ],
+      "product_command": false
+    },
+    {
+      "id": "CMD21-P01",
+      "name": "install_locked_dependencies",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P02",
+      "name": "lint",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P03",
+      "name": "typecheck",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P04",
+      "name": "unit_tests",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P05",
+      "name": "openapi_independent_validate",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P06",
+      "name": "contract_tests",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P07",
+      "name": "migrate_test_database",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P08",
+      "name": "seed_namespace",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P09",
+      "name": "integration_tests",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P10",
+      "name": "e2e_tests",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P11",
+      "name": "accessibility_tests",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P12",
+      "name": "build_release_candidate",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P13",
+      "name": "restore_rehearsal",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P14",
+      "name": "run_local_product",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    },
+    {
+      "id": "CMD21-P15",
+      "name": "deploy_candidate",
+      "class": "PRODUCT_UNBOUND",
+      "argv": null,
+      "cwd": null,
+      "network_required": null,
+      "status": "UNBOUND_AFTER_ADR",
+      "expected_exit_codes": [],
+      "product_command": true
+    }
+  ],
+  "actual_codex_invocations": 0,
+  "application_command_bindings": 0
+}

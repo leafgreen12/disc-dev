@@ -1,0 +1,848 @@
+{
+  "review_date": "2026-10-15",
+  "scope_note": "Các mục là lỗi tệp/hợp đồng, khoảng trống bằng chứng hoặc đề xuất thiết kế. P0 là chặn phạm vi liên quan, không tuyên bố đang có lỗ hổng production.",
+  "findings": [
+    {
+      "id": "RV-001",
+      "priority": "P0",
+      "kind": "BASELINE_GAP",
+      "title": "Chưa có một baseline thực thi đã hợp nhất",
+      "blocking_scope": "Trước build phần có mâu thuẫn; trước mọi scope người thật",
+      "evidence": "DOC21 vẫn giữ baseline ứng viên R20-00, approved_baseline_ref/stack_decision_ref null; bảy CR nền được liệt kê nhưng chưa hợp nhất vào hợp đồng đích.",
+      "impact": "Agent có thể chọn sai giữa nguồn gốc và refinement mới, hoặc tiếp tục tạo kế hoạch thay vì xây phần dùng được.",
+      "recommended_change": "Tạo baseline v0.2 theo scope đầu, có diff và trạng thái ứng viên/được duyệt tách biệt; hợp nhất các CR tác động hành vi, không cần đóng mọi nhánh optional.",
+      "owner_role": "Product Owner / BA / Tech / Privacy",
+      "retest_acceptance": "Một behavior chỉ có một contract có hiệu lực; policy/API/test đồng nghĩa; reviewer xác nhận scope phù hợp.",
+      "sources": [
+        {
+          "path": "DOC-21_BASELINE_AUTHORITY.md",
+          "sha256": "419f29b64b333899a1032b8f927a74f29cf20c4a5f851aff6a10de5edf64c8b9",
+          "locator_text": "Bảy thay đổi nền",
+          "matching_lines": [
+            39
+          ],
+          "locator_status": "LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-21_BASELINE_CANDIDATE.json",
+          "sha256": "2defd17b2807ce200edfb96976bb43f5b305fea187ee58d90c22cd50b0b52d00",
+          "locator_text": "approved_baseline_ref",
+          "matching_lines": [
+            8
+          ],
+          "locator_status": "LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-002",
+      "priority": "P0",
+      "kind": "SCOPE_LEGAL_GAP",
+      "title": "Quyền dữ liệu và offboarding chưa thành hợp đồng đồng bộ",
+      "blocking_scope": "Mọi dữ liệu nhân viên thật",
+      "evidence": "CR14-01/02 còn yêu cầu hòa giải xử lý dữ liệu sau nghỉ việc, request kinds và clocks. DOC20/21 thừa nhận các thay đổi này chưa áp vào nguồn.",
+      "impact": "Chỉ khóa tài khoản hoặc dùng TTL chung có thể không thực hiện đầy đủ phương án quyền dữ liệu được yêu cầu.",
+      "recommended_change": "Chốt dataflow, người phụ trách, loại yêu cầu, mốc và ngoại lệ theo review pháp lý; cập nhật mới API/data/tests và kế hoạch xóa từng store.",
+      "owner_role": "Privacy / Legal / HR / Tech",
+      "retest_acceptance": "Case ngoài phiên được xử lý đúng scope; offboard deny và xóa/giữ có căn cứ; bằng chứng store-by-store.",
+      "sources": [
+        {
+          "path": "DOC-20_BASELINE_RECONCILIATION.md",
+          "sha256": null,
+          "locator_text": "CR14-01",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-14_RETENTION_DELETION_RESTORE.md",
+          "sha256": null,
+          "locator_text": "Mốc chấm dứt",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-003",
+      "priority": "P0",
+      "kind": "ARCHITECTURE_EVIDENCE_GAP",
+      "title": "Mốc thu hồi–cấp đầu ra chưa được chứng minh trên topology",
+      "blocking_scope": "Các response hoặc egress có dữ liệu được bảo vệ",
+      "evidence": "DOC14 nêu hai lần check không loại được khoảng race; DOC17 vẫn cần authority/egress binding và observer.",
+      "impact": "Có thể thực hiện sai cam kết nếu coi epoch field hoặc event xóa cache là hàng rào nguyên tử.",
+      "recommended_change": "Thực hiện spike trên stack chọn: xác định mốc quyết định/handoff; thử lịch reader/writer bằng barrier và quan sát bytes. Nếu topology không đạt, sửa thiết kế có review, không đổi nghĩa âm thầm.",
+      "owner_role": "Tech Lead / Security / QA / Ops",
+      "retest_acceptance": "Các lịch revoke trước request, sau compute trước handoff, và giữa stream có outcome/giới hạn quan sát được; không hứa thu hồi bytes đã ra ngoài.",
+      "sources": [
+        {
+          "path": "DOC-14_REVOCATION_CONSISTENCY.md",
+          "sha256": null,
+          "locator_text": "TOCTOU",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-17_MIGRATION_JOBS_CONSISTENCY.md",
+          "sha256": null,
+          "locator_text": "authority",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-004",
+      "priority": "P0",
+      "kind": "SCIENTIFIC_EVIDENCE_GAP",
+      "title": "Chưa có căn cứ mở nhận xét theo điểm/nhãn",
+      "blocking_scope": "Assessment người thật và các claim phụ thuộc theo stage",
+      "evidence": "Bank là candidate; scorer không tạo classification/norm/uncertainty; protocol tốt nhưng chưa có dữ liệu/thẩm định thực địa.",
+      "impact": "Giao diện hoặc marketing có thể tạo ấn tượng công cụ đã biết tính cách nếu bật tính năng sớm.",
+      "recommended_change": "Giữ no-score/no-label cho bản tự chọn; khóa từng claim theo evidence. Nghiên cứu độc lập với build kỹ thuật, cho phép kết luận không phân loại hoặc thay mô hình.",
+      "owner_role": "Psychometric Lead / Research / Content",
+      "retest_acceptance": "Review exact form/context/key; scope nghiên cứu được phép; chỉ nội dung đủ bằng chứng và quyền mới được cấp.",
+      "sources": [
+        {
+          "path": "DOC-09_CLASSIFICATION_EVIDENCE.md",
+          "sha256": null,
+          "locator_text": "classification=null",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-10_PSYCHOMETRIC_VALIDATION_PROTOCOL.md",
+          "sha256": null,
+          "locator_text": "0,70",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-005",
+      "priority": "P1",
+      "kind": "REPRODUCED_LOCAL_VALIDATION_GAP",
+      "title": "MetricEstimate thiếu kiểm miền theo đơn vị",
+      "blocking_scope": "Trước tái sử dụng helper/contract trong ứng dụng",
+      "evidence": "PR01–PR04: COUNT=-3, COUNT=2.5, RAW_MEAN_1_5=7, LINEAR_0_100=107 được helper chấp nhận. COUNT phân số cần định nghĩa riêng nếu chủ đích là weighted estimate.",
+      "impact": "Dữ liệu sai đơn vị có thể đi tiếp tới evidence hoặc dashboard nếu adapter thật cũng thiếu kiểm.",
+      "recommended_change": "Phân nhánh schema/validator theo unit; count quan sát là số nguyên không âm; weighted/noisy estimate có unit riêng. Tách diagnostic bất thường khỏi estimate có thể dùng diễn giải.",
+      "owner_role": "API / Data / QA",
+      "retest_acceptance": "Từ chối raw mean 7, score=107, negative count; giữ COUNT=0 hợp lệ. Negative tests chạy schema lẫn service.",
+      "sources": [
+        {
+          "path": "contract_doc13.py",
+          "sha256": null,
+          "locator_text": "if name == 'MetricEstimate'",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-13_DTO_SCHEMAS.json",
+          "sha256": null,
+          "locator_text": "RAW_MEAN_1_5",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-006",
+      "priority": "P1",
+      "kind": "REPRODUCED_LOCAL_PRECONDITION_GAP",
+      "title": "Bốn snapshot ref null vẫn cho local pair allowed",
+      "blocking_scope": "Chỉ helper mô phỏng; cần chặn trước port authorization",
+      "evidence": "PR06 gọi evaluate với selected/granted của A/B đều null: allowed=true, runtime_authorization=false. Hàm chỉ so bằng nhau, chưa xác minh sự tồn tại nguồn.",
+      "impact": "Phản ví dụ làm rõ thiếu precondition; không chứng minh có lỗ hổng đang chạy vì chưa có server và authoritative resolver.",
+      "recommended_change": "Đặt typed non-null references; xác minh exact result/grant/owner/generation/method và quyền ở service trước so bằng nhau. Helper hoặc adapter phải từ chối input không đạt precondition.",
+      "owner_role": "Security / Backend / QA",
+      "retest_acceptance": "Null, empty, unknown, wrong-owner và wrong-generation đều deny; thêm case compatible scope và current state.",
+      "sources": [
+        {
+          "path": "policy_doc14_reference.py",
+          "sha256": null,
+          "locator_text": "snapshot_selected_a",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-14_AUTHORIZATION_MATRIX.md",
+          "sha256": null,
+          "locator_text": "SINGLE_SNAPSHOT",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-007",
+      "priority": "P2",
+      "kind": "REPRODUCED_LOCAL_CONTRACT_AMBIGUITY",
+      "title": "Giá trị hiển thị và precision chưa khóa cùng nghĩa",
+      "blocking_scope": "Self result transport",
+      "evidence": "PR05: value=75.04 và text=75,0 cùng được nhận dù hợp đồng chấm nguồn định một chữ số thập phân ở presentation.",
+      "impact": "Consumer có thể tính lại hoặc hiển thị khác; chưa có bằng chứng sai số học core.",
+      "recommended_change": "Chọn value là display-rounded hoặc exact (tách field riêng); kiểm text và decimal_places cùng contract. Không double-rounding.",
+      "owner_role": "API / Frontend / QA",
+      "retest_acceptance": "Test rõ 75.04/75.0, biên làm tròn và serialization qua ngôn ngữ đích.",
+      "sources": [
+        {
+          "path": "contract_doc13.py",
+          "sha256": null,
+          "locator_text": "if name == 'SafeDimension'",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-09_SCORING_CONTRACTS.md",
+          "sha256": null,
+          "locator_text": "decimal_places",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-008",
+      "priority": "P1",
+      "kind": "TOOLCHAIN_GAP",
+      "title": "OpenAPI chưa qua validator độc lập đầy đủ",
+      "blocking_scope": "Contract toolchain trước integration",
+      "evidence": "Kiểm tĩnh review mới resolve 3.034 $ref và 123 operations không lỗi cấu trúc được kiểm; cài validator độc lập không thành công do DNS. Không đồng nghĩa OpenAPI đã đầy đủ conformant.",
+      "impact": "Lỗi chuẩn hoặc khác biệt dialect có thể chỉ lộ lúc codegen/framework xử lý.",
+      "recommended_change": "Cài và pin validator trong môi trường có mạng được phép; chạy trên baseline mới và source để ghi chênh lệch; bổ sung tests request/response với service thật.",
+      "owner_role": "API Architect / QA",
+      "retest_acceptance": "Report tool/version/errors; không đóng GAP16-03 chỉ bằng checker tự viết.",
+      "sources": [
+        {
+          "path": "DOC-21_VALIDATION_REPORT.md",
+          "sha256": "229c435125b0f4c549b3a6d2618aff3a702d9429feb763498bd634b797a13b59",
+          "locator_text": "Validator OpenAPI độc lập",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-009",
+      "priority": "P1",
+      "kind": "QUESTION_CONTENT_GAP",
+      "title": "Mức giữa và bối cảnh trả lời chưa đủ rõ",
+      "blocking_scope": "Trước pilot câu hỏi",
+      "evidence": "Mức 3 là Tùy tình huống / ở mức trung bình; context USUAL_WORK chưa có reference_period/novice_guidance được duyệt.",
+      "impact": "Cùng đáp án3 có thể mang nhiều nghĩa; người thiếu cơ hội trải nghiệm dễ chọn giữa như phương án né câu hỏi.",
+      "recommended_change": "Thử cách diễn đạt thang và hướng dẫn bằng phỏng vấn nhận thức; chọn revision mới. Nếu cần N/A, thiết kế trạng thái riêng với policy, không dùng số 0 hoặc 3.",
+      "owner_role": "Psychometric / UX / Content",
+      "retest_acceptance": "Người thử mô tả được cùng nhiệm vụ trả lời; bảo toàn nguồn cũ; không sửa label tại runtime.",
+      "sources": [
+        {
+          "path": "DOC-08_QUESTION_BANK_METADATA.md",
+          "sha256": null,
+          "locator_text": "Tùy tình huống",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-08_QUESTION_BANK_METADATA.md",
+          "sha256": null,
+          "locator_text": "novice_guidance",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-010",
+      "priority": "P1",
+      "kind": "QUESTION_CONSTRUCT_GAP",
+      "title": "Câu hỏi lẫn quyền hạn/năng lực với xu hướng",
+      "blocking_scope": "Trước diễn giải điểm",
+      "evidence": "L-D07 reverse D hỏi về phạm vi quyết định; L-C04 so khả năng thấy lỗi với người khác; L-S01 hỏi có thể duy trì nhịp. DOC08 đã ghi các concerns liên quan.",
+      "impact": "Điểm có thể phản ánh nghề, thẩm quyền, self-enhancement hoặc cơ hội thực hiện; đây là giả thuyết nhiễu chưa có bằng chứng thống kê kết luận.",
+      "recommended_change": "Rewrite thành hành vi/sở thích trong điều kiện rõ; expert review polarity; phân tích role dependence/cross-loading sau thu dữ liệu có quyền.",
+      "owner_role": "Psychometric / Research",
+      "retest_acceptance": "Mỗi item rủi ro có disposition giữ/sửa/loại và bằng chứng; không giữ câu nghịch chỉ để đủ quota.",
+      "sources": [
+        {
+          "path": "DOC-08_SOURCE_INVENTORY.md",
+          "sha256": null,
+          "locator_text": "L-D07",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-08_SOURCE_INVENTORY.md",
+          "sha256": null,
+          "locator_text": "L-C04",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-011",
+      "priority": "P1",
+      "kind": "DESIGN_TRADEOFF",
+      "title": "Missing policy có thể làm giảm kết quả đủ miền",
+      "blocking_scope": "Assessment UX và chất lượng mẫu",
+      "evidence": "REQUIRE_ALL_ITEMS mỗi miền; minh họa giả định độc lập missing 2% cho .98^10=81,7% đủ miền, .98^40=44,6% đủ cả bài. Không phải tỷ lệ Vaga.",
+      "impact": "Quy tắc bảo thủ có thể gây nhiều kết quả giới hạn; người bị thiếu dữ liệu không nhất thiết thiếu hợp tác.",
+      "recommended_change": "Đánh giá chính sách cần đủ 100% câu và các phương án chuyên gia đề xuất bằng dữ liệu nghiên cứu; báo thiếu dữ liệu và thiên lệch; không tự điền đáp án hoặc hạ ngưỡng chưa review.",
+      "owner_role": "Psychometric / UX / Data",
+      "retest_acceptance": "Báo coverage, sai số và khác biệt nhóm theo từng phương án; quyết định được version hóa.",
+      "sources": [
+        {
+          "path": "DOC-09_SCORING_CONTRACTS.md",
+          "sha256": null,
+          "locator_text": "REQUIRE_ALL_ITEMS",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-012",
+      "priority": "P1",
+      "kind": "CONTENT_TAGGING_GAP",
+      "title": "44/72 thẻ dùng cả bảy context",
+      "blocking_scope": "Bộ chọn nội dung theo tình huống",
+      "evidence": "Đếm trong ngân hàng có 44 thẻ gắn đủ bảy contexts; CB11-SELF-D-03 nói về giao việc/chốt phương án nhưng cũng cho phép context recognition.",
+      "impact": "Giảm tính chọn lọc; không chứng minh mọi output đang sai, nhưng chưa đủ đảm bảo cá nhân hóa theo nhiệm vụ.",
+      "recommended_change": "Giới hạn context chính/phụ và điều kiện loại trừ theo thẻ; viết kiểm thử không nên chọn trong một số tình huống; chấp nhận không có thẻ thay vì ép đủ ba.",
+      "owner_role": "Content / UX / QA",
+      "retest_acceptance": "Mỗi thẻ có context rationale và ít nhất một counterexample; review đầu ra theo tình huống, không chỉ theo D/I/S/C.",
+      "sources": [
+        {
+          "path": "DOC-11_CONTENT_BANK.json",
+          "sha256": null,
+          "locator_text": "CB11-SELF-D-03",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-013",
+      "priority": "P1",
+      "kind": "PRODUCT_OPPORTUNITY",
+      "title": "Private actions bị phụ thuộc assessment không cần thiết",
+      "blocking_scope": "MVP hai luồng giá trị",
+      "evidence": "WP20-019 phụ thuộc WP017; ActionInput hiện có title/trigger/behavior/success_signal/date/timezone và không yêu cầu result.",
+      "impact": "Giá trị phát triển cá nhân bị trì hoãn vì chờ khoa học dù hành động tự chọn không cần suy DISC.",
+      "recommended_change": "Tạo variant self_chosen_actions_no_assessment; cho người dùng tự chọn mục tiêu/thử hành vi/ghi nhận riêng; không suy tính cách, không tự share.",
+      "owner_role": "Product / BA / Backend / UX",
+      "retest_acceptance": "Người chưa có bài đánh giá vẫn tạo/sửa/xóa hành động; owner-only; xóa/offboard/restore đúng scope.",
+      "sources": [
+        {
+          "path": "DOC-20_WORK_PACKAGES_DEPENDENCIES.md",
+          "sha256": null,
+          "locator_text": "Self, hành động riêng",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-13_DTO_SCHEMAS.json",
+          "sha256": null,
+          "locator_text": "\"ActionInput\"",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-014",
+      "priority": "P1",
+      "kind": "USER_EVIDENCE_GAP",
+      "title": "Chưa kiểm ba tác vụ thực với người dùng mục tiêu",
+      "blocking_scope": "Phê duyệt UX theo scope",
+      "evidence": "Có prototype atlas và kiểm trình duyệt trước; UAT/nghiên cứu thực giữ NOT_RUN trong tài liệu.",
+      "impact": "Ngôn ngữ hoặc số bước có thể đúng về mặt hợp đồng nhưng gây bỏ cuộc.",
+      "recommended_change": "Tạo bản thử không có bảng điều khiển fixture trong chế độ người dùng. Thử soạn manual, đọc hướng dẫn nhanh và tự chọn hành động bằng hồ sơ giả, theo protocol phù hợp.",
+      "owner_role": "UX / Product / QA",
+      "retest_acceptance": "Ghi thời gian, lỗi, trợ giúp cần và vấn đề quan sát; không suy khả năng tiếp cận toàn bộ từ ảnh chụp.",
+      "sources": [
+        {
+          "path": "DOC-07_PROTOTYPE_AND_REVIEW.md",
+          "sha256": null,
+          "locator_text": "người dùng",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-16_ENVIRONMENTS_AND_TEST_DATA.md",
+          "sha256": null,
+          "locator_text": "ENV16-UX-SYN",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-015",
+      "priority": "P1",
+      "kind": "SCOPE_COMPLEXITY",
+      "title": "Dễ hiện thực toàn inventory thay vì lát cắt hữu dụng",
+      "blocking_scope": "Chi phí và thời gian build",
+      "evidence": "123 API, 65 thực thể và 43 mẫu UI là phạm vi thiết kế tổng; chưa phải những phần bắt buộc của bản đầu.",
+      "impact": "Có thể dành phần lớn công sức dựng framework quản trị trước khi kiểm được manual và hành động.",
+      "recommended_change": "Chọn operation/entities theo end-to-end slice, dùng modular monolith đề xuất; giữ invariants thiết yếu và hoãn extension bằng OFF enforcement.",
+      "owner_role": "Tech Lead / Product",
+      "retest_acceptance": "Danh mục IN/OUT của scope; không có đường backend phụ ngoài phạm vi; không tính % hoàn tất theo số bảng/endpoint.",
+      "sources": [
+        {
+          "path": "DOC-20_CAPABILITY_RELEASE_MATRIX.md",
+          "sha256": null,
+          "locator_text": "R20-01",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-12_DATA_MODEL.md",
+          "sha256": null,
+          "locator_text": "logic",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-016",
+      "priority": "P1",
+      "kind": "CONTRACT_DRIFT_RISK",
+      "title": "Nhiều biểu diễn cùng quy tắc thiếu nguồn sinh duy nhất",
+      "blocking_scope": "Duy trì schema/API/validation/policy",
+      "evidence": "Các module có Markdown, JSON Schema, registry, helper và fixture riêng. PR01–PR05 cho thấy bảng ngữ nghĩa và checker có thể chưa khớp nhau.",
+      "impact": "Mỗi thay đổi có thể cần sửa nhiều nơi; kiểm số ID không phát hiện mọi drift ý nghĩa.",
+      "recommended_change": "Chọn hợp đồng runtime chuẩn để sinh tài liệu, kiểu client và validation cơ bản. Giữ oracle độc lập, ghi rõ các kiểm tra ngữ nghĩa; không sinh expected từ chính hàm cần kiểm.",
+      "owner_role": "Tech / API / QA",
+      "retest_acceptance": "Thay một field cập nhật projections/tests bị ảnh hưởng có diff; CI chặn drift của file được sinh.",
+      "sources": [
+        {
+          "path": "DOC-13_DATA_CONTRACTS.md",
+          "sha256": null,
+          "locator_text": "MetricEstimate",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-21_CONTEXT_CONTRACT_MAP.md",
+          "sha256": "d6e251b1d5aec52f7fb534e651fd25ff385e8d24fc0ca7f9283abb43d0e902c1",
+          "locator_text": "contract",
+          "matching_lines": [
+            2,
+            3,
+            14
+          ],
+          "locator_status": "LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-017",
+      "priority": "P1",
+      "kind": "QUALITY_COVERAGE_GAP",
+      "title": "Nhiều kiểm tra hình thức hơn kiểm tra phản ví dụ độc lập",
+      "blocking_scope": "QA trước tái sử dụng helpers",
+      "evidence": "Checker cuối đạt 114 kiểm tra nhưng review bổ sung có sáu phản ví dụ cần xử lý hoặc làm rõ. Một số bước setup chung lặp 375 lần trong catalog.",
+      "impact": "Số PASS có thể tạo cảm giác bao phủ lớn hơn thực tế nếu được đọc không đúng phạm vi.",
+      "recommended_change": "Giữ các kiểm hiện có; thêm kiểm giá trị đúng/sai theo đơn vị, mutation/property tests, các trường hợp từ chối quyền và bộ quan sát độc lập. Chọn assertions theo rủi ro, không theo quota.",
+      "owner_role": "QA / Reviewer độc lập",
+      "retest_acceptance": "Thay đổi làm hỏng guard phải khiến test thất bại. Bằng chứng ở đúng tầng; không tăng số test chỉ bằng cách chia vòng lặp.",
+      "sources": [
+        {
+          "path": "DOC-16_ACCEPTANCE_TEST_CATALOG.md",
+          "sha256": null,
+          "locator_text": "Đặt lại namespace",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-21_VALIDATION_REPORT.md",
+          "sha256": "229c435125b0f4c549b3a6d2618aff3a702d9429feb763498bd634b797a13b59",
+          "locator_text": "114/114",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-018",
+      "priority": "P2",
+      "kind": "CONFIRMED_DOCUMENT_LINK_DEFECT",
+      "title": "50 liên kết hỏng ở README lịch sử",
+      "blocking_scope": "Khả năng tra cứu archive",
+      "evidence": "Kiểm 12.957 liên kết Markdown cục bộ, thấy 28 liên kết hỏng trong history/batch09/README.md và 22 trong history/batch08/README.md. Điểm bắt đầu hiện hành không bị phát hiện lỗi này.",
+      "impact": "Người truy lịch sử dễ đi vào tài liệu không còn ở đường dẫn cũ.",
+      "recommended_change": "Không sửa bản nguồn bất biến. Tạo lớp điều hướng hoặc bản tra cứu đường dẫn cho archive, hoặc bản sửa link được đánh dấu generated; kiểm liên kết toàn phạm vi được cung cấp.",
+      "owner_role": "Documentation / Tooling",
+      "retest_acceptance": "Các liên kết của bản current và archive view mở đúng đích; file gốc vẫn giữ nguyên hash.",
+      "sources": [
+        {
+          "path": "history/batch09/README.md",
+          "sha256": null,
+          "locator_text": "DOC-11",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "history/batch08/README.md",
+          "sha256": null,
+          "locator_text": "DOC-10",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-019",
+      "priority": "P2",
+      "kind": "MAINTAINABILITY_RISK",
+      "title": "Boilerplate và lịch sử làm context bị loãng",
+      "blocking_scope": "Đọc tài liệu và sử dụng agent",
+      "evidence": "Trong 33.700 dòng Markdown dài hơn 100 ký tự, có 9.414 lượt lặp nguyên văn. Số này gồm bảng dùng chung và tài liệu lịch sử, nên không thể gọi 27,9% nội dung là thừa.",
+      "impact": "Người đọc cần lọc nhiều chữ chung để tìm quyết định của thao tác hiện tại.",
+      "recommended_change": "Dùng tham chiếu chính sách chung và các bản chi tiết được sinh có kiểm soát. Agent nhận hợp đồng active, task và các kiểm thử ngoại lệ; không tự nạp archive.",
+      "owner_role": "BA / Tech Writer / Tech",
+      "retest_acceptance": "Đánh giá khả năng tìm nguồn và ngoại lệ theo task; không cắt bớt yêu cầu chỉ để giảm dung lượng.",
+      "sources": [
+        {
+          "path": "DOC-16_ACCEPTANCE_TEST_CATALOG.md",
+          "sha256": null,
+          "locator_text": "Đặt lại namespace",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-21_CONTEXT_SOURCES.json",
+          "sha256": "e42d35f2b4c9896533014fc9731114d2a673d8db48bdbf1f5705746789349fd2",
+          "locator_text": "selectors",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-020",
+      "priority": "P1",
+      "kind": "DRAFT_RUNTIME_BOUNDARY",
+      "title": "Schema draft không phải schema có thẩm quyền runtime",
+      "blocking_scope": "Importer, release và cấu hình",
+      "evidence": "Nhiều gói tác giả cố ý khóa false/NOT_APPROVED. Helper mô phỏng nhận các giả định dạng boolean; tài liệu đã nói không dùng những giả định này làm authorization.",
+      "impact": "Developer có thể bỏ các hằng khóa để mở hệ thống mà không xây workflow có nguồn thẩm quyền.",
+      "recommended_change": "Tách đầu vào tác giả, đối tượng do dịch vụ có thẩm quyền quản lý và projection. Trường authority do service ghi; kiểm duyệt giả phải bị chặn theo danh tính thực.",
+      "owner_role": "Security / API / Release",
+      "retest_acceptance": "Upload tự khai APPROVED không cấp quyền. Reviewer phải đúng target, scope và hash; draft không được đưa vào production như tài sản đã duyệt.",
+      "sources": [
+        {
+          "path": "DOC-08_QUESTION_BANK_METADATA.md",
+          "sha256": null,
+          "locator_text": "APPROVED",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-11_CONTENT_CONTRACTS.md",
+          "sha256": null,
+          "locator_text": "authoring",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-021",
+      "priority": "P1",
+      "kind": "DECISION_GOVERNANCE",
+      "title": "290 quyết định chưa được phân nhóm để chốt scope đầu",
+      "blocking_scope": "Khởi động build",
+      "evidence": "Đã có mã DEC-001 đến DEC-290; trạng thái trong gói bàn giao vẫn là đề xuất. Không cần đóng hết, nhưng cần chọn những quyết định ảnh hưởng scope đầu.",
+      "impact": "Phê duyệt trở thành điểm nghẽn nếu mọi lựa chọn đều bị coi cùng mức cấp thiết.",
+      "recommended_change": "Chia thành quyết định kỹ thuật có thể đảo ngược, phạm vi sản phẩm, authority nhạy cảm và khoa học. Bổ nhiệm owner thật; ưu tiên tám quyết định scope đầu, hoãn nhánh khác với điều kiện mở lại.",
+      "owner_role": "Sponsor / Product / Tech / Domain owners",
+      "retest_acceptance": "Không có blocker vô chủ. Scope build có baseline được duyệt hoặc giả định synthetic rõ; không ký giả để vượt gate.",
+      "sources": [
+        {
+          "path": "DOC-21_DECISIONS_AND_REFERENCES.md",
+          "sha256": "d01d76f42b145fcca33a53b3695a6d70fd338d9af610abdc5dd26045294c0bd3",
+          "locator_text": "DEC-290",
+          "matching_lines": [
+            141,
+            142
+          ],
+          "locator_status": "LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-21_BASELINE_AUTHORITY.md",
+          "sha256": "419f29b64b333899a1032b8f927a74f29cf20c4a5f851aff6a10de5edf64c8b9",
+          "locator_text": "Mục đích không phải đóng hết",
+          "matching_lines": [
+            20
+          ],
+          "locator_status": "LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-022",
+      "priority": "P2",
+      "kind": "OPTIONAL_INVESTMENT",
+      "title": "AI, HRIS và analytics rộng hơn nhu cầu đã chứng minh",
+      "blocking_scope": "Các nhánh tùy chọn",
+      "evidence": "AI, tích hợp và analytics đều có đặc tả sâu, nhưng nhu cầu, nhà cung cấp và năng lực chưa được chọn; cấu hình đang tắt.",
+      "impact": "Xây đồng thời làm loãng MVP và tăng rủi ro gửi/lưu dữ liệu ngoài ứng dụng.",
+      "recommended_change": "Giữ tắt; ưu tiên quy tắc, hướng dẫn nguyên văn hoặc chung, cùng quy trình tài khoản an toàn tối thiểu. Chỉ chọn nhánh mới khi giá trị tăng thêm được đối chiếu với chi phí và rủi ro.",
+      "owner_role": "Product / Tech / Finance / Privacy",
+      "retest_acceptance": "Có quyết định không xây hoặc mục tiêu đánh giá cụ thể; không biến nhánh tùy chọn thành điều kiện phát hành manual.",
+      "sources": [
+        {
+          "path": "DOC-15_CONFIG_PROPOSAL.json",
+          "sha256": null,
+          "locator_text": "false",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-18_CONFIG_PROPOSAL.json",
+          "sha256": null,
+          "locator_text": "false",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-19_CONFIG_PROPOSAL.json",
+          "sha256": null,
+          "locator_text": "false",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-023",
+      "priority": "P1",
+      "kind": "SCIENCE_MODEL_DECISION",
+      "title": "Bốn điểm liên tục chưa tự tạo 12 kiểu hợp lệ",
+      "blocking_scope": "Classifier/norm/so sánh",
+      "evidence": "DOC09 đã phân biệt các thang có thể khác mức dễ đồng ý và chưa chứng minh một đơn vị tâm lý chung. Taxonomy 12 nhãn chỉ là dự kiến.",
+      "impact": "Lấy hai điểm raw cao nhất hoặc ngưỡng cứng có thể gán nhãn tùy tiện. Chuẩn hóa không tự chứng minh cấu trúc vòng tròn.",
+      "recommended_change": "Giữ điểm mô tả theo phạm vi; kiểm mô hình bốn nhân tố tương quan và giả thuyết trục/vòng khi phù hợp. Chỉ mở taxonomy vì mục đích cần thiết và bằng chứng hỗ trợ.",
+      "owner_role": "Psychometric / Product",
+      "retest_acceptance": "Không tự gán nhãn từ max. Classifier cần khả năng không phân loại, kiểm độ ổn định và giới hạn được duyệt.",
+      "sources": [
+        {
+          "path": "DOC-09_CLASSIFICATION_EVIDENCE.md",
+          "sha256": null,
+          "locator_text": "Một norm cùng quần thể",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-09_CLASSIFICATION_EVIDENCE.md",
+          "sha256": null,
+          "locator_text": "Taxonomy",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-024",
+      "priority": "P1",
+      "kind": "CONTENT_IP_REVIEW_GAP",
+      "title": "Nội dung mới soạn chưa được thẩm định nghĩa hoặc quyền",
+      "blocking_scope": "Trước serving người thật",
+      "evidence": "Ngân hàng câu hỏi và nội dung đều giữ trạng thái chưa có review thực. Lời khai mới soạn không chứng minh không giống tài sản được bảo hộ.",
+      "impact": "Nội dung chưa được người chịu trách nhiệm xem xét có thể được cấp cho nhân viên quá sớm.",
+      "recommended_change": "Review theo revision/hash, phạm vi sử dụng, quyền tác giả và ý nghĩa. Ưu tiên tài sản của scope đầu, không cần duyệt đồng thời toàn bộ thư viện.",
+      "owner_role": "Content / IP-Legal / Psychometric khi cần",
+      "retest_acceptance": "Chỉ tài sản đủ review mới được chọn. Một citation vendor không thay bằng chứng quyền sử dụng hoặc tính phù hợp nội dung.",
+      "sources": [
+        {
+          "path": "DOC-11_CONTENT_BANK.json",
+          "sha256": null,
+          "locator_text": "rights_review",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-08_QUESTION_BANK_METADATA.md",
+          "sha256": null,
+          "locator_text": "REPORT_CLAIMS_NEWLY_AUTHORED",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-025",
+      "priority": "P2",
+      "kind": "ANALYTICS_INTERPRETATION_RISK",
+      "title": "Nhóm nhỏ và UNSURE cần cách báo cáo minh bạch",
+      "blocking_scope": "Analytics/khảo sát có điều kiện",
+      "evidence": "Ngưỡng 20 người và 5 người mỗi phía chỉ là đề xuất. Công thức YES/(YES+NO) không đưa UNSURE vào mẫu số chính.",
+      "impact": "Dashboard có thể không đủ số để công bố hoặc tạo ấn tượng hữu ích cao nếu không trình bày các câu trả lời chưa chắc.",
+      "recommended_change": "Báo ba nhóm trả lời và tỷ lệ phản hồi. Khi nhóm không đủ điều kiện, dùng nghiên cứu tác vụ/định tính có quyền; không hạ bảo vệ chỉ để có số.",
+      "owner_role": "Analytics / Product / Privacy",
+      "retest_acceptance": "Người xem hiểu mẫu số và phần chưa chắc. Ô bị ẩn không lộ count qua export hoặc tooltip.",
+      "sources": [
+        {
+          "path": "DOC-19_METRIC_DICTIONARY.md",
+          "sha256": null,
+          "locator_text": "UNSURE",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-19_CONFIG_PROPOSAL.json",
+          "sha256": null,
+          "locator_text": "20",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-026",
+      "priority": "P0",
+      "kind": "LIFECYCLE_EVIDENCE_GAP",
+      "title": "Xóa và chống hồi sinh dữ liệu chưa diễn tập thực",
+      "blocking_scope": "Mọi scope có dữ liệu người thật",
+      "evidence": "Runbook và cơ chế ledger/restore đã được mô tả, nhưng chưa có diễn tập trên DB, object store và backup thực.",
+      "impact": "Có thể xóa bản ghi chính nhưng còn payload trong bản xuất, queue, log, backup hoặc dữ liệu đã phục hồi.",
+      "recommended_change": "Lập bản đồ từng store với owner, lịch và căn cứ. Diễn tập xóa dữ liệu tổng hợp, phục hồi trong cách ly, áp lại deny và xác minh trước mở traffic.",
+      "owner_role": "Ops / Security / Privacy / QA",
+      "retest_acceptance": "Không đọc lại dữ liệu đã xóa qua đường phục hồi ngoài phương án cho phép. Phần giữ tối thiểu có căn cứ; không gọi pseudonym/hash là ẩn danh.",
+      "sources": [
+        {
+          "path": "DOC-17_BACKUP_RESTORE.md",
+          "sha256": null,
+          "locator_text": "restore",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-20_BASELINE_RECONCILIATION.md",
+          "sha256": null,
+          "locator_text": "GAP20-11",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-027",
+      "priority": "P1",
+      "kind": "HANDOFF_EXECUTABILITY_GAP",
+      "title": "Lệnh sản phẩm chưa bind và agent chưa chạy task thật",
+      "blocking_scope": "Từ chuẩn bị sang build",
+      "evidence": "DOC21 có 15 vị trí chờ lệnh sản phẩm, chưa có argv/cwd thực. Bộ 114 kiểm tra là helper; chưa có repository ứng dụng hay lần thực hiện Codex.",
+      "impact": "Gói có thể bị hiểu là chỉ cần chạy lệnh sẽ có ứng dụng, trong khi các lệnh hiện chỉ đọc và kiểm tài liệu.",
+      "recommended_change": "Sau ADR, tạo repository, vòng build/test tối thiểu và một task đầu-cuối có negative cases. AGENTS thực tế nêu nguồn và lệnh đúng, không yêu cầu nạp toàn corpus.",
+      "owner_role": "Tech Lead / QA",
+      "retest_acceptance": "Checkout sạch chạy được lệnh đã ghi và kiểm một lát cắt. Output có files, commands, actual results; không gọi đó là phê duyệt production.",
+      "sources": [
+        {
+          "path": "DOC-21_BOOTSTRAP_COMMANDS.md",
+          "sha256": "88008f93ba206e4ec85ab75e72890d79c0e8eb4b5810f440dcdb17bc78cc825f",
+          "locator_text": "UNBOUND",
+          "matching_lines": [
+            22,
+            25
+          ],
+          "locator_status": "LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-21_VALIDATION_REPORT.md",
+          "sha256": "229c435125b0f4c549b3a6d2618aff3a702d9429feb763498bd634b797a13b59",
+          "locator_text": "15 binding",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    },
+    {
+      "id": "RV-028",
+      "priority": "P1",
+      "kind": "INVESTMENT_DECISION_GAP",
+      "title": "Hướng tự xây hoặc cấp phép assessment cần quyết định thực",
+      "blocking_scope": "Track đo lường",
+      "evidence": "WP20-015 là gói chọn hướng assessment, nhưng chưa có quyết định, quyền tích hợp hoặc nguồn lực kiểm định được xác nhận.",
+      "impact": "Có thể chỉ tính chi phí code mà bỏ qua nghiên cứu, IP, bản dịch, API, vòng đời dữ liệu và vận hành.",
+      "recommended_change": "So ba phương án: workstyle tự chọn không điểm; DISC-inspired tự kiểm định; cấp phép instrument có quyền tích hợp. Thu báo giá/contract thực khi cân nhắc, không tự đưa giá giả.",
+      "owner_role": "Product / Psychometric / Legal / Finance",
+      "retest_acceptance": "Quyết định có lý do, quyền sử dụng, phạm vi tuyên bố, tổng chi phí và phương án thoát. Việc lựa chọn instrument không buộc dừng manual.",
+      "sources": [
+        {
+          "path": "DOC-20_WORK_PACKAGES_DEPENDENCIES.md",
+          "sha256": null,
+          "locator_text": "WP20-015",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        },
+        {
+          "path": "DOC-20_DECISIONS_AND_REFERENCES.md",
+          "sha256": null,
+          "locator_text": "DEC-267",
+          "matching_lines": [],
+          "locator_status": "SOURCE_FILE_ONLY_NO_LITERAL_MATCH"
+        }
+      ],
+      "status": "OPEN_RECOMMENDATION_NOT_APPLIED",
+      "production_vulnerability_confirmed": false
+    }
+  ]
+}

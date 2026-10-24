@@ -1,0 +1,3511 @@
+{
+  "document_id": "DOC-21-TASK-REGISTRY",
+  "version": "0.1.0",
+  "prepared_on": "2026-10-15",
+  "status": "REVIEW_DRAFT",
+  "approval_status": "NOT_APPROVED",
+  "production_authorized": false,
+  "tasks": [
+    {
+      "id": "TASK21-001",
+      "work_package_ref": "WP20-001",
+      "variant_key": "scope_baseline",
+      "title": "Lập baseline ứng viên R20-00 và danh sách delta R20-01",
+      "kind": "PREPARATION_ONLY",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Lập baseline ứng viên R20-00 và danh sách delta R20-01, tách nguồn tham khảo khỏi file có thể sửa. Ghi rõ bảy CR nền, phần OIDC có điều kiện và các nhánh OFF.",
+      "source_goal": "Lập baseline ứng viên R20-00 và danh sách delta R20-01, tách nguồn tham khảo khỏi file có thể sửa. Ghi rõ bảy CR nền, phần OIDC có điều kiện và các nhánh OFF.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-00"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không ký baseline, chọn nhà cung cấp, sửa DOC00–20 hoặc tạo lịch cam kết.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Lập baseline ứng viên R20-00 và danh sách delta R20-01, tách nguồn tham khảo khỏi file có thể sửa. Ghi rõ bảy CR nền, phần OIDC có điều kiện và các nhánh OFF."
+      ],
+      "variant_instructions": [
+        "Lập baseline ứng viên R20-00 và danh sách delta R20-01, tách nguồn tham khảo khỏi file có thể sửa. Ghi rõ bảy CR nền, phần OIDC có điều kiện và các nhánh OFF."
+      ],
+      "negative_test_design": "Một nguồn đổi hash; một CR chưa có người quyết định; một nhiệm vụ manual bị kéo theo AI. Cả ba phải có xử lý riêng, không mặc định bản mới hơn đúng.",
+      "source_verification": [
+        "Một nguồn đổi hash; một CR chưa có người quyết định; một nhiệm vụ manual bị kéo theo AI. Cả ba phải có xử lý riêng, không mặc định bản mới hơn đúng."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không ký baseline, chọn nhà cung cấp, sửa DOC00–20 hoặc tạo lịch cam kết."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-002",
+      "work_package_ref": "WP20-001",
+      "variant_key": "architecture",
+      "title": "Lập ADR ứng viên cho runtime",
+      "kind": "PREPARATION_ONLY",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Lập ADR ứng viên cho runtime, DB, identity, hosting và miền nhất quán quyền; mô tả chứng cứ cần thử cho R trước I. Chưa có lựa chọn thực thì bàn giao ma trận capability và kế hoạch spike.",
+      "source_goal": "Lập ADR ứng viên cho runtime, DB, identity, hosting và miền nhất quán quyền; mô tả chứng cứ cần thử cho R trước I. Chưa có lựa chọn thực thì bàn giao ma trận capability và kế hoạch spike.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-00"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không lấy stack dự án khác, dựng tài khoản cloud hoặc gọi dữ liệu doanh nghiệp.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Lập ADR ứng viên cho runtime, DB, identity, hosting và miền nhất quán quyền; mô tả chứng cứ cần thử cho R trước I. Chưa có lựa chọn thực thì bàn giao ma trận capability và kế hoạch spike."
+      ],
+      "variant_instructions": [
+        "Lập ADR ứng viên cho runtime, DB, identity, hosting và miền nhất quán quyền; mô tả chứng cứ cần thử cho R trước I. Chưa có lựa chọn thực thì bàn giao ma trận capability và kế hoạch spike."
+      ],
+      "negative_test_design": "Hai cấu hình dùng DB khác nhau nhưng cùng giả định fencing; proxy đã nhận byte trước lúc kiểm quyền; replica quyền bị trễ. Ghi boundary nào chưa chứng minh.",
+      "source_verification": [
+        "Hai cấu hình dùng DB khác nhau nhưng cùng giả định fencing; proxy đã nhận byte trước lúc kiểm quyền; replica quyền bị trễ. Ghi boundary nào chưa chứng minh."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không lấy stack dự án khác, dựng tài khoản cloud hoặc gọi dữ liệu doanh nghiệp."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-003",
+      "work_package_ref": "WP20-002",
+      "variant_key": "test_foundation",
+      "title": "Tạo vòng kiểm contract và fixture synthetic sau ADR",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Tạo vòng kiểm contract và fixture synthetic sau ADR; pin toolchain, validator OpenAPI độc lập, source digests, namespace reset và positive-control observers.",
+      "source_goal": "Tạo vòng kiểm contract và fixture synthetic sau ADR; pin toolchain, validator OpenAPI độc lập, source digests, namespace reset và positive-control observers.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-00"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không tạo auth bypass trong bản phát hành, không gán PASS cho server chưa chạy.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Tạo vòng kiểm contract và fixture synthetic sau ADR; pin toolchain, validator OpenAPI độc lập, source digests, namespace reset và positive-control observers."
+      ],
+      "variant_instructions": [
+        "Tạo vòng kiểm contract và fixture synthetic sau ADR; pin toolchain, validator OpenAPI độc lập, source digests, namespace reset và positive-control observers."
+      ],
+      "negative_test_design": "Schema mẫu hợp lệ nhưng OpenAPI sai; observer không thu được positive marker; fixture key lọt bundle frontend. Test phải fail hoặc inconclusive đúng lớp.",
+      "source_verification": [
+        "Schema mẫu hợp lệ nhưng OpenAPI sai; observer không thu được positive marker; fixture key lọt bundle frontend. Test phải fail hoặc inconclusive đúng lớp."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không tạo auth bypass trong bản phát hành, không gán PASS cho server chưa chạy."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-004",
+      "work_package_ref": "WP20-002",
+      "variant_key": "identity_core",
+      "title": "Liên kết issuer/subject",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Liên kết issuer/subject, membership và generation; tách phiên MEMBER/RIGHTS/BOOTSTRAP/WORKLOAD; kiểm role theo target và scope.",
+      "source_goal": "Liên kết issuer/subject, membership và generation; tách phiên MEMBER/RIGHTS/BOOTSTRAP/WORKLOAD; kiểm role theo target và scope.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không sync HRIS/SCIM; không domain allowlist thành membership tự động.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Liên kết issuer/subject, membership và generation; tách phiên MEMBER/RIGHTS/BOOTSTRAP/WORKLOAD; kiểm role theo target và scope."
+      ],
+      "variant_instructions": [
+        "Liên kết issuer/subject, membership và generation; tách phiên MEMBER/RIGHTS/BOOTSTRAP/WORKLOAD; kiểm role theo target và scope."
+      ],
+      "negative_test_design": "Email đổi, email tái cấp, hai subject cùng display name, callback phiên trước sau account switch, role bị rút giữa request.",
+      "source_verification": [
+        "Email đổi, email tái cấp, hai subject cùng display name, callback phiên trước sau account switch, role bị rút giữa request."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không sync HRIS/SCIM; không domain allowlist thành membership tự động."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-005",
+      "work_package_ref": "WP20-003",
+      "variant_key": "core_privacy",
+      "title": "Dựng privacy center cho manual và thông báo phạm vi dữ liệu",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Dựng privacy center cho manual và thông báo phạm vi dữ liệu; giữ đường không làm assessment, không chia sẻ và yêu cầu dữ liệu.",
+      "source_goal": "Dựng privacy center cho manual và thông báo phạm vi dữ liệu; giữ đường không làm assessment, không chia sẻ và yêu cầu dữ liệu.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không thêm AI/analytics consent, không coi checkbox UI là căn cứ pháp lý đã ký.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Dựng privacy center cho manual và thông báo phạm vi dữ liệu; giữ đường không làm assessment, không chia sẻ và yêu cầu dữ liệu."
+      ],
+      "variant_instructions": [
+        "Dựng privacy center cho manual và thông báo phạm vi dữ liệu; giữ đường không làm assessment, không chia sẻ và yêu cầu dữ liệu."
+      ],
+      "negative_test_design": "Không có purpose assessment nhưng vẫn viết manual; notice thay khi đang đọc; chọn dừng manual không xóa account hoặc bật pair.",
+      "source_verification": [
+        "Không có purpose assessment nhưng vẫn viết manual; notice thay khi đang đọc; chọn dừng manual không xóa account hoặc bật pair."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không thêm AI/analytics consent, không coi checkbox UI là căn cứ pháp lý đã ký."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-006",
+      "work_package_ref": "WP20-003",
+      "variant_key": "assessment_purpose",
+      "title": "Bổ sung ASSESSMENT_SELF theo phiên bản notice và trạng thái xử lý",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Bổ sung ASSESSMENT_SELF theo phiên bản notice và trạng thái xử lý; dùng consent/policy authority từ baseline đã chọn.",
+      "source_goal": "Bổ sung ASSESSMENT_SELF theo phiên bản notice và trạng thái xử lý; dùng consent/policy authority từ baseline đã chọn.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không chia sẻ kết quả với manager hoặc cấp PAIR_DISC cùng thao tác.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Bổ sung ASSESSMENT_SELF theo phiên bản notice và trạng thái xử lý; dùng consent/policy authority từ baseline đã chọn."
+      ],
+      "variant_instructions": [
+        "Bổ sung ASSESSMENT_SELF theo phiên bản notice và trạng thái xử lý; dùng consent/policy authority từ baseline đã chọn."
+      ],
+      "negative_test_design": "Rút mục đích khi bài đang lưu hoặc worker đang chấm; notice version không còn hợp lệ; đăng xuất không bị nhầm thành rút consent.",
+      "source_verification": [
+        "Rút mục đích khi bài đang lưu hoặc worker đang chấm; notice version không còn hợp lệ; đăng xuất không bị nhầm thành rút consent."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không chia sẻ kết quả với manager hoặc cấp PAIR_DISC cùng thao tác."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-007",
+      "work_package_ref": "WP20-004",
+      "variant_key": "pair_purposes",
+      "title": "Tách PAIR_DISC và PAIR_PREFERENCE",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Tách PAIR_DISC và PAIR_PREFERENCE; ràng buộc grant tới đúng snapshot hoặc nguồn sở thích, kiểm riêng hai phía.",
+      "source_goal": "Tách PAIR_DISC và PAIR_PREFERENCE; ràng buộc grant tới đúng snapshot hoặc nguồn sở thích, kiểm riêng hai phía.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không scope FUTURE_ALL_SNAPSHOTS hoặc latest tự động, không suy consent từ publication.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Tách PAIR_DISC và PAIR_PREFERENCE; ràng buộc grant tới đúng snapshot hoặc nguồn sở thích, kiểm riêng hai phía."
+      ],
+      "variant_instructions": [
+        "Tách PAIR_DISC và PAIR_PREFERENCE; ràng buộc grant tới đúng snapshot hoặc nguồn sở thích, kiểm riêng hai phía."
+      ],
+      "negative_test_design": "A chưa publish nhưng có quyền làm viewer; B không còn target; R2 mới không thay grant R1; rút một mục đích giữ nguyên mục đích khác.",
+      "source_verification": [
+        "A chưa publish nhưng có quyền làm viewer; B không còn target; R2 mới không thay grant R1; rút một mục đích giữ nguyên mục đích khác."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không scope FUTURE_ALL_SNAPSHOTS hoặc latest tự động, không suy consent từ publication."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-008",
+      "work_package_ref": "WP20-004",
+      "variant_key": "manual_draft",
+      "title": "Làm editor bảy tình huống với plain text",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Làm editor bảy tình huống với plain text, giới hạn Unicode và trạng thái lưu theo ACK; nháp song song bản công bố.",
+      "source_goal": "Làm editor bảy tình huống với plain text, giới hạn Unicode và trạng thái lưu theo ACK; nháp song song bản công bố.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không publish từ autosave, không lưu notes/raw offline bền hoặc suy preference code từ free text.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Làm editor bảy tình huống với plain text, giới hạn Unicode và trạng thái lưu theo ACK; nháp song song bản công bố."
+      ],
+      "variant_instructions": [
+        "Làm editor bảy tình huống với plain text, giới hạn Unicode và trạng thái lưu theo ACK; nháp song song bản công bố."
+      ],
+      "negative_test_design": "Hai tab ghi cùng revision; ACK cũ đến sau sửa mới; mất mạng sau commit; bỏ local text không undo bản đã lưu.",
+      "source_verification": [
+        "Hai tab ghi cùng revision; ACK cũ đến sau sửa mới; mất mạng sau commit; bỏ local text không undo bản đã lưu."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không publish từ autosave, không lưu notes/raw offline bền hoặc suy preference code từ free text."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-009",
+      "work_package_ref": "WP20-005",
+      "variant_key": "manual_publication",
+      "title": "Kết nối preview chính xác",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Kết nối preview chính xác, confirmation, publish, danh bạ và revoke; cùng renderer public projection, wrapper owner tách riêng.",
+      "source_goal": "Kết nối preview chính xác, confirmation, publish, danh bạ và revoke; cùng renderer public projection, wrapper owner tách riêng.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không public Internet, không filter directory theo DISC, không đưa draft/private fields vào payload.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Kết nối preview chính xác, confirmation, publish, danh bạ và revoke; cùng renderer public projection, wrapper owner tách riêng."
+      ],
+      "variant_instructions": [
+        "Kết nối preview chính xác, confirmation, publish, danh bạ và revoke; cùng renderer public projection, wrapper owner tách riêng."
+      ],
+      "negative_test_design": "Audience hoặc identity projection đổi sau preview; publish lặp; B mất quyền trước issuance; Back không flash snapshot cũ.",
+      "source_verification": [
+        "Audience hoặc identity projection đổi sau preview; publish lặp; B mất quyền trước issuance; Back không flash snapshot cũ."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không public Internet, không filter directory theo DISC, không đưa draft/private fields vào payload."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-010",
+      "work_package_ref": "WP20-005",
+      "variant_key": "rights_core",
+      "title": "Tạo case quyền dữ liệu và xác minh tách khỏi membership",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Tạo case quyền dữ liệu và xác minh tách khỏi membership; phân biệt requested scope, approved scope, clocks và operator assignment.",
+      "source_goal": "Tạo case quyền dữ liệu và xác minh tách khỏi membership; phân biệt requested scope, approved scope, clocks và operator assignment.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không tự đặt hạn pháp luật hoặc gộp RIGHTS vào phiên nội bộ; chưa xử lý CR14-02 thì chặn phạm vi chịu ảnh hưởng.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Tạo case quyền dữ liệu và xác minh tách khỏi membership; phân biệt requested scope, approved scope, clocks và operator assignment."
+      ],
+      "variant_instructions": [
+        "Tạo case quyền dữ liệu và xác minh tách khỏi membership; phân biệt requested scope, approved scope, clocks và operator assignment."
+      ],
+      "negative_test_design": "Người đã nghỉ mở kênh RIGHTS; request kind nguồn thiếu nhánh được policy yêu cầu; xác minh kéo dài không tự đặt lại mốc nhận.",
+      "source_verification": [
+        "Người đã nghỉ mở kênh RIGHTS; request kind nguồn thiếu nhánh được policy yêu cầu; xác minh kéo dài không tự đặt lại mốc nhận."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không tự đặt hạn pháp luật hoặc gộp RIGHTS vào phiên nội bộ; chưa xử lý CR14-02 thì chặn phạm vi chịu ảnh hưởng."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-011",
+      "work_package_ref": "WP20-006",
+      "variant_key": "rights_manual",
+      "title": "Thực hiện xuất/sửa/xóa identity/manual/support theo scope được duyệt",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Thực hiện xuất/sửa/xóa identity/manual/support theo scope được duyệt, phân loại dữ liệu bên thứ ba và evidence giao dữ liệu.",
+      "source_goal": "Thực hiện xuất/sửa/xóa identity/manual/support theo scope được duyệt, phân loại dữ liệu bên thứ ba và evidence giao dữ liệu.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không lấy toàn hàng DB làm export, không đánh FULFILLED chỉ vì tạo ZIP xong.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Thực hiện xuất/sửa/xóa identity/manual/support theo scope được duyệt, phân loại dữ liệu bên thứ ba và evidence giao dữ liệu."
+      ],
+      "variant_instructions": [
+        "Thực hiện xuất/sửa/xóa identity/manual/support theo scope được duyệt, phân loại dữ liệu bên thứ ba và evidence giao dữ liệu."
+      ],
+      "negative_test_design": "Package READY nhưng chưa được cấp; truyền dở; scope thu hẹp trước download; complaint chứa dữ liệu người khác; yêu cầu hủy sau xóa không khôi phục.",
+      "source_verification": [
+        "Package READY nhưng chưa được cấp; truyền dở; scope thu hẹp trước download; complaint chứa dữ liệu người khác; yêu cầu hủy sau xóa không khôi phục."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không lấy toàn hàng DB làm export, không đánh FULFILLED chỉ vì tạo ZIP xong."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-012",
+      "work_package_ref": "WP20-006",
+      "variant_key": "rights_assessment",
+      "title": "Mở rộng quyền dữ liệu tới response/submission/result/action và bản dẫn xuất",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Mở rộng quyền dữ liệu tới response/submission/result/action và bản dẫn xuất, giữ lineage của kết quả còn được phép.",
+      "source_goal": "Mở rộng quyền dữ liệu tới response/submission/result/action và bản dẫn xuất, giữ lineage của kết quả còn được phép.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không xóa question bank của tổ chức theo việc xóa người dùng; không giấu phần chưa đáp ứng.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Mở rộng quyền dữ liệu tới response/submission/result/action và bản dẫn xuất, giữ lineage của kết quả còn được phép."
+      ],
+      "variant_instructions": [
+        "Mở rộng quyền dữ liệu tới response/submission/result/action và bản dẫn xuất, giữ lineage của kết quả còn được phép."
+      ],
+      "negative_test_design": "CLEAR không phục dựng từ log; xóa đáp án làm mất khả năng tính lại; request đổi type không sửa raw; reference dữ liệu đã xóa không tái sinh.",
+      "source_verification": [
+        "CLEAR không phục dựng từ log; xóa đáp án làm mất khả năng tính lại; request đổi type không sửa raw; reference dữ liệu đã xóa không tái sinh."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không xóa question bank của tổ chức theo việc xóa người dùng; không giấu phần chưa đáp ứng."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-013",
+      "work_package_ref": "WP20-007",
+      "variant_key": "rights_extensions",
+      "title": "Tính đủ phạm vi connector/AI/analytics/research thực bật trong kế hoạch quyền dữ liệu",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Tính đủ phạm vi connector/AI/analytics/research thực bật trong kế hoạch quyền dữ liệu, theo processor và copy thực tế.",
+      "source_goal": "Tính đủ phạm vi connector/AI/analytics/research thực bật trong kế hoạch quyền dữ liệu, theo processor và copy thực tế.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không hứa xóa byte ngoài quyền kiểm soát; không coi fake acknowledgement là vendor evidence.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Tính đủ phạm vi connector/AI/analytics/research thực bật trong kế hoạch quyền dữ liệu, theo processor và copy thực tế."
+      ],
+      "variant_instructions": [
+        "Tính đủ phạm vi connector/AI/analytics/research thực bật trong kế hoạch quyền dữ liệu, theo processor và copy thực tế."
+      ],
+      "negative_test_design": "Đã rút scope nhưng buffer còn; dataset frozen chứa người đã rút; vendor receipt chưa xác minh; aggregate correction có nguy cơ differencing.",
+      "source_verification": [
+        "Đã rút scope nhưng buffer còn; dataset frozen chứa người đã rút; vendor receipt chưa xác minh; aggregate correction có nguy cơ differencing."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không hứa xóa byte ngoài quyền kiểm soát; không coi fake acknowledgement là vendor evidence."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-014",
+      "work_package_ref": "WP20-007",
+      "variant_key": "support_core",
+      "title": "Tạo requester/operator projections",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Tạo requester/operator projections, preview metadata đính kèm và phân tuyến phản ánh độc lập; cập nhật trạng thái có căn cứ.",
+      "source_goal": "Tạo requester/operator projections, preview metadata đính kèm và phân tuyến phản ánh độc lập; cập nhật trạng thái có căn cứ.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không attachments tự động, không gửi complaint cho manager hoặc lấy support role làm quyền đọc raw.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Tạo requester/operator projections, preview metadata đính kèm và phân tuyến phản ánh độc lập; cập nhật trạng thái có căn cứ."
+      ],
+      "variant_instructions": [
+        "Tạo requester/operator projections, preview metadata đính kèm và phân tuyến phản ánh độc lập; cập nhật trạng thái có căn cứ."
+      ],
+      "negative_test_design": "Người bị phản ánh ở tuyến mặc định; assignee bị offboard; caller đổi target ref để mở Self người khác; duplicate submit.",
+      "source_verification": [
+        "Người bị phản ánh ở tuyến mặc định; assignee bị offboard; caller đổi target ref để mở Self người khác; duplicate submit."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không attachments tự động, không gửi complaint cho manager hoặc lấy support role làm quyền đọc raw."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-015",
+      "work_package_ref": "WP20-008",
+      "variant_key": "lifecycle_core",
+      "title": "Thực thi revoke/generation và sự kiện offboarding tại authority",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Thực thi revoke/generation và sự kiện offboarding tại authority; deny có hiệu lực trước tác vụ phụ, không phụ thuộc log sink ngoài.",
+      "source_goal": "Thực thi revoke/generation và sự kiện offboarding tại authority; deny có hiệu lực trước tác vụ phụ, không phụ thuộc log sink ngoài.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không coi một epoch field là chứng minh linearizability; không trì hoãn deny đến TTL.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Thực thi revoke/generation và sự kiện offboarding tại authority; deny có hiệu lực trước tác vụ phụ, không phụ thuộc log sink ngoài."
+      ],
+      "variant_instructions": [
+        "Thực thi revoke/generation và sự kiện offboarding tại authority; deny có hiệu lực trước tác vụ phụ, không phụ thuộc log sink ngoài."
+      ],
+      "negative_test_design": "R trước I; R ghi ở authority nhưng cache cũ; enqueue thành công nhưng deny thất bại; tài khoản quay lại và stale event từ đợt cũ.",
+      "source_verification": [
+        "R trước I; R ghi ở authority nhưng cache cũ; enqueue thành công nhưng deny thất bại; tài khoản quay lại và stale event từ đợt cũ."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không coi một epoch field là chứng minh linearizability; không trì hoãn deny đến TTL."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-016",
+      "work_package_ref": "WP20-008",
+      "variant_key": "lifecycle_domain_adapters",
+      "title": "Lập fan-out theo tất cả store của scope đang chọn: primary DB",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Lập fan-out theo tất cả store của scope đang chọn: primary DB, object, search, queue, cache, exports và restore ledger.",
+      "source_goal": "Lập fan-out theo tất cả store của scope đang chọn: primary DB, object, search, queue, cache, exports và restore ledger.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không xóa mọi domain optional chưa chọn hoặc gán đã xóa khi chỉ đặt soft-delete.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Lập fan-out theo tất cả store của scope đang chọn: primary DB, object, search, queue, cache, exports và restore ledger."
+      ],
+      "variant_instructions": [
+        "Lập fan-out theo tất cả store của scope đang chọn: primary DB, object, search, queue, cache, exports và restore ledger."
+      ],
+      "negative_test_design": "Job cũ thức dậy sau xóa; một store purge lỗi; backup cũ restore; tombstone mất khi restore; nội dung owner tự viết còn căn cứ riêng.",
+      "source_verification": [
+        "Job cũ thức dậy sau xóa; một store purge lỗi; backup cũ restore; tombstone mất khi restore; nội dung owner tự viết còn căn cứ riêng."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không xóa mọi domain optional chưa chọn hoặc gán đã xóa khi chỉ đặt soft-delete."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-017",
+      "work_package_ref": "WP20-009",
+      "variant_key": "general_catalog",
+      "title": "Nhập mẫu manual và nội dung chung như draft",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Nhập mẫu manual và nội dung chung như draft, review theo audience và provenance, release riêng sau người duyệt thật.",
+      "source_goal": "Nhập mẫu manual và nội dung chung như draft, review theo audience và provenance, release riêng sau người duyệt thật.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không import 72 thẻ thành RELEASED hoặc tạo evidence efficacy giả.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Nhập mẫu manual và nội dung chung như draft, review theo audience và provenance, release riêng sau người duyệt thật."
+      ],
+      "variant_instructions": [
+        "Nhập mẫu manual và nội dung chung như draft, review theo audience và provenance, release riêng sau người duyệt thật."
+      ],
+      "negative_test_design": "Editor tự khai approved; reviewer tự duyệt bản mình soạn; block SELF bị đổi audience; body đổi nhưng bundle hash giữ cũ.",
+      "source_verification": [
+        "Editor tự khai approved; reviewer tự duyệt bản mình soạn; block SELF bị đổi audience; body đổi nhưng bundle hash giữ cũ."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không import 72 thẻ thành RELEASED hoặc tạo evidence efficacy giả."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-018",
+      "work_package_ref": "WP20-009",
+      "variant_key": "conditional_catalog",
+      "title": "Chuẩn bị thẻ theo điểm/nhãn/pair với claim dependencies",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị thẻ theo điểm/nhãn/pair với claim dependencies, selector và bundle closure; serving giữ tắt khi chưa đủ gate.",
+      "source_goal": "Chuẩn bị thẻ theo điểm/nhãn/pair với claim dependencies, selector và bundle closure; serving giữ tắt khi chưa đủ gate.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không D>=70 hoặc top-two tự tạo D_FOCUS; không bật classifier để đủ báo cáo.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị thẻ theo điểm/nhãn/pair với claim dependencies, selector và bundle closure; serving giữ tắt khi chưa đủ gate."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị thẻ theo điểm/nhãn/pair với claim dependencies, selector và bundle closure; serving giữ tắt khi chưa đủ gate."
+      ],
+      "negative_test_design": "Feature policy null, claim scope sai form, block withdrawn, nguồn current khác grant. Mọi nhánh không đủ điều kiện phải abstain/fallback đúng quyền.",
+      "source_verification": [
+        "Feature policy null, claim scope sai form, block withdrawn, nguồn current khác grant. Mọi nhánh không đủ điều kiện phải abstain/fallback đúng quyền."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không D>=70 hoặc top-two tự tạo D_FOCUS; không bật classifier để đủ báo cáo."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-019",
+      "work_package_ref": "WP20-010",
+      "variant_key": "operations_core",
+      "title": "Ràng buộc build/deploy/config/secrets/audit tới scope",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Ràng buộc build/deploy/config/secrets/audit tới scope; triển khai giám sát tối thiểu không chứa hồ sơ riêng.",
+      "source_goal": "Ràng buộc build/deploy/config/secrets/audit tới scope; triển khai giám sát tối thiểu không chứa hồ sơ riêng.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không deploy production hoặc dùng cloud account suy đoán từ profile người dùng.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Ràng buộc build/deploy/config/secrets/audit tới scope; triển khai giám sát tối thiểu không chứa hồ sơ riêng."
+      ],
+      "variant_instructions": [
+        "Ràng buộc build/deploy/config/secrets/audit tới scope; triển khai giám sát tối thiểu không chứa hồ sơ riêng."
+      ],
+      "negative_test_design": "Thiếu effective config; log sink lỗi; private canary trong APM; secret test trong artifact; rollout dùng manifest đo lường thay deployment manifest.",
+      "source_verification": [
+        "Thiếu effective config; log sink lỗi; private canary trong APM; secret test trong artifact; rollout dùng manifest đo lường thay deployment manifest."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không deploy production hoặc dùng cloud account suy đoán từ profile người dùng."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-020",
+      "work_package_ref": "WP20-010",
+      "variant_key": "scope_rehearsal",
+      "title": "Diễn tập deploy/rollback/restore synthetic trên topology thật đã chọn",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Diễn tập deploy/rollback/restore synthetic trên topology thật đã chọn; bảo toàn current deny/deletion/generation.",
+      "source_goal": "Diễn tập deploy/rollback/restore synthetic trên topology thật đã chọn; bảo toàn current deny/deletion/generation.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không gọi Python boolean fixture là restore test; không mở traffic trước các kiểm deny.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Diễn tập deploy/rollback/restore synthetic trên topology thật đã chọn; bảo toàn current deny/deletion/generation."
+      ],
+      "variant_instructions": [
+        "Diễn tập deploy/rollback/restore synthetic trên topology thật đã chọn; bảo toàn current deny/deletion/generation."
+      ],
+      "negative_test_design": "Restore DB thành công nhưng ledger trễ; worker lease cũ; key đã revoke trong backup; smoke happy path đạt nhưng private projection rò.",
+      "source_verification": [
+        "Restore DB thành công nhưng ledger trễ; worker lease cũ; key đã revoke trong backup; smoke happy path đạt nhưng private projection rò."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không gọi Python boolean fixture là restore test; không mở traffic trước các kiểm deny."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-021",
+      "work_package_ref": "WP20-011",
+      "variant_key": "core_ux",
+      "title": "Hiện thực shell",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Hiện thực shell, truy cập, riêng tư, quyền dữ liệu và hỗ trợ theo nguồn; phản hồi trạng thái đúng và thao tác bằng bàn phím.",
+      "source_goal": "Hiện thực shell, truy cập, riêng tư, quyền dữ liệu và hỗ trợ theo nguồn; phản hồi trạng thái đúng và thao tác bằng bàn phím.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không buộc xây màn hình assessment/pair để nghiệm thu trang chung.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Hiện thực shell, truy cập, riêng tư, quyền dữ liệu và hỗ trợ theo nguồn; phản hồi trạng thái đúng và thao tác bằng bàn phím."
+      ],
+      "variant_instructions": [
+        "Hiện thực shell, truy cập, riêng tư, quyền dữ liệu và hỗ trợ theo nguồn; phản hồi trạng thái đúng và thao tác bằng bàn phím."
+      ],
+      "negative_test_design": "Focus lạc khi dialog đóng; hết phiên giữa thao tác; zoom/reflow; ready package nhầm fulfilled; lỗi quyền không được lộ tồn tại tài nguyên.",
+      "source_verification": [
+        "Focus lạc khi dialog đóng; hết phiên giữa thao tác; zoom/reflow; ready package nhầm fulfilled; lỗi quyền không được lộ tồn tại tài nguyên."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không buộc xây màn hình assessment/pair để nghiệm thu trang chung."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-022",
+      "work_package_ref": "WP20-011",
+      "variant_key": "manual_ux",
+      "title": "Nối editor",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Nối editor, preview, publish, colleague và rights/support vào luồng manual hoàn chỉnh; kiểm responsive và công nghệ hỗ trợ.",
+      "source_goal": "Nối editor, preview, publish, colleague và rights/support vào luồng manual hoàn chỉnh; kiểm responsive và công nghệ hỗ trợ.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không lấy atlas HTML cũ làm bằng chứng E2E hoặc full WCAG.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Nối editor, preview, publish, colleague và rights/support vào luồng manual hoàn chỉnh; kiểm responsive và công nghệ hỗ trợ."
+      ],
+      "variant_instructions": [
+        "Nối editor, preview, publish, colleague và rights/support vào luồng manual hoàn chỉnh; kiểm responsive và công nghệ hỗ trợ."
+      ],
+      "negative_test_design": "Focus error summary, save ACK qua screen reader, hai tab xung đột, nội dung dài 320px, revoke khi trang cũ đang mở.",
+      "source_verification": [
+        "Focus error summary, save ACK qua screen reader, hai tab xung đột, nội dung dài 320px, revoke khi trang cũ đang mở."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không lấy atlas HTML cũ làm bằng chứng E2E hoặc full WCAG."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-023",
+      "work_package_ref": "WP20-012",
+      "variant_key": "assessment_ux",
+      "title": "Hiện thực scale/item/review/result/history theo exact form",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Hiện thực scale/item/review/result/history theo exact form, không tự rewrite câu hoặc chọn sẵn mức giữa.",
+      "source_goal": "Hiện thực scale/item/review/result/history theo exact form, không tự rewrite câu hoặc chọn sẵn mức giữa.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không thêm timer đánh giá trung thực, confidence hoặc nhóm mặc định.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Hiện thực scale/item/review/result/history theo exact form, không tự rewrite câu hoặc chọn sẵn mức giữa."
+      ],
+      "variant_instructions": [
+        "Hiện thực scale/item/review/result/history theo exact form, không tự rewrite câu hoặc chọn sẵn mức giữa."
+      ],
+      "negative_test_design": "Bỏ chọn khác mức3; item keyboard không tự chuyển câu; missing=null không vẽ0; retest không autopublish; RAW và LINEAR đúng đơn vị.",
+      "source_verification": [
+        "Bỏ chọn khác mức3; item keyboard không tự chuyển câu; missing=null không vẽ0; retest không autopublish; RAW và LINEAR đúng đơn vị."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không thêm timer đánh giá trung thực, confidence hoặc nhóm mặc định."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-024",
+      "work_package_ref": "WP20-012",
+      "variant_key": "extension_ux",
+      "title": "Xây chỉ màn hình pair/analytics/AI/connector thuộc capability đã chọn và các state không đủ nguồn/quyền.",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Xây chỉ màn hình pair/analytics/AI/connector thuộc capability đã chọn và các state không đủ nguồn/quyền.",
+      "source_goal": "Xây chỉ màn hình pair/analytics/AI/connector thuộc capability đã chọn và các state không đủ nguồn/quyền.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không dùng cùng DTO cho employee/operator/research, không bật nhánh chỉ để demo.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Xây chỉ màn hình pair/analytics/AI/connector thuộc capability đã chọn và các state không đủ nguồn/quyền."
+      ],
+      "variant_instructions": [
+        "Xây chỉ màn hình pair/analytics/AI/connector thuộc capability đã chọn và các state không đủ nguồn/quyền."
+      ],
+      "negative_test_design": "B_ONLY không so hai người; analytics OFF không thành0%; AI draft chưa duyệt không auto-public; connector failure không mở quyền.",
+      "source_verification": [
+        "B_ONLY không so hai người; analytics OFF không thành0%; AI draft chưa duyệt không auto-public; connector failure không mở quyền."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không dùng cùng DTO cho employee/operator/research, không bật nhánh chỉ để demo."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-025",
+      "work_package_ref": "WP20-013",
+      "variant_key": "manual_rollout",
+      "title": "Chuẩn bị hồ sơ go/no-go cho manual sau bằng chứng kỹ thuật",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị hồ sơ go/no-go cho manual sau bằng chứng kỹ thuật, nội dung, pháp lý và vận hành; người phụ trách quyết định mời.",
+      "source_goal": "Chuẩn bị hồ sơ go/no-go cho manual sau bằng chứng kỹ thuật, nội dung, pháp lý và vận hành; người phụ trách quyết định mời.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Codex không mời nhân viên, ký duyệt hoặc kích hoạt sản phẩm từ một checklist.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị hồ sơ go/no-go cho manual sau bằng chứng kỹ thuật, nội dung, pháp lý và vận hành; người phụ trách quyết định mời."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị hồ sơ go/no-go cho manual sau bằng chứng kỹ thuật, nội dung, pháp lý và vận hành; người phụ trách quyết định mời."
+      ],
+      "negative_test_design": "Thiếu người tiếp nhận quyền dữ liệu; lỗi critical vẫn còn dù pass-rate cao; optional backend vẫn phục vụ khi nút ẩn; rollback hồi sinh share.",
+      "source_verification": [
+        "Thiếu người tiếp nhận quyền dữ liệu; lỗi critical vẫn còn dù pass-rate cao; optional backend vẫn phục vụ khi nút ẩn; rollback hồi sinh share."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Codex không mời nhân viên, ký duyệt hoặc kích hoạt sản phẩm từ một checklist."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-026",
+      "work_package_ref": "WP20-013",
+      "variant_key": "measurement_route",
+      "title": "Lập hồ sơ tự xây/cấp phép với phạm vi đo",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Lập hồ sơ tự xây/cấp phép với phạm vi đo, IP, quyền tích hợp, lifecycle và chi phí cần xác minh.",
+      "source_goal": "Lập hồ sơ tự xây/cấp phép với phạm vi đo, IP, quyền tích hợp, lifecycle và chi phí cần xác minh.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không chép ngân hàng thương mại hoặc gán độ tin cậy vendor cho Vaga.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Lập hồ sơ tự xây/cấp phép với phạm vi đo, IP, quyền tích hợp, lifecycle và chi phí cần xác minh."
+      ],
+      "variant_instructions": [
+        "Lập hồ sơ tự xây/cấp phép với phạm vi đo, IP, quyền tích hợp, lifecycle và chi phí cần xác minh."
+      ],
+      "negative_test_design": "License không cho truy xuất hoặc xóa theo scope; vendor evidence không khớp locale; tự xây chưa có mẫu; thiếu báo giá được ghi unknown.",
+      "source_verification": [
+        "License không cho truy xuất hoặc xóa theo scope; vendor evidence không khớp locale; tự xây chưa có mẫu; thiếu báo giá được ghi unknown."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không chép ngân hàng thương mại hoặc gán độ tin cậy vendor cho Vaga."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-027",
+      "work_package_ref": "WP20-014",
+      "variant_key": "qualitative_evidence",
+      "title": "Chuẩn bị review item/scale/context theo DOC08/10",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị review item/scale/context theo DOC08/10, phiếu phỏng vấn và quản trị revision; chuyên gia/người thật tạo kết quả sau nghiên cứu.",
+      "source_goal": "Chuẩn bị review item/scale/context theo DOC08/10, phiếu phỏng vấn và quản trị revision; chuyên gia/người thật tạo kết quả sau nghiên cứu.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không tạo người tham gia, chữ ký, quote hay kết luận thẩm định bằng agent.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị review item/scale/context theo DOC08/10, phiếu phỏng vấn và quản trị revision; chuyên gia/người thật tạo kết quả sau nghiên cứu."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị review item/scale/context theo DOC08/10, phiếu phỏng vấn và quản trị revision; chuyên gia/người thật tạo kết quả sau nghiên cứu."
+      ],
+      "negative_test_design": "Mức3 bị hiểu hai nghĩa; L-D07 lẫn thẩm quyền; ghi paraphrase thành quote; đã sửa wording nhưng giữ form revision.",
+      "source_verification": [
+        "Mức3 bị hiểu hai nghĩa; L-D07 lẫn thẩm quyền; ghi paraphrase thành quote; đã sửa wording nhưng giữ form revision."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không tạo người tham gia, chữ ký, quote hay kết luận thẩm định bằng agent."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-028",
+      "work_package_ref": "WP20-014",
+      "variant_key": "assessment_synthetic",
+      "title": "Hiện thực save–resume–submit–score/stop trên exact manifest và dữ liệu tổng hợp",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Hiện thực save–resume–submit–score/stop trên exact manifest và dữ liệu tổng hợp, port công thức theo golden độc lập.",
+      "source_goal": "Hiện thực save–resume–submit–score/stop trên exact manifest và dữ liệu tổng hợp, port công thức theo golden độc lập.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không thay khóa giả thuyết, chuyển weight null thành1 ở source hoặc mở bài cho nhân viên.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Hiện thực save–resume–submit–score/stop trên exact manifest và dữ liệu tổng hợp, port công thức theo golden độc lập."
+      ],
+      "variant_instructions": [
+        "Hiện thực save–resume–submit–score/stop trên exact manifest và dữ liệu tổng hợp, port công thức theo golden độc lập."
+      ],
+      "negative_test_design": "3.00000000000000000000001 bị làm tròn thành3; reverse hai lần; một miền thiếu; hai worker; purpose rút trước commit; plan mismatch.",
+      "source_verification": [
+        "3.00000000000000000000001 bị làm tròn thành3; reverse hai lần; một miền thiếu; hai worker; purpose rút trước commit; plan mismatch."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không thay khóa giả thuyết, chuyển weight null thành1 ở source hoặc mở bài cho nhân viên."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-029",
+      "work_package_ref": "WP20-015",
+      "variant_key": "measurement_release",
+      "title": "Tạo workflow review/release manifest",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Tạo workflow review/release manifest, golden oracle, retirement và corrective run có provenance.",
+      "source_goal": "Tạo workflow review/release manifest, golden oracle, retirement và corrective run có provenance.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không phê duyệt đo lường bằng migration DB hoặc software unit test.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Tạo workflow review/release manifest, golden oracle, retirement và corrective run có provenance."
+      ],
+      "variant_instructions": [
+        "Tạo workflow review/release manifest, golden oracle, retirement và corrective run có provenance."
+      ],
+      "negative_test_design": "Phê duyệt sai hash; cùng người maker/checker; lỗi formula bị disguised retry; source WITHDRAWN còn cache; old-result sửa tại chỗ.",
+      "source_verification": [
+        "Phê duyệt sai hash; cùng người maker/checker; lỗi formula bị disguised retry; source WITHDRAWN còn cache; old-result sửa tại chỗ."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không phê duyệt đo lường bằng migration DB hoặc software unit test."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-030",
+      "work_package_ref": "WP20-015",
+      "variant_key": "research_governance",
+      "title": "Chuẩn bị stage protocol",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị stage protocol, recruitment permissions, vault contact, scope rút dữ liệu và trách nhiệm custodian.",
+      "source_goal": "Chuẩn bị stage protocol, recruitment permissions, vault contact, scope rút dữ liệu và trách nhiệm custodian.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không tuyển người hoặc thu dữ liệu nghiên cứu từ task lập trình này.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị stage protocol, recruitment permissions, vault contact, scope rút dữ liệu và trách nhiệm custodian."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị stage protocol, recruitment permissions, vault contact, scope rút dữ liệu và trách nhiệm custodian."
+      ],
+      "negative_test_design": "Consent app bị tái dùng cho nghiên cứu; planned_n điền actual_n; khảo sát nhân viên dưới áp lực quản lý; reviewer chưa có.",
+      "source_verification": [
+        "Consent app bị tái dùng cho nghiên cứu; planned_n điền actual_n; khảo sát nhân viên dưới áp lực quản lý; reviewer chưa có."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không tuyển người hoặc thu dữ liệu nghiên cứu từ task lập trình này."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-031",
+      "work_package_ref": "WP20-016",
+      "variant_key": "study_infrastructure",
+      "title": "Tách source",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Tách source, workspace phân tích, evidence và release; gắn exact dataset/plan/run, holdout custody và rights.",
+      "source_goal": "Tách source, workspace phân tích, evidence và release; gắn exact dataset/plan/run, holdout custody và rights.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không chạy thống kê lên dữ liệu người thật hoặc tạo alpha/omega giả.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Tách source, workspace phân tích, evidence và release; gắn exact dataset/plan/run, holdout custody và rights."
+      ],
+      "variant_instructions": [
+        "Tách source, workspace phân tích, evidence và release; gắn exact dataset/plan/run, holdout custody và rights."
+      ],
+      "negative_test_design": "Dev/confirm có cùng người; synthetic bị gắn EMPIRICAL; dataset frozen sau restriction; evidence ref ngoài scope; null/0 nhầm.",
+      "source_verification": [
+        "Dev/confirm có cùng người; synthetic bị gắn EMPIRICAL; dataset frozen sau restriction; evidence ref ngoài scope; null/0 nhầm."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không chạy thống kê lên dữ liệu người thật hoặc tạo alpha/omega giả."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-032",
+      "work_package_ref": "WP20-016",
+      "variant_key": "self_limited",
+      "title": "Hiện thực owner result",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Hiện thực owner result, phản hồi, hành động riêng và lịch sử/retake; lấy source metadata đúng snapshot được yêu cầu.",
+      "source_goal": "Hiện thực owner result, phản hồi, hành động riêng và lịch sử/retake; lấy source metadata đúng snapshot được yêu cầu.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không claim personality đúng, stress, năng lực hoặc published profile theo điểm.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Hiện thực owner result, phản hồi, hành động riêng và lịch sử/retake; lấy source metadata đúng snapshot được yêu cầu."
+      ],
+      "variant_instructions": [
+        "Hiện thực owner result, phản hồi, hành động riêng và lịch sử/retake; lấy source metadata đúng snapshot được yêu cầu."
+      ],
+      "negative_test_design": "R1 khi R2 tồn tại; manager đọc URL Self; toàn điểm hòa vẫn classification=null; corrective result không thay original; action note lộ log.",
+      "source_verification": [
+        "R1 khi R2 tồn tại; manager đọc URL Self; toàn điểm hòa vẫn classification=null; corrective result không thay original; action note lộ log."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không claim personality đúng, stress, năng lực hoặc published profile theo điểm."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-033",
+      "work_package_ref": "WP20-017",
+      "variant_key": "generic_actions",
+      "title": "Xây hành động do owner tự viết/chọn từ nội dung chung",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Xây hành động do owner tự viết/chọn từ nội dung chung, không bắt assessment; trigger, self-check, date-only và timezone riêng.",
+      "source_goal": "Xây hành động do owner tự viết/chọn từ nội dung chung, không bắt assessment; trigger, self-check, date-only và timezone riêng.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không bật nhắc ngoài app hoặc biến completion thành KPI quản lý.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Xây hành động do owner tự viết/chọn từ nội dung chung, không bắt assessment; trigger, self-check, date-only và timezone riêng."
+      ],
+      "variant_instructions": [
+        "Xây hành động do owner tự viết/chọn từ nội dung chung, không bắt assessment; trigger, self-check, date-only và timezone riêng."
+      ],
+      "negative_test_design": "Ngày đổi bởi timezone thiết bị; xóa action không còn reminder; partial save; note chứa thông tin thứ ba cần cảnh báo/rights.",
+      "source_verification": [
+        "Ngày đổi bởi timezone thiết bị; xóa action không còn reminder; partial save; note chứa thông tin thứ ba cần cảnh báo/rights."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không bật nhắc ngoài app hoặc biến completion thành KPI quản lý."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-034",
+      "work_package_ref": "WP20-017",
+      "variant_key": "pilot_rollout",
+      "title": "Chuẩn bị phạm vi pilot đúng form/protocol",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị phạm vi pilot đúng form/protocol, trạng thái kết quả giới hạn và kênh hỗ trợ; người có thẩm quyền mới mở nghiên cứu.",
+      "source_goal": "Chuẩn bị phạm vi pilot đúng form/protocol, trạng thái kết quả giới hạn và kênh hỗ trợ; người có thẩm quyền mới mở nghiên cứu.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không lấy user Continue làm đồng ý nghiên cứu hoặc tự gửi lời mời.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị phạm vi pilot đúng form/protocol, trạng thái kết quả giới hạn và kênh hỗ trợ; người có thẩm quyền mới mở nghiên cứu."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị phạm vi pilot đúng form/protocol, trạng thái kết quả giới hạn và kênh hỗ trợ; người có thẩm quyền mới mở nghiên cứu."
+      ],
+      "negative_test_design": "Scale/context chưa duyệt; known issue chưa xử lý; software pass bị dùng thay IP; thay form giữa cohort mà không amendment.",
+      "source_verification": [
+        "Scale/context chưa duyệt; known issue chưa xử lý; software pass bị dùng thay IP; thay form giữa cohort mà không amendment."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không lấy user Continue làm đồng ý nghiên cứu hoặc tự gửi lời mời."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-035",
+      "work_package_ref": "WP20-018",
+      "variant_key": "empirical_claims",
+      "title": "Tổ chức gói evidence theo claim/form/population/purpose và phương pháp",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Tổ chức gói evidence theo claim/form/population/purpose và phương pháp; người nghiên cứu thực hiện, reviewer xét kết quả bất lợi.",
+      "source_goal": "Tổ chức gói evidence theo claim/form/population/purpose và phương pháp; người nghiên cứu thực hiện, reviewer xét kết quả bất lợi.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không gán validated=true chung hoặc sửa dữ liệu để có bốn nhân tố.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Tổ chức gói evidence theo claim/form/population/purpose và phương pháp; người nghiên cứu thực hiện, reviewer xét kết quả bất lợi."
+      ],
+      "variant_instructions": [
+        "Tổ chức gói evidence theo claim/form/population/purpose và phương pháp; người nghiên cứu thực hiện, reviewer xét kết quả bất lợi."
+      ],
+      "negative_test_design": "Model không hội tụ; zero variance; holdout leakage; reliability cao nhưng coverage kém; effect chưa ước lượng không điền0.",
+      "source_verification": [
+        "Model không hội tụ; zero variance; holdout leakage; reliability cao nhưng coverage kém; effect chưa ước lượng không điền0."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không gán validated=true chung hoặc sửa dữ liệu để có bốn nhân tố."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-036",
+      "work_package_ref": "WP20-018",
+      "variant_key": "score_content_synthetic",
+      "title": "Xây port interpreter chỉ nhận feature envelope có policy/claim binding",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Xây port interpreter chỉ nhận feature envelope có policy/claim binding; mô phỏng token bằng fixture riêng không tác động nguồn.",
+      "source_goal": "Xây port interpreter chỉ nhận feature envelope có policy/claim binding; mô phỏng token bằng fixture riêng không tác động nguồn.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không dùng high score tự tạo cutoff hoặc đọc raw cho content selection.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Xây port interpreter chỉ nhận feature envelope có policy/claim binding; mô phỏng token bằng fixture riêng không tác động nguồn."
+      ],
+      "variant_instructions": [
+        "Xây port interpreter chỉ nhận feature envelope có policy/claim binding; mô phỏng token bằng fixture riêng không tác động nguồn."
+      ],
+      "negative_test_design": "Scorer không trả feature mà frontend tự suy; policy null; claim bị rút sau selection; không eligible block phải bỏ gợi ý.",
+      "source_verification": [
+        "Scorer không trả feature mà frontend tự suy; policy null; claim bị rút sau selection; không eligible block phải bỏ gợi ý."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không dùng high score tự tạo cutoff hoặc đọc raw cho content selection."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-037",
+      "work_package_ref": "WP20-019",
+      "variant_key": "reviewed_self_content",
+      "title": "Chuẩn bị và kiểm gói nội dung Self đúng audience",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị và kiểm gói nội dung Self đúng audience, source level, context và reviews; người phụ trách duyệt ý nghĩa và quyền sử dụng.",
+      "source_goal": "Chuẩn bị và kiểm gói nội dung Self đúng audience, source level, context và reviews; người phụ trách duyệt ý nghĩa và quyền sử dụng.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không biến approval tài liệu thành review 72 thẻ hoặc tự mở serving.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị và kiểm gói nội dung Self đúng audience, source level, context và reviews; người phụ trách duyệt ý nghĩa và quyền sử dụng."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị và kiểm gói nội dung Self đúng audience, source level, context và reviews; người phụ trách duyệt ý nghĩa và quyền sử dụng."
+      ],
+      "negative_test_design": "Block đẹp nhưng vượt claim; biến ngôn ngữ điều kiện thành khẳng định; owner không đồng ý bị coi trả lời sai; nội dung bị thu hồi.",
+      "source_verification": [
+        "Block đẹp nhưng vượt claim; biến ngôn ngữ điều kiện thành khẳng định; owner không đồng ý bị coi trả lời sai; nội dung bị thu hồi."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không biến approval tài liệu thành review 72 thẻ hoặc tự mở serving."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-038",
+      "work_package_ref": "WP20-019",
+      "variant_key": "self_score_rollout",
+      "title": "Chuẩn bị gói phát hành theo đúng phần claim đã được phép",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị gói phát hành theo đúng phần claim đã được phép; giữ phần chưa đủ evidence OFF và dự phòng general.",
+      "source_goal": "Chuẩn bị gói phát hành theo đúng phần claim đã được phép; giữ phần chưa đủ evidence OFF và dự phòng general.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không kéo theo classifier/norm hoặc DISC pair khi chỉ duyệt Self content.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị gói phát hành theo đúng phần claim đã được phép; giữ phần chưa đủ evidence OFF và dự phòng general."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị gói phát hành theo đúng phần claim đã được phép; giữ phần chưa đủ evidence OFF và dự phòng general."
+      ],
+      "negative_test_design": "Chỉ claim điểm từng miền nhưng mở so sánh giữa miền; source token sai revision; feature bất ngờ bật sau rollback; không thể withdraw.",
+      "source_verification": [
+        "Chỉ claim điểm từng miền nhưng mở so sánh giữa miền; source token sai revision; feature bất ngờ bật sau rollback; không thể withdraw."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không kéo theo classifier/norm hoặc DISC pair khi chỉ duyệt Self content."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-039",
+      "work_package_ref": "WP20-020",
+      "variant_key": "literal_pair",
+      "title": "Làm A→B từ manual/literal/general theo PAIR_PREFERENCE và target gate",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Làm A→B từ manual/literal/general theo PAIR_PREFERENCE và target gate; không đọc vector hoặc suy A ở B_ONLY.",
+      "source_goal": "Làm A→B từ manual/literal/general theo PAIR_PREFERENCE và target gate; không đọc vector hoặc suy A ở B_ONLY.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không NLP text thành trait/preference atom hoặc phần trăm hợp nhau.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Làm A→B từ manual/literal/general theo PAIR_PREFERENCE và target gate; không đọc vector hoặc suy A ở B_ONLY."
+      ],
+      "variant_instructions": [
+        "Làm A→B từ manual/literal/general theo PAIR_PREFERENCE và target gate; không đọc vector hoặc suy A ở B_ONLY."
+      ],
+      "negative_test_design": "B target mất; A không publish; text B không grant; thiếu đủ ba lời khuyên; same A/B; revoke giữa tạo và cấp.",
+      "source_verification": [
+        "B target mất; A không publish; text B không grant; thiếu đủ ba lời khuyên; same A/B; revoke giữa tạo và cấp."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không NLP text thành trait/preference atom hoặc phần trăm hợp nhau."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-040",
+      "work_package_ref": "WP20-020",
+      "variant_key": "semantic_pair",
+      "title": "Xây extension binding sau CR: owner chọn code",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Xây extension binding sau CR: owner chọn code, xác nhận exact field hash/context/publication và applicability.",
+      "source_goal": "Xây extension binding sau CR: owner chọn code, xác nhận exact field hash/context/publication và applicability.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không migrate manual cũ bằng NLP hoặc nâng bản template thành owner-confirmed.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Xây extension binding sau CR: owner chọn code, xác nhận exact field hash/context/publication và applicability."
+      ],
+      "variant_instructions": [
+        "Xây extension binding sau CR: owner chọn code, xác nhận exact field hash/context/publication và applicability."
+      ],
+      "negative_test_design": "Text đổi làm hash stale; hai sở thích mâu thuẫn trong context; client gửi hash_matches=true; source publication cũ; revoke purpose.",
+      "source_verification": [
+        "Text đổi làm hash stale; hai sở thích mâu thuẫn trong context; client gửi hash_matches=true; source publication cũ; revoke purpose."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không migrate manual cũ bằng NLP hoặc nâng bản template thành owner-confirmed."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-041",
+      "work_package_ref": "WP20-021",
+      "variant_key": "preference_rollout",
+      "title": "Chuẩn bị acceptance cho literal hoặc semantic đúng variant",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị acceptance cho literal hoặc semantic đúng variant, kiểm source labels và hiểu của người đọc.",
+      "source_goal": "Chuẩn bị acceptance cho literal hoặc semantic đúng variant, kiểm source labels và hiểu của người đọc.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không gọi preference advice là DISC pair đã kiểm định.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị acceptance cho literal hoặc semantic đúng variant, kiểm source labels và hiểu của người đọc."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị acceptance cho literal hoặc semantic đúng variant, kiểm source labels và hiểu của người đọc."
+      ],
+      "negative_test_design": "B_ONLY dùng lời so cặp; người nhận tưởng hệ thống đã đánh giá năng lực; nhánh fallback vẫn đọc điểm; thiếu operator xử lý phản ánh.",
+      "source_verification": [
+        "B_ONLY dùng lời so cặp; người nhận tưởng hệ thống đã đánh giá năng lực; nhánh fallback vẫn đọc điểm; thiếu operator xử lý phản ánh."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không gọi preference advice là DISC pair đã kiểm định."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-042",
+      "work_package_ref": "WP20-021",
+      "variant_key": "disc_pair_synthetic",
+      "title": "Hiện thực pipeline hai grant SINGLE_SNAPSHOT",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Hiện thực pipeline hai grant SINGLE_SNAPSHOT, version compatibility và direction, dùng fixture có quyền giả định trong sandbox.",
+      "source_goal": "Hiện thực pipeline hai grant SINGLE_SNAPSHOT, version compatibility và direction, dùng fixture có quyền giả định trong sandbox.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không tạo all-pairs matrix, không phần trăm hợp nhau hoặc code labels từ raw score.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Hiện thực pipeline hai grant SINGLE_SNAPSHOT, version compatibility và direction, dùng fixture có quyền giả định trong sandbox."
+      ],
+      "variant_instructions": [
+        "Hiện thực pipeline hai grant SINGLE_SNAPSHOT, version compatibility và direction, dùng fixture có quyền giả định trong sandbox."
+      ],
+      "negative_test_design": "Grant R1 nhưng đọc latestR2; A spoof; B vector xuất qua tooltip; R trước I; compatibility UNKNOWN; classifier disabled.",
+      "source_verification": [
+        "Grant R1 nhưng đọc latestR2; A spoof; B vector xuất qua tooltip; R trước I; compatibility UNKNOWN; classifier disabled."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không tạo all-pairs matrix, không phần trăm hợp nhau hoặc code labels từ raw score."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-043",
+      "work_package_ref": "WP20-022",
+      "variant_key": "disc_pair_rollout",
+      "title": "Chuẩn bị gói bằng chứng pair theo operation/direction",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị gói bằng chứng pair theo operation/direction, cả hai nguồn đủ quyền và số hành động đúng giới hạn.",
+      "source_goal": "Chuẩn bị gói bằng chứng pair theo operation/direction, cả hai nguồn đủ quyền và số hành động đúng giới hạn.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không dùng rollout pair để quyết định tuyển dụng hoặc quan hệ nhân sự.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị gói bằng chứng pair theo operation/direction, cả hai nguồn đủ quyền và số hành động đúng giới hạn."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị gói bằng chứng pair theo operation/direction, cả hai nguồn đủ quyền và số hành động đúng giới hạn."
+      ],
+      "negative_test_design": "Có consent nhưng không claim; nguồn B bị xóa; riêng A/B được duyệt nhưng pair efficacy chưa rõ; version sau release không tương thích.",
+      "source_verification": [
+        "Có consent nhưng không claim; nguồn B bị xóa; riêng A/B được duyệt nhưng pair efficacy chưa rõ; version sau release không tương thích."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không dùng rollout pair để quyết định tuyển dụng hoặc quan hệ nhân sự."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-044",
+      "work_package_ref": "WP20-022",
+      "variant_key": "enterprise_integration",
+      "title": "Chọn đúng CAP18 và adapter: trust",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chọn đúng CAP18 và adapter: trust, SCIM/HRIS hoặc notification; xác định writer/identity/crosswalk và source event lanes.",
+      "source_goal": "Chọn đúng CAP18 và adapter: trust, SCIM/HRIS hoặc notification; xác định writer/identity/crosswalk và source event lanes.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không tự kết nối tenant thật hoặc cho source groups viết role/consent/publication.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chọn đúng CAP18 và adapter: trust, SCIM/HRIS hoặc notification; xác định writer/identity/crosswalk và source event lanes."
+      ],
+      "variant_instructions": [
+        "Chọn đúng CAP18 và adapter: trust, SCIM/HRIS hoặc notification; xác định writer/identity/crosswalk và source event lanes."
+      ],
+      "negative_test_design": "Email tái cấp; event tương lai bị cập nhật chức danh ghi đè; scan thiếu trang; active=true sau local deny; provider cutover replay.",
+      "source_verification": [
+        "Email tái cấp; event tương lai bị cập nhật chức danh ghi đè; scan thiếu trang; active=true sau local deny; provider cutover replay."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không tự kết nối tenant thật hoặc cho source groups viết role/consent/publication."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-045",
+      "work_package_ref": "WP20-023",
+      "variant_key": "ai_task_release",
+      "title": "Chọn một AIT15",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chọn một AIT15, chuẩn bị adapter tối thiểu, egress/source validation, variants hoặc human-reviewed draft, quota và kill.",
+      "source_goal": "Chọn một AIT15, chuẩn bị adapter tối thiểu, egress/source validation, variants hoặc human-reviewed draft, quota và kill.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không gửi raw/notes/keys; không auto-publish, chấm điểm hoặc gọi provider để hoàn thành hồ sơ.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chọn một AIT15, chuẩn bị adapter tối thiểu, egress/source validation, variants hoặc human-reviewed draft, quota và kill."
+      ],
+      "variant_instructions": [
+        "Chọn một AIT15, chuẩn bị adapter tối thiểu, egress/source validation, variants hoặc human-reviewed draft, quota và kill."
+      ],
+      "negative_test_design": "R trước provider E; AI-only revoke khác source revoke; JSON hợp lệ nhưng đảo nghĩa; timeout unknown provider spend; injection trong text.",
+      "source_verification": [
+        "R trước provider E; AI-only revoke khác source revoke; JSON hợp lệ nhưng đảo nghĩa; timeout unknown provider spend; injection trong text."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không gửi raw/notes/keys; không auto-publish, chấm điểm hoặc gọi provider để hoàn thành hồ sơ."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-046",
+      "work_package_ref": "WP20-023",
+      "variant_key": "analytics_release",
+      "title": "Chọn event/metric/view nhỏ nhất",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chọn event/metric/view nhỏ nhất, authority capture, cohort maturity, dedup, disclosure family và lifecycle.",
+      "source_goal": "Chọn event/metric/view nhỏ nhất, authority capture, cohort maturity, dedup, disclosure family và lifecycle.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không graph A→B, private notes, raw scores, session replay hoặc KPI từ chối test.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chọn event/metric/view nhỏ nhất, authority capture, cohort maturity, dedup, disclosure family và lifecycle."
+      ],
+      "variant_instructions": [
+        "Chọn event/metric/view nhỏ nhất, authority capture, cohort maturity, dedup, disclosure family và lifecycle."
+      ],
+      "negative_test_design": "Collector OFF có network; view signal không chứng minh đọc; cohort cuối tháng; missing denominator; tổng làm lộ ô bị ẩn; xóa làm differencing.",
+      "source_verification": [
+        "Collector OFF có network; view signal không chứng minh đọc; cohort cuối tháng; missing denominator; tổng làm lộ ô bị ẩn; xóa làm differencing."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không graph A→B, private notes, raw scores, session replay hoặc KPI từ chối test."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-047",
+      "work_package_ref": "WP20-024",
+      "variant_key": "operation_review",
+      "title": "Chuẩn bị chu kỳ xem xét theo rủi ro/sự kiện",
+      "kind": "HUMAN_OWNED_AGENT_PREPARES",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị chu kỳ xem xét theo rủi ro/sự kiện, duty roster, SLO thực, capacity, patch và retirement procedure.",
+      "source_goal": "Chuẩn bị chu kỳ xem xét theo rủi ro/sự kiện, duty roster, SLO thực, capacity, patch và retirement procedure.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không đặt lịch cam kết, chi phí hoặc on-call người thật chưa được xác nhận.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị chu kỳ xem xét theo rủi ro/sự kiện, duty roster, SLO thực, capacity, patch và retirement procedure."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị chu kỳ xem xét theo rủi ro/sự kiện, duty roster, SLO thực, capacity, patch và retirement procedure."
+      ],
+      "negative_test_design": "Không ai nhận alarm; workload ngoài thử tải; backup chưa drill; processor đổi retention; ngừng app làm mất kênh quyền dữ liệu.",
+      "source_verification": [
+        "Không ai nhận alarm; workload ngoài thử tải; backup chưa drill; processor đổi retention; ngừng app làm mất kênh quyền dữ liệu."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không đặt lịch cam kết, chi phí hoặc on-call người thật chưa được xác nhận."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-048",
+      "work_package_ref": "WP20-024",
+      "variant_key": "reminder_release",
+      "title": "Thiết kế task nhắc có lựa chọn riêng",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Thiết kế task nhắc có lựa chọn riêng, date-only/timezone, quiet window được duyệt, kênh tối thiểu và hủy trước gửi.",
+      "source_goal": "Thiết kế task nhắc có lựa chọn riêng, date-only/timezone, quiet window được duyệt, kênh tối thiểu và hủy trước gửi.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không bật mặc định hoặc coi consent assessment là consent notification.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Thiết kế task nhắc có lựa chọn riêng, date-only/timezone, quiet window được duyệt, kênh tối thiểu và hủy trước gửi."
+      ],
+      "variant_instructions": [
+        "Thiết kế task nhắc có lựa chọn riêng, date-only/timezone, quiet window được duyệt, kênh tối thiểu và hủy trước gửi."
+      ],
+      "negative_test_design": "Action xóa sau enqueue; same reminder lặp; đổi timezone; opt-out khi send pending; email chứa nội dung note riêng.",
+      "source_verification": [
+        "Action xóa sau enqueue; same reminder lặp; đổi timezone; opt-out khi send pending; email chứa nội dung note riêng."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không bật mặc định hoặc coi consent assessment là consent notification."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-049",
+      "work_package_ref": "WP20-025",
+      "variant_key": "classification_extension",
+      "title": "Chuẩn bị hợp đồng classifier riêng theo bằng chứng",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị hợp đồng classifier riêng theo bằng chứng; taxonomy, abstention, tie/uncertainty và version link.",
+      "source_goal": "Chuẩn bị hợp đồng classifier riêng theo bằng chứng; taxonomy, abstention, tie/uncertainty và version link.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không đưa threshold0.40SD của nghiên cứu thành runtime khi chưa được review.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị hợp đồng classifier riêng theo bằng chứng; taxonomy, abstention, tie/uncertainty và version link."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị hợp đồng classifier riêng theo bằng chứng; taxonomy, abstention, tie/uncertainty và version link."
+      ],
+      "negative_test_design": "Top2 không phân biệt; hai miền không kề; score semantics chưa tương đương; frontend tự gán Balanced; thay classifier sửa lịch sử.",
+      "source_verification": [
+        "Top2 không phân biệt; hai miền không kề; score semantics chưa tương đương; frontend tự gán Balanced; thay classifier sửa lịch sử."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không đưa threshold0.40SD của nghiên cứu thành runtime khi chưa được review."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    },
+    {
+      "id": "TASK21-050",
+      "work_package_ref": "WP20-025",
+      "variant_key": "norm_extension",
+      "title": "Chuẩn bị norm dataset/representativeness/method",
+      "kind": "IMPLEMENTATION_AFTER_BASELINE",
+      "document_status": "REVIEW_DRAFT",
+      "dispatch_status": "NOT_DISPATCHED",
+      "application_execution_status": "NOT_STARTED",
+      "production_authorized": false,
+      "goal": "Chuẩn bị norm dataset/representativeness/method, population scope, uncertainty và version linking riêng.",
+      "source_goal": "Chuẩn bị norm dataset/representativeness/method, population scope, uncertainty và version linking riêng.",
+      "source_story_ids": [],
+      "source_fr_ids": [],
+      "source_ac_pool": [],
+      "ac_applicability_status": "REQUIRES_SCOPE_ASSERTION_REVIEW",
+      "source_dependency_work_packages": [],
+      "selected_scope_dependencies": null,
+      "recipe_refs": [
+        "R20-01"
+      ],
+      "required_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "contract_context_source_ids": [
+        "SRC21-0001"
+      ],
+      "specialist_source_files": [
+        {
+          "path": "DOC-21_CODEX_BUILD_PACK.md",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "candidate_write_roots": [
+        "handoff_work/"
+      ],
+      "write_scope_status": "PROPOSED_UNBOUND_TO_APPLICATION_REPOSITORY",
+      "forbidden_actions": [
+        "Không chuẩn hóa từ vài nhân viên rồi tuyên bố áp dụng cho mọi người Việt.",
+        "Không sửa nguồn corpus, golden kỳ vọng hoặc quyền để ép test đạt.",
+        "Không secrets/dữ liệu nhân viên/provider calls/deploy trong gói bàn giao."
+      ],
+      "prerequisites": [
+        "Chọn recipe/variant cụ thể và xác định phần AC áp dụng; không tự mở rộng sang tất cả biến thể của WP."
+      ],
+      "implementation_steps": [
+        "Chuẩn bị norm dataset/representativeness/method, population scope, uncertainty và version linking riêng."
+      ],
+      "variant_instructions": [
+        "Chuẩn bị norm dataset/representativeness/method, population scope, uncertainty và version linking riêng."
+      ],
+      "negative_test_design": "Norm vendor bị mượn; SD0; nhóm nhỏ; cùng0–100 bị gọi percentile; new-form dùng norm old-form; null norm bị fallback.",
+      "source_verification": [
+        "Norm vendor bị mượn; SD0; nhóm nhỏ; cùng0–100 bị gọi percentile; new-form dùng norm old-form; null norm bị fallback."
+      ],
+      "migration_notes": "Không tự động migrate dữ liệu người thật.",
+      "stop_conditions": [
+        "Không chuẩn hóa từ vài nhân viên rồi tuyên bố áp dụng cho mọi người Việt."
+      ],
+      "evidence_deliverables": [
+        "Diff/path list có task, scope, baseline/source digests."
+      ],
+      "accountable_role": "PO/Tech/QA",
+      "technical_reviewer_role": "QA/Tech",
+      "assigned_person": null,
+      "human_approvals": [],
+      "product_command_bindings": null,
+      "runtime_evidence_refs": [],
+      "definition_of_done": "Chỉ hoàn tất đầu ra của variant đã chọn và có review/evidence đúng tầng."
+    }
+  ],
+  "count": 50
+}

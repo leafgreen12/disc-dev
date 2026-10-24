@@ -1,0 +1,161 @@
+{
+  "documents": [
+    {
+      "document_id": "DOC-00",
+      "path": "DOC-00_DOCUMENTATION_MAP.md",
+      "responsibility": "Mã nguồn yêu cầu và quản trị",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-01",
+      "path": "DOC-01_URD.md",
+      "responsibility": "Nhu cầu người dùng",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-02",
+      "path": "DOC-02_BRD.md",
+      "responsibility": "Nghiệp vụ và giới hạn",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-03",
+      "path": "DOC-03_USE_CASES.md",
+      "responsibility": "Use Cases/ngoại lệ",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-04",
+      "path": "DOC-04_USER_STORIES.md",
+      "responsibility": "Stories/AC",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-05",
+      "path": "DOC-05_FRD.md",
+      "responsibility": "Function/field/state",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-06",
+      "path": "DOC-06_IA_UX_FLOWS.md",
+      "responsibility": "IA/flows",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-07",
+      "path": "DOC-07_UI_UX_SPECIFICATION.md",
+      "responsibility": "Screen/component/copy",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-08",
+      "path": "DOC-08_QUESTION_BANK_METADATA.md",
+      "responsibility": "Item/form/scale/provenance",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-09",
+      "path": "DOC-09_SCORING_CLASSIFICATION.md",
+      "responsibility": "Numerical scoring/abstention",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-10",
+      "path": "DOC-10_PSYCHOMETRIC_VALIDATION_PROTOCOL.md",
+      "responsibility": "Validation/evidence protocol",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-11",
+      "path": "DOC-11_MODULAR_BEHAVIORAL_CONTENT.md",
+      "responsibility": "Content/rule/source",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-12",
+      "path": "DOC-12_DATA_MODEL.md",
+      "responsibility": "Data/transaction/lifecycle",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-13",
+      "path": "DOC-13_API_SPECIFICATION.md",
+      "responsibility": "API/DTO/transport",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-14",
+      "path": "DOC-14_SECURITY_PRIVACY_SPECIFICATION.md",
+      "responsibility": "Security/privacy",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-15",
+      "path": "DOC-15_AI_LLM_PERSONALIZATION.md",
+      "responsibility": "AI có điều kiện",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-16",
+      "path": "DOC-16_MASTER_TEST_QUALITY_PLAN.md",
+      "responsibility": "Test/evidence/release quality",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-17",
+      "path": "DOC-17_DEPLOYMENT_DEVOPS_OPERATIONS.md",
+      "responsibility": "Deploy/restore/operations",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-18",
+      "path": "DOC-18_ENTERPRISE_INTEGRATION.md",
+      "responsibility": "Enterprise integration có điều kiện",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-19",
+      "path": "DOC-19_PRODUCT_ANALYTICS_MEASUREMENT.md",
+      "responsibility": "Analytics có điều kiện",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-20",
+      "path": "DOC-20_PRODUCT_ROADMAP_RELEASE_PLAN.md",
+      "responsibility": "Roadmap/scope/WBS",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    },
+    {
+      "document_id": "DOC-21",
+      "path": "DOC-21_CODEX_BUILD_PACK.md",
+      "responsibility": "Task/context/agent handoff",
+      "status": "REVIEW_DRAFT",
+      "approval_status": "NOT_APPROVED"
+    }
+  ],
+  "drafted_count": 22,
+  "approved_count": 0,
+  "application_implementation_status": "NOT_STARTED"
+}
